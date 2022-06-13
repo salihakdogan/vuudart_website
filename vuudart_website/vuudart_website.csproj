@@ -1,0 +1,488 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED40A2D7-986C-4B3A-B33E-0A8D915820BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>vuudart_website</RootNamespace>
+    <AssemblyName>vuudart_website</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44315</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="yonetici_arayuz\.gitignore" />
+    <Content Include="yonetici_arayuz\assets\fonts\fa-solid-900.svg" />
+    <Content Include="yonetici_arayuz\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\1.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\10.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\11.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\12.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\2.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\3.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\4.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\5.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\8.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\avatars\9.jpg" />
+    <Content Include="yonetici_arayuz\assets\images\logo-inverse.png" />
+    <Content Include="yonetici_arayuz\assets\images\logo-inverse1.png" />
+    <Content Include="yonetici_arayuz\assets\images\logo.png" />
+    <Content Include="yonetici_arayuz\assets\images\logo1.png" />
+    <Content Include="yonetici_arayuz\assets\scripts\main.js" />
+    <Content Include="yonetici_arayuz\charts-chartjs.html" />
+    <Content Include="yonetici_arayuz\components-accordions.html" />
+    <Content Include="yonetici_arayuz\components-calendar.html" />
+    <Content Include="yonetici_arayuz\components-carousel.html" />
+    <Content Include="yonetici_arayuz\components-maps.html" />
+    <Content Include="yonetici_arayuz\components-modals.html" />
+    <Content Include="yonetici_arayuz\components-notifications.html" />
+    <Content Include="yonetici_arayuz\components-pagination.html" />
+    <Content Include="yonetici_arayuz\components-progress-bar.html" />
+    <Content Include="yonetici_arayuz\components-scrollable-elements.html" />
+    <Content Include="yonetici_arayuz\components-tabs.html" />
+    <Content Include="yonetici_arayuz\components-tooltips-popovers.html" />
+    <Content Include="yonetici_arayuz\dashboard-boxes.html" />
+    <Content Include="yonetici_arayuz\datatable\bootstrap.css" />
+    <Content Include="yonetici_arayuz\datatable\dataTables.bootstrap4.min.css" />
+    <Content Include="yonetici_arayuz\datatable\dataTables.bootstrap4.min.js" />
+    <Content Include="yonetici_arayuz\datatable\jquery-3.5.1.js" />
+    <Content Include="yonetici_arayuz\datatable\jquery.dataTables.min.js" />
+    <Content Include="yonetici_arayuz\elements-badges-labels.html" />
+    <Content Include="yonetici_arayuz\elements-buttons-standard.html" />
+    <Content Include="yonetici_arayuz\elements-cards.html" />
+    <Content Include="yonetici_arayuz\elements-dropdowns.html" />
+    <Content Include="yonetici_arayuz\elements-icons.html" />
+    <Content Include="yonetici_arayuz\elements-list-group.html" />
+    <Content Include="yonetici_arayuz\elements-navigation.html" />
+    <Content Include="yonetici_arayuz\elements-utilities.html" />
+    <Content Include="yonetici_arayuz\forms-controls.html" />
+    <Content Include="yonetici_arayuz\forms-layouts.html" />
+    <Content Include="yonetici_arayuz\forms-validation.html" />
+    <Content Include="yonetici_arayuz\giris_ekran.css" />
+    <Content Include="yonetici_arayuz\index.aspx" />
+    <Content Include="yonetici_arayuz\index.html" />
+    <Content Include="yonetici_arayuz\logo\vuudart-giris_ekran_logo.png" />
+    <Content Include="yonetici_arayuz\logo\vuudart16x16.png" />
+    <Content Include="yonetici_arayuz\logo\vuudart180x180.png" />
+    <Content Include="yonetici_arayuz\logo\vuudart32x32.png" />
+    <Content Include="yonetici_arayuz\main.css" />
+    <Content Include="yonetici_arayuz\src\app.js" />
+    <Content Include="yonetici_arayuz\src\assets\components\maps\maps-word-map.js" />
+    <Content Include="yonetici_arayuz\src\assets\demo-ui\images\logo.png" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\1.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\10.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\11.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\12.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\2.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\3.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\4.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\5.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\8.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\avatars\9.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\images\logo-inverse.png" />
+    <Content Include="yonetici_arayuz\src\assets\images\logo.png" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\ajax-loader.gif" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\1.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\10.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\11.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\12.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\2.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\3.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\4.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\5.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\8.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\avatars\9.jpg" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\logo-inverse.png" />
+    <Content Include="yonetici_arayuz\src\assets\utils\images\logo.png" />
+    <Content Include="yonetici_arayuz\src\layout\favicon.ico" />
+    <Content Include="yonetici_arayuz\src\pages.js" />
+    <Content Include="yonetici_arayuz\src\scripts-init\calendar.js" />
+    <Content Include="yonetici_arayuz\src\scripts-init\charts\chartjs.js" />
+    <Content Include="yonetici_arayuz\src\scripts-init\charts\chartsjs-utils.js" />
+    <Content Include="yonetici_arayuz\src\scripts-init\demo.js" />
+    <Content Include="yonetici_arayuz\src\scripts-init\maps.js" />
+    <Content Include="yonetici_arayuz\src\scripts-init\scrollbar.js" />
+    <Content Include="yonetici_arayuz\src\scripts-init\toastr.js" />
+    <Content Include="yonetici_arayuz\tables-regular.html" />
+    <Content Include="yonetici_arayuz\uye_ekle.aspx" />
+    <Content Include="yonetici_arayuz\uye_liste.aspx" />
+    <Content Include="yonetici_arayuz\uye_profil\06112022_195527_alt.JPG" />
+    <Content Include="yonetici_arayuz\uye_profil\default_uye_profil.jpg" />
+    <Content Include="yonetici_arayuz\webpack-dev.config.js" />
+    <Content Include="yonetici_arayuz\webpack-prod.config.js" />
+    <Content Include="yonetici_arayuz\webpack.config-helper.js" />
+    <Content Include="yonetici_giris.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cs\Db.cs" />
+    <Compile Include="cs\Uye.cs" />
+    <Compile Include="cs\UyeCRUD.cs" />
+    <Compile Include="cs\Yonetici.cs" />
+    <Compile Include="cs\YoneticiCRUD.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="yonetici_arayuz\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\uye_ekle.aspx.cs">
+      <DependentUpon>uye_ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\uye_ekle.aspx.designer.cs">
+      <DependentUpon>uye_ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\uye_liste.aspx.cs">
+      <DependentUpon>uye_liste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\uye_liste.aspx.designer.cs">
+      <DependentUpon>uye_liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici.Master.cs">
+      <DependentUpon>yonetici.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici.Master.designer.cs">
+      <DependentUpon>yonetici.Master</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_giris.aspx.cs">
+      <DependentUpon>yonetici_giris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_giris.aspx.designer.cs">
+      <DependentUpon>yonetici_giris.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="yonetici_arayuz\.babelrc" />
+    <Content Include="yonetici_arayuz\assets\fonts\fa-solid-900.eot" />
+    <Content Include="yonetici_arayuz\assets\fonts\fa-solid-900.ttf" />
+    <Content Include="yonetici_arayuz\assets\fonts\fa-solid-900.woff" />
+    <Content Include="yonetici_arayuz\assets\fonts\fa-solid-900.woff2" />
+    <Content Include="yonetici_arayuz\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="yonetici_arayuz\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="yonetici_arayuz\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="yonetici_arayuz\Changelog.md" />
+    <Content Include="yonetici_arayuz\Free and Premium Bootstrap 4 Admin Themes &amp; UI Kits - DashboardPack 2.webloc" />
+    <Content Include="yonetici_arayuz\LICENSE" />
+    <Content Include="yonetici_arayuz\package.json" />
+    <Content Include="yonetici_arayuz\README.md" />
+    <Content Include="yonetici_arayuz\src\assets\base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\bootstrap-grid.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\bootstrap-reboot.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\bootstrap.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_alert.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_background-variant.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_badge.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_border-radius.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_box-shadow.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_breakpoints.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_buttons.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_caret.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_clearfix.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_float.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_forms.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_gradients.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_grid-framework.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_grid.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_hover.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_image.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_list-group.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_lists.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_nav-divider.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_pagination.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_reset-text.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_resize.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_screen-reader.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_size.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_table-row.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_text-emphasis.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_text-hide.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_text-truncate.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_transition.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\mixins\_visibility.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_align.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_background.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_borders.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_clearfix.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_display.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_embed.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_flex.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_float.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_overflow.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_position.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_screenreaders.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_shadows.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_sizing.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_spacing.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_text.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\utilities\_visibility.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_alert.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_badge.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_breadcrumb.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_button-group.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_buttons.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_card.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_carousel.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_close.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_code.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_custom-forms.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_dropdown.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_forms.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_functions.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_grid.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_images.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_input-group.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_jumbotron.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_list-group.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_media.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_mixins.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_modal.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_nav.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_navbar.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_pagination.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_popover.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_print.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_progress.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_reboot.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_root.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_spinners.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_tables.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_toasts.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_tooltip.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_transitions.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_type.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_utilities.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\bootstrap4\_variables.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\calendar\_calendar.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\hamburgers.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_3dx-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_3dx.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_3dxy-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_3dxy.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_3dy-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_3dy.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_arrow-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_arrow.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_arrowalt-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_arrowalt.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_arrowturn-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_arrowturn.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_boring.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_collapse-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_collapse.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_elastic-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_elastic.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_emphatic-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_emphatic.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_minus.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_slider-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_slider.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_spin-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_spin.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_spring-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_spring.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_squeeze.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_stand-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_stand.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_vortex-r.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\types\_vortex.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\hamburgers\_base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\icons\fontawesome\_fontawesome.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\icons\_p7icons.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\maps\_vector-maps.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\notifications\_toastr.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\perfect-scrollbar\_perfect-scrollbar.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\popovers-tooltips\_popovers-tooltips.scss" />
+    <Content Include="yonetici_arayuz\src\assets\components\tables\_tables.scss" />
+    <Content Include="yonetici_arayuz\src\assets\demo-ui\elements\_layout-themes.scss" />
+    <Content Include="yonetici_arayuz\src\assets\demo-ui\elements\_theme-options.scss" />
+    <Content Include="yonetici_arayuz\src\assets\demo-ui\_demo.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\listgroup.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_accordions.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_badges.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_buttons.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_cards.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_dropdown.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_forms.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_modals.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_navs.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_pagination.scss" />
+    <Content Include="yonetici_arayuz\src\assets\elements\_tabs.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\elements\page-title\_page-title-base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\elements\search-box\_search-box.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\footer\_fixed-footer.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\footer\_footer-base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\generic\_generic-base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\header\modifiers\_fixed-header.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\header\themes\_header-dark.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\header\themes\_header-light.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\header\_header-base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\main\themes\_main-white.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\main\_main-base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\responsive\_responsive-base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\sidebar\modifiers\_closed-sidebar.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\sidebar\modifiers\_fixed-sidebar.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\sidebar\modifiers\_navmenu-vertical.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\sidebar\themes\_sidebar-dark.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\sidebar\themes\_sidebar-light.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\sidebar\_sidebar-base.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\_layout-variables.scss" />
+    <Content Include="yonetici_arayuz\src\assets\layout\_layout.scss" />
+    <Content Include="yonetici_arayuz\src\assets\themes\default\_variables.scss" />
+    <Content Include="yonetici_arayuz\src\assets\themes\_layout-variables.scss" />
+    <Content Include="yonetici_arayuz\src\assets\utils\helpers\_grayscale.scss" />
+    <Content Include="yonetici_arayuz\src\assets\utils\helpers\_opacity.scss" />
+    <Content Include="yonetici_arayuz\src\assets\utils\_animate.scss" />
+    <Content Include="yonetici_arayuz\src\assets\utils\_backgrounds.scss" />
+    <Content Include="yonetici_arayuz\src\assets\utils\_comps-animations.scss" />
+    <Content Include="yonetici_arayuz\src\assets\utils\_helpers.scss" />
+    <Content Include="yonetici_arayuz\src\assets\widgets\content-boxes\_content-boxes.scss" />
+    <Content Include="yonetici_arayuz\src\DemoPages\charts\chartjs.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\accordions.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\calendar.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\carousel.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\maps.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\modals.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\notifications.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\pagination.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\progress-bar.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\scrollable-elements.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\tabs.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\components\tooltips-popovers.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\dashboard-widgets\dashboard-boxes.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\dashboards\dashboard-example-1.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\badges-labels.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\buttons\standard.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\cards.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\dropdowns.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\icons.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\list-group.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\navigation.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\elements\utilities.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\forms\elements\controls.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\forms\elements\layouts.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\forms\elements\validation.hbs" />
+    <Content Include="yonetici_arayuz\src\DemoPages\tables\regular.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppFooter\footer.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppHeader\Components\header-left.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppHeader\Components\header-right.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppHeader\Components\logo.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppHeader\header.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppMain\page-title-actions.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppMain\page-title.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\AppSidebar\sidebar.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\base.hbs" />
+    <Content Include="yonetici_arayuz\src\layout\ThemeOptions\theme-options.hbs" />
+    <Content Include="yonetici_arayuz\uye_profil\06112022_200035_uye_profil" />
+    <Content Include="yonetici_arayuz\yonetici.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="yonetici_arayuz\src\assets\fonts\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53231</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44315/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
