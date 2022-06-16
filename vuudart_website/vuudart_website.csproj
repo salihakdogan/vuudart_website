@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cs\Db.cs" />
+    <Compile Include="cs\SorgularCRUD.cs" />
     <Compile Include="cs\Uye.cs" />
     <Compile Include="cs\UyeCRUD.cs" />
     <Compile Include="cs\Yonetici.cs" />

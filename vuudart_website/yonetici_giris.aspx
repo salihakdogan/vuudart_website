@@ -14,10 +14,51 @@
     <link href="yonetici_arayuz/giris_ekran.css" rel="stylesheet" />
     <link href="yonetici_arayuz/main.css" rel="stylesheet" />
 
+    <%--sweet alert javascript--%>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11.4.17"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">   
+    
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4@5.0.11/bootstrap-4.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
+
+    <style>
+
+        body {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+        }
+
+    </style>
+    <%--sweet alert javascript bitis--%>
+
+
 </head>
 
 <body>
     
+    <script id="girisyapilamadi">
+        function girisyapilamadi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Giriş yapılamadı e-mail ya da şifreniz hatalı!'
+            })
+        }
+    </script>
+   
     <form id="form1" runat="server">
         
        <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -25,20 +66,7 @@
            <div class="app-main">
      
                  <div class="app-main__inner">
-
-         <div class="col-md-6 ortahizala">
-
-         <div id="girishatali" runat="server" visible="false">
-             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                 <strong>Giriş yapılamadı!</strong> E-mail adresiniz ya da şifreniz hatalı!
-                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-                 </button>
-             </div>
-         </div>
-
-         </div>
-
+      
          <div class="col-md-6 ortahizala">
                   
              <div class="main-card mb-3 card card-shadow-secondary border mb-3 card card-body border-secondary">
@@ -120,9 +148,9 @@
        </div>
 
     </form>
-    
+  
 </body>
 
-    <script type="text/javascript" src="yonetici_arayuz/assets/scripts/main.js"></script>
+    <script type="text/javascript" src="yonetici_arayuz/assets/scripts/main.js"></script>   
 
 </html>

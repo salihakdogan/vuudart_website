@@ -16,49 +16,70 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //yeni sayfa
-            cs.Uye yeniuye = new cs.Uye();
-            cs.UyeCRUD yeniuyeCRUD = new cs.UyeCRUD();
+            cs.SorgularCRUD sorgu = new cs.SorgularCRUD();
 
-            yeniuye.Ad = TextBox1.Text;
-            yeniuye.Soyad = TextBox2.Text;
-            yeniuye.Mail = TextBox3.Text;
-            yeniuye.Telefon = TextBox4.Text;
-            yeniuye.Sifre = TextBox5.Text;
-
-            yeniuye.Tc = TextBox7.Text;
-            yeniuye.Sirket = TextBox8.Text;
-            yeniuye.Ulke = TextBox9.Text;
-            yeniuye.Sehir = TextBox10.Text;
-            yeniuye.Postakod = TextBox11.Text;
-            yeniuye.Adres = TextBox12.Text;
-
-
-            if (!FileUpload1.HasFile)
+            bool mailcevap = sorgu.mailkullanimdami(TextBox3.Text);
+            bool telefoncevap = sorgu.telefonkullanimdami(TextBox4.Text);
+            bool tccevap = sorgu.tckullanimdami(TextBox7.Text);
+     
+            if (mailcevap == true)/*mail adresi kullaniliyorsa*/
             {
-                yeniuye.Pfotograf = "uye_profil/default_uye_profil.jpg";
+                ClientScript.RegisterStartupScript(this.GetType(), "mailkullanimda", "mailkullanimda()", true);
+            }
+            else if (telefoncevap == true)
+            {              
+                ClientScript.RegisterStartupScript(this.GetType(), "telefonkullanimda", "telefonkullanimda()", true);
+            }
+            else if (tccevap == true)
+            {             
+                ClientScript.RegisterStartupScript(this.GetType(), "tckullanimda", "tckullanimda()", true);
             }
             else
             {
-                //string upfotograf = FileUpload1.FileName.Replace(FileUpload1.FileName, "uye_profil");
-                string upfotograf = FileUpload1.FileName;
-                string upfotograftarih = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+                //yeni sayfa
+                cs.Uye yeniuye = new cs.Uye();
+                cs.UyeCRUD yeniuyeCRUD = new cs.UyeCRUD();
 
-                FileUpload1.SaveAs(Server.MapPath("uye_profil/" + upfotograftarih + "_" + upfotograf));
+                yeniuye.Ad = TextBox1.Text;
+                yeniuye.Soyad = TextBox2.Text;
+                yeniuye.Mail = TextBox3.Text;
+                yeniuye.Telefon = TextBox4.Text;
+                yeniuye.Sifre = TextBox5.Text;
 
-                yeniuye.Pfotograf = "uye_profil/" + upfotograftarih + "_" + upfotograf;
-            }
+                yeniuye.Tc = TextBox7.Text;
+                yeniuye.Sirket = TextBox8.Text;
+                yeniuye.Ulke = TextBox9.Text;
+                yeniuye.Sehir = TextBox10.Text;
+                yeniuye.Postakod = TextBox11.Text;
+                yeniuye.Adres = TextBox12.Text;
 
-            bool cevap = yeniuyeCRUD.uyeekle(yeniuye);
 
-            if (cevap == true)
-            {
-                kayitbasarili.Visible = true;
-            }
-            else
-            {
-                Response.Write("hatali kayit");
-            }
+                if (!FileUpload1.HasFile)
+                {
+                    yeniuye.Pfotograf = "uye_profil/default_uye_profil.jpg";
+                }
+                else
+                {
+                    //string upfotograf = FileUpload1.FileName.Replace(FileUpload1.FileName, "uye_profil");
+                    string upfotograf = FileUpload1.FileName;
+                    string upfotograftarih = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+
+                    FileUpload1.SaveAs(Server.MapPath("uye_profil/" + upfotograftarih + "_" + upfotograf));
+
+                    yeniuye.Pfotograf = "uye_profil/" + upfotograftarih + "_" + upfotograf;
+                }
+
+                bool cevap = yeniuyeCRUD.uyeekle(yeniuye);
+
+                if (cevap == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "basarilikayit", "basarilikayit()", true);
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "basarisizkayit", "basarisizkayit()", true);
+                }
+            }                   
         }
 
         protected void Button2_Click(object sender, EventArgs e)

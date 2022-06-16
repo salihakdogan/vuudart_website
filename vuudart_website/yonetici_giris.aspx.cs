@@ -25,14 +25,13 @@ namespace vuudart_website
             bool cevap = ygirisbilgi.yoneticigiris(TextBox1.Text, TextBox2.Text);
 
             if (cevap)
-            {
-                girishatali.Visible = false;
+            {                
                 Session["yoneticigiris"] = "dogrugiris";
                 Response.Redirect("yonetici_arayuz/index.aspx");
             }
             else
             {
-                girishatali.Visible = true;
+                ClientScript.RegisterStartupScript(this.GetType(), "girisyapilamadi", "girisyapilamadi()", true);
             }
         }
 
