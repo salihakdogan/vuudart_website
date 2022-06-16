@@ -11,10 +11,10 @@ namespace vuudart_website.yonetici_arayuz
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["yoneticigiris"] != "dogrugiris")
-            {
-                Response.Redirect("../yonetici_giris.aspx");
-            }
+            //if (Session["yoneticigiris"] != "dogrugiris")
+            //{
+            //    Response.Redirect("../yonetici_giris.aspx");
+            //}
         }
     }
 }

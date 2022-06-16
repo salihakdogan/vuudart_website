@@ -10,7 +10,7 @@ namespace vuudart_website.cs
     public class SorgularCRUD
     {
         Db db = new Db();
-        public bool mailkullanimdami(string pmail) /*mail kullanimda mi? sorgusu*/
+        public bool mailkullanimdami(string pmail)
         {
             bool sonuc = true;
             db.ac();
@@ -30,7 +30,7 @@ namespace vuudart_website.cs
             return sonuc;
         }
 
-        public bool telefonkullanimdami(string ptelefon) /*mail kullanimda mi? sorgusu*/
+        public bool telefonkullanimdami(string ptelefon)
         {
             bool sonuc = true;
             db.ac();
@@ -49,7 +49,7 @@ namespace vuudart_website.cs
 
             return sonuc;
         }
-        public bool tckullanimdami(string ptc) /*mail kullanimda mi? sorgusu*/
+        public bool tckullanimdami(string ptc)
         {
             bool sonuc = true;
             db.ac();
