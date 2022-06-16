@@ -44,7 +44,7 @@ namespace vuudart_website.cs
             return sonuc;
         }
 
-        public DataTable uyelerliste()
+        public DataTable uyelerilistele()
         {
             DataTable dt = new DataTable();
             db.ac();
