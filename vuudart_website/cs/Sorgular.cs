@@ -7,7 +7,7 @@ using System.Web;
 
 namespace vuudart_website.cs
 {
-    public class SorgularCRUD
+    public class Sorgular
     {
         Db db = new Db();
 

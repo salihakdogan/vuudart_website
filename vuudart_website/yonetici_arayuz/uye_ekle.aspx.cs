@@ -16,7 +16,7 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            cs.SorgularCRUD sorgu = new cs.SorgularCRUD();
+            cs.Sorgular sorgu = new cs.Sorgular();
 
             bool kadicevap = sorgu.kadikullanimdami(TextBox1.Text);
             bool mailcevap = sorgu.mailkullanimdami(TextBox2.Text);

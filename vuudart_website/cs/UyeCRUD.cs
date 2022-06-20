@@ -57,5 +57,65 @@ namespace vuudart_website.cs
             db.kapat();
             return dt;
         }
+        
+        public bool uyesil(string uyeprm)
+        {
+            bool cevap = true; //silindi
+            db.ac();
+            SqlCommand silme = new SqlCommand("delete from Uyeler where KullaniciAdi=@1", db.baglanti);
+            silme.Parameters.AddWithValue("@1", uyeprm);
+            int bilgi = silme.ExecuteNonQuery();
+
+            if (bilgi == 0)
+            {
+                cevap = false; //silinemedi
+            }
+
+            db.kapat();
+            return cevap;
+        }
+        public DataTable uyegoster(string mailprm) //güncelleme işlemi için
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select * from Uyeler where KullaniciAdi=@1", db.baglanti);
+            goster.Parameters.AddWithValue("@1", mailprm);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
+        public bool uyeguncelle(Uye uyegoster) //güncelleme işlemi için
+        {
+            bool cevap = true;
+            db.ac();
+            SqlCommand guncelle = new SqlCommand("update Uyeler set UyeMail=@a, Ad=@b, Soyad=@c, Sifre=@d, Tc=@e, Telefon=@f, Ulke=@g, Sehir=@h, PostaKod=@i, Adres=@j, Pfotograf=@k where KullaniciAdi=@l", db.baglanti);
+
+            guncelle.Parameters.AddWithValue("@a", uyegoster.Mail);
+            guncelle.Parameters.AddWithValue("@b", uyegoster.Ad);
+            guncelle.Parameters.AddWithValue("@c", uyegoster.Soyad);
+            guncelle.Parameters.AddWithValue("@d", uyegoster.Sifre);
+            guncelle.Parameters.AddWithValue("@e", uyegoster.Tc);
+            guncelle.Parameters.AddWithValue("@f", uyegoster.Telefon);
+            guncelle.Parameters.AddWithValue("@g", uyegoster.Ulke);
+            guncelle.Parameters.AddWithValue("@h", uyegoster.Sehir);
+            guncelle.Parameters.AddWithValue("@i", uyegoster.Postakod);
+            guncelle.Parameters.AddWithValue("@j", uyegoster.Adres);
+            guncelle.Parameters.AddWithValue("@k", uyegoster.Pfotograf);
+            guncelle.Parameters.AddWithValue("@l", uyegoster.Kullaniciad);
+
+            int donus = guncelle.ExecuteNonQuery();
+
+            if (donus == 0)
+            {
+                cevap = false;
+            }
+
+            db.kapat();
+            return cevap;
+        }
     }
 }
