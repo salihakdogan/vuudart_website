@@ -10,6 +10,27 @@ namespace vuudart_website.cs
     public class SorgularCRUD
     {
         Db db = new Db();
+
+        public bool kadikullanimdami(string pkadi)
+        {
+            bool sonuc = true;
+            db.ac();
+            SqlCommand komut = new SqlCommand("select count(*) from Uyeler where KullaniciAdi=@1", db.baglanti);
+
+            komut.Parameters.AddWithValue("@1", pkadi);
+
+            int kytsayi = Convert.ToInt16(komut.ExecuteScalar());
+
+            if (kytsayi == 0)
+            {
+                sonuc = false;
+            }
+
+            db.kapat();
+
+            return sonuc;
+        }
+
         public bool mailkullanimdami(string pmail)
         {
             bool sonuc = true;

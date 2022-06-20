@@ -18,21 +18,27 @@ namespace vuudart_website.yonetici_arayuz
         {
             cs.SorgularCRUD sorgu = new cs.SorgularCRUD();
 
-            bool mailcevap = sorgu.mailkullanimdami(TextBox3.Text);
-            bool telefoncevap = sorgu.telefonkullanimdami(TextBox4.Text);
+            bool kadicevap = sorgu.kadikullanimdami(TextBox1.Text);
+            bool mailcevap = sorgu.mailkullanimdami(TextBox2.Text);
             bool tccevap = sorgu.tckullanimdami(TextBox7.Text);
-     
-            if (mailcevap == true)/*mail adresi kullaniliyorsa*/
+            bool telefoncevap = sorgu.telefonkullanimdami(TextBox8.Text);
+            
+                 
+            if (kadicevap == true)/*mail adresi kullaniliyorsa*/
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "mailkullanimda", "mailkullanimda()", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "kadikullanimda", "kadikullanimda()", true);
             }
-            else if (telefoncevap == true)
+            else if (mailcevap == true)
             {              
-                ClientScript.RegisterStartupScript(this.GetType(), "telefonkullanimda", "telefonkullanimda()", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "mailkullanimda", "mailkullanimda()", true);
             }
             else if (tccevap == true)
             {             
                 ClientScript.RegisterStartupScript(this.GetType(), "tckullanimda", "tckullanimda()", true);
+            }
+            else if (telefoncevap == true)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "telefonkullanimda", "telefonkullanimda()", true);
             }
             else
             {
@@ -40,14 +46,14 @@ namespace vuudart_website.yonetici_arayuz
                 cs.Uye yeniuye = new cs.Uye();
                 cs.UyeCRUD yeniuyeCRUD = new cs.UyeCRUD();
 
-                yeniuye.Ad = TextBox1.Text;
-                yeniuye.Soyad = TextBox2.Text;
-                yeniuye.Mail = TextBox3.Text;
-                yeniuye.Telefon = TextBox4.Text;
+                yeniuye.Kullaniciad = TextBox1.Text;
+                yeniuye.Mail = TextBox2.Text;
+                yeniuye.Ad = TextBox3.Text;
+                yeniuye.Soyad = TextBox4.Text;
                 yeniuye.Sifre = TextBox5.Text;
 
                 yeniuye.Tc = TextBox7.Text;
-                yeniuye.Sirket = TextBox8.Text;
+                yeniuye.Telefon = TextBox8.Text;
                 yeniuye.Ulke = TextBox9.Text;
                 yeniuye.Sehir = TextBox10.Text;
                 yeniuye.Postakod = TextBox11.Text;

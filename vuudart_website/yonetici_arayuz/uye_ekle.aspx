@@ -40,17 +40,18 @@
                        
                        <div class="col-md-6">
                            <div class="position-relative form-group">
-                               <asp:Label ID="Label2" runat="server" Text="Ad * "></asp:Label>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ad alanı boş bırakılamaz!" ControlToValidate="TextBox1" ForeColor="#FF5840"></asp:RequiredFieldValidator>
+                               <asp:Label ID="Label2" runat="server" Text="Kullanıcı adı * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Kullanıcı adı alanı boş bırakılamaz!" ControlToValidate="TextBox1" ForeColor="#FF5840"></asp:RequiredFieldValidator>
                                <asp:TextBox ID="TextBox1" runat="server" class="form-control"></asp:TextBox>
                             </div>
                        </div>
                              
                        <div class="col-md-6">
                            <div class="position-relative form-group">
-                               <asp:Label ID="Label1" runat="server" Text="Soyad * "></asp:Label>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Soyad alanı boş bırakılamaz!" ControlToValidate="TextBox2" ForeColor="#FF5840"></asp:RequiredFieldValidator>
-                               <asp:TextBox ID="TextBox2" runat="server" class="form-control"></asp:TextBox>
+                               <asp:Label ID="Label1" runat="server" Text="Mail * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Mail alanı boş bırakılamaz!" ControlToValidate="TextBox2" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
+                               <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Mail adresi yanlış veya formatı hatalı!" ControlToValidate="TextBox2" ForeColor="#FF5840" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"></asp:RegularExpressionValidator>
+                               <asp:TextBox ID="TextBox2" runat="server" class="form-control" placeholder="ornek@mail.com"></asp:TextBox>
                            </div>
                        </div>
                    
@@ -60,18 +61,17 @@
                        
                        <div class="col-md-6">
                            <div class="position-relative form-group">
-                               <asp:Label ID="Label3" runat="server" Text="Mail * "></asp:Label>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Mail adresi alanı boş bırakılamaz!" ControlToValidate="TextBox3" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
-                               <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Mail adresi yanlış veya formatı hatalı!" ControlToValidate="TextBox3" ForeColor="#FF5840" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"></asp:RegularExpressionValidator>
-                               <asp:TextBox ID="TextBox3" runat="server" class="form-control" placeholder="ornek@mail.com"></asp:TextBox>
+                               <asp:Label ID="Label3" runat="server" Text="Ad * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Ad alanı boş bırakılamaz!" ControlToValidate="TextBox3" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
+                               <asp:TextBox ID="TextBox3" runat="server" class="form-control"></asp:TextBox>
                             </div>
                        </div>
                              
                        <div class="col-md-6">
                            <div class="position-relative form-group">
-                               <asp:Label ID="Label4" runat="server" Text="Telefon numarası * "></asp:Label>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Telefon numarası alanı boş bırakılamaz!" ControlToValidate="TextBox4" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
-                               <asp:TextBox ID="TextBox4" runat="server" class="form-control" MaxLength="11" placeholder="05xxxxxxxxx"></asp:TextBox>
+                               <asp:Label ID="Label4" runat="server" Text="Soyad * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Soyad alanı boş bırakılamaz!" ControlToValidate="TextBox4" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
+                               <asp:TextBox ID="TextBox4" runat="server" class="form-control"></asp:TextBox>
                            </div>
                        </div>
                    
@@ -120,8 +120,8 @@
                              
                        <div class="col-md-6">
                            <div class="position-relative form-group">
-                               <asp:Label ID="Label8" runat="server" Text="Şirket Adı"></asp:Label>
-                               <asp:TextBox ID="TextBox8" runat="server" class="form-control"></asp:TextBox>
+                               <asp:Label ID="Label8" runat="server" Text="Telefon numarası"></asp:Label>
+                               <asp:TextBox ID="TextBox8" runat="server" class="form-control" MaxLength="11" placeholder="05xxxxxxxxx"></asp:TextBox>
                            </div>
                        </div>
                    

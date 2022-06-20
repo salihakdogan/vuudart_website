@@ -19,13 +19,13 @@ namespace vuudart_website.cs
 
             SqlCommand komut = new SqlCommand("insert into Uyeler values(@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", db.baglanti);
 
-            komut.Parameters.AddWithValue("@1", yeniuye.Ad);
-            komut.Parameters.AddWithValue("@2", yeniuye.Soyad);
-            komut.Parameters.AddWithValue("@3", yeniuye.Mail);
-            komut.Parameters.AddWithValue("@4", yeniuye.Telefon);
-            komut.Parameters.AddWithValue("@5", yeniuye.Sifre);
+            komut.Parameters.AddWithValue("@1", yeniuye.Kullaniciad);
+            komut.Parameters.AddWithValue("@2", yeniuye.Mail);
+            komut.Parameters.AddWithValue("@3", yeniuye.Ad);
+            komut.Parameters.AddWithValue("@4", yeniuye.Soyad);
+            komut.Parameters.AddWithValue("@5", yeniuye.Sifre); 
             komut.Parameters.AddWithValue("@6", yeniuye.Tc);
-            komut.Parameters.AddWithValue("@7", yeniuye.Sirket);
+            komut.Parameters.AddWithValue("@7", yeniuye.Telefon);
             komut.Parameters.AddWithValue("@8", yeniuye.Ulke);
             komut.Parameters.AddWithValue("@9", yeniuye.Sehir);
             komut.Parameters.AddWithValue("@10", yeniuye.Postakod);
