@@ -161,6 +161,7 @@
     <Content Include="yonetici_arayuz\src\scripts-init\scrollbar.js" />
     <Content Include="yonetici_arayuz\src\scripts-init\toastr.js" />
     <Content Include="yonetici_arayuz\tables-regular.html" />
+    <Content Include="yonetici_arayuz\urun_ekle.aspx" />
     <Content Include="yonetici_arayuz\uye_ekle.aspx" />
     <Content Include="yonetici_arayuz\uye_guncelle.aspx" />
     <Content Include="yonetici_arayuz\uye_liste.aspx" />
@@ -174,6 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cs\Db.cs" />
+    <Compile Include="cs\Droplist.cs" />
+    <Compile Include="cs\DroplistCRUD.cs" />
     <Compile Include="cs\Sorgular.cs" />
     <Compile Include="cs\Uye.cs" />
     <Compile Include="cs\UyeCRUD.cs" />
@@ -186,6 +189,13 @@
     </Compile>
     <Compile Include="yonetici_arayuz\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\urun_ekle.aspx.cs">
+      <DependentUpon>urun_ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\urun_ekle.aspx.designer.cs">
+      <DependentUpon>urun_ekle.aspx</DependentUpon>
     </Compile>
     <Compile Include="yonetici_arayuz\uye_ekle.aspx.cs">
       <DependentUpon>uye_ekle.aspx</DependentUpon>

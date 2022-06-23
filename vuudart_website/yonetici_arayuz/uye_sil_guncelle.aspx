@@ -102,7 +102,7 @@
                 <td><%=dt.Rows[i][3] %></td>
                 <td><%=dt.Rows[i][1] %></td>
                 <td><button type="button" class="mb-2 mr-2 btn btn-outline-danger btn-sm btn-block" data-toggle="modal" data-target="#silonay<%=dt.Rows[i][0] %>">Sil</button></td>
-                <td><a href="uye_guncelle.aspx?prmkadi=<%=dt.Rows[i][0] %>"<button type="button" class="mb-2 mr-2 btn btn-outline-success btn-sm btn-block">Güncelle</button></a></td>
+                <td><a href="uye_guncelle.aspx?prmkadi=<%=dt.Rows[i][0] %>"><button type="button" class="mb-2 mr-2 btn btn-outline-success btn-sm btn-block">Güncelle</button></a></td>
 
             </tr>
        <%}%>

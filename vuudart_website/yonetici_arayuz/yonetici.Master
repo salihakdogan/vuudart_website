@@ -237,6 +237,138 @@
         }
     </script>
 
+    <script id="kategorieklendi">
+        function kategorieklendi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Yeni kategori başarıyla eklendi.'
+            })
+        }
+    </script>
+
+    <script id="kategorieklenemedi">
+        function kategorieklenemedi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Yeni kategori eklenemedi kayıt sırasında bir hata oluştu daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
+    <script id="islem1iptal">
+        function islem1iptal() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'info',
+                title: 'Yeni kategori ekleme işleminiz iptal edilmiştir.'
+            })
+        }
+    </script>
+
+    <script id="hammadeeklendi">
+        function hammaddeeklendi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Yeni hammadde başarıyla eklendi.'
+            })
+        }
+    </script>
+
+    <script id="hammaddeeklenemedi">
+        function hammaddeeklenemedi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Yeni hammadde eklenemedi kayıt sırasında bir hata oluştu daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
+    <script id="islem2iptal">
+        function islem2iptal() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'info',
+                title: 'Yeni hammadde ekleme işleminiz iptal edilmiştir.'
+            })
+        }
+    </script>
+
 <body>
     
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
