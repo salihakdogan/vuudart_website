@@ -59,40 +59,33 @@
 
                    <div class="form-row">
                        
-
-
-                       <div class="col-md-4">
+                       <div class="col-md-6">
                            <div class="position-relative form-group">
                                <asp:Label ID="Label3" runat="server" Text="Kategori* "></asp:Label>
+                         <div class="input-group">
                                <asp:DropDownList ID="DropDownList1" runat="server" class="form-control"></asp:DropDownList>
-                            </div>
-                       </div>
-
-                       <div class="col-md-2">
-                           <div class="position-relative form-group">
-                               <asp:Label ID="Label7" runat="server" Text="Yeni kategori ekle "></asp:Label>
-                               <asp:Button ID="yeni_kategori" runat="server" Text="+" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="yeni_kategori_Click" ValidationGroup="yk_ekle"/>                   
-                            </div>
-                       </div>
-                             
-
-
-                       <div class="col-md-4">
-                           <div class="position-relative form-group">
-                               <asp:Label ID="Label4" runat="server" Text="Hammadde * "></asp:Label>
-                               <asp:DropDownList ID="DropDownList2" runat="server" class="form-control"></asp:DropDownList>
+                         <div class="input-group-append">
+                              <asp:Button ID="yeni_kategori" runat="server" Text="Yeni Ekle +" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="yeni_kategori_Click" ValidationGroup="yk_ekle" Visible="false"/>
+                              <button class="btn btn-outline-success" runat="server" type="button" onserverclick="yeni_kategori_Click" ValidationGroup="yk_ekle" style="font-size:13px;"><i class="fa fa-plus"></i> Yeni ekle</button>
+                         </div>
+                         </div>
                            </div>
                        </div>
 
-                       <div class="col-md-2">
+                     
+                       <div class="col-md-6">
                            <div class="position-relative form-group">
-                               <asp:Label ID="Label8" runat="server" Text="Yeni hammadde ekle "></asp:Label>
-                               <asp:Button ID="yeni_hammadde" runat="server" Text="+" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="yeni_hammadde_Click" ValidationGroup="yh_ekle" />                     
-                            </div>
+                               <asp:Label ID="Label4" runat="server" Text="Hammadde * "></asp:Label>
+                         <div class="input-group">
+                               <asp:DropDownList ID="DropDownList2" runat="server" class="form-control"></asp:DropDownList>
+                         <div class="input-group-append">
+                               <asp:Button ID="yeni_hammadde" runat="server" Text="Yeni Ekle +" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="yeni_hammadde_Click" ValidationGroup="yh_ekle" Visible="false"/>  
+                               <button class="btn btn-outline-success" runat="server" type="button" onserverclick="yeni_hammadde_Click" ValidationGroup="yh_ekle" style="font-size:13px;"><i class="fa fa-plus"></i> Yeni ekle</button>                            
+                         </div>
+                         </div>
+                           </div>
                        </div>
-                   
-
-
+                      
                    </div>
     
         </div>
