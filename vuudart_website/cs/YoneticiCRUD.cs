@@ -37,5 +37,19 @@ namespace vuudart_website.cs
 
             return sonuc;
         }
+
+        public DataTable yoneticigoster(string mailprm)
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select YoneticiTc, Ad, Soyad, Mail, Sifre, Telefon, Unvanlar.Unvan, Pfotograf from Yoneticiler,Unvanlar where Yoneticiler.Unvan=Unvanlar.UnvanId and Mail=@1", db.baglanti);
+            goster.Parameters.AddWithValue("@1", mailprm);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
     }
 }

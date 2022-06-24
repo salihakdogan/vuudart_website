@@ -26,7 +26,7 @@ namespace vuudart_website
 
             if (cevap)
             {                
-                Session["yoneticigiris"] = "dogrugiris";
+                Session["yoneticigiris"] = TextBox1.Text;
                 Response.Redirect("yonetici_arayuz/index.aspx");
             }
             else

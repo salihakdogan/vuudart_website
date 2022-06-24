@@ -171,6 +171,8 @@
     <Content Include="yonetici_arayuz\webpack-dev.config.js" />
     <Content Include="yonetici_arayuz\webpack-prod.config.js" />
     <Content Include="yonetici_arayuz\webpack.config-helper.js" />
+    <Content Include="yonetici_arayuz\yonetici_profil\murat_catmali_profil.jpg" />
+    <Content Include="yonetici_arayuz\yonetici_profil\salih_profil.jpg" />
     <Content Include="yonetici_giris.aspx" />
   </ItemGroup>
   <ItemGroup>

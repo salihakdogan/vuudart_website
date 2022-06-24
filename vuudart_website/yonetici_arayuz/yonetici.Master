@@ -421,7 +421,8 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <%--<img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">--%>
+                                            <asp:Image ID="y_pfotograf" runat="server" Width="42" Height="42" class="rounded-circle"/>
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
@@ -438,10 +439,10 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        Salih Akdoğan
+                                        <asp:Label ID="y_adlabel" runat="server" Text="Label"></asp:Label> <asp:Label ID="y_soyadlabel" runat="server" Text="Label"></asp:Label>
                                     </div>
                                     <div class="widget-subheading">
-                                        VP People Manager
+                                        <asp:Label ID="y_unvanlabel" runat="server" Text="Label"></asp:Label>
                                     </div>
                                 </div>
                                 
