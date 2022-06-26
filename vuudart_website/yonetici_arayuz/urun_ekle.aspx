@@ -90,7 +90,38 @@
     
         </div>
                
-       
+       <div class="card-body">
+           
+           <h5 class="card-title">ÜRÜN AÇIKLAMA VE RESİMLERİ</h5>
+           <div class="position-relative form-group">
+               <p style="color:#406bd0"><h7 class="">(Doldurulması zorunlu olan alanlar.)</h7></p>
+           </div>
+               
+               <form>
+                   
+                   <div class="form-row">
+                       
+                       <div class="col-md-6">
+                           <div class="position-relative form-group">
+                               <asp:Label ID="Label5" runat="server" Text="Barkod * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Barkod alanı boş bırakılamaz!" ControlToValidate="TextBox1" ForeColor="#FF5840"></asp:RequiredFieldValidator>
+                               <asp:TextBox ID="TextBox3" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
+                            </div>
+                       </div>
+                             
+                       <div class="col-md-6">
+                           <div class="position-relative form-group">
+                               <asp:Label ID="Label6" runat="server" Text="Ad * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ad alanı boş bırakılamaz!" ControlToValidate="TextBox2" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
+                               <asp:FileUpload ID="FileUpload1" runat="server" class="form-control"/>
+                           </div>
+                       </div>
+                   
+                   </div>
+
+                   
+    
+        </div>
 
        <div class="card-body">
 

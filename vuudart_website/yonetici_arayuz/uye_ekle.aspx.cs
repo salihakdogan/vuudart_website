@@ -22,7 +22,6 @@ namespace vuudart_website.yonetici_arayuz
             bool mailcevap = sorgu.mailkullanimdami(TextBox2.Text);
             bool tccevap = sorgu.tckullanimdami(TextBox7.Text);
             bool telefoncevap = sorgu.telefonkullanimdami(TextBox8.Text);
-            
                  
             if (kadicevap == true)/*mail adresi kullaniliyorsa*/
             {
@@ -62,7 +61,7 @@ namespace vuudart_website.yonetici_arayuz
 
                 if (!FileUpload1.HasFile)
                 {
-                    yeniuye.Pfotograf = "uye_profil/default_uye_profil.jpg";
+                    yeniuye.Pfotograf = "img/uye_profil/default_uye_profil.jpg";
                 }
                 else
                 {
@@ -70,9 +69,9 @@ namespace vuudart_website.yonetici_arayuz
                     string upfotograf = FileUpload1.FileName;
                     string upfotograftarih = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-                    FileUpload1.SaveAs(Server.MapPath("uye_profil/" + upfotograftarih + "_" + upfotograf));
+                    FileUpload1.SaveAs(Server.MapPath("img/uye_profil/" + upfotograftarih + "_" + upfotograf));
 
-                    yeniuye.Pfotograf = "uye_profil/" + upfotograftarih + "_" + upfotograf;
+                    yeniuye.Pfotograf = "img/uye_profil/" + upfotograftarih + "_" + upfotograf;
                 }
 
                 bool cevap = yeniuyeCRUD.uyeekle(yeniuye);

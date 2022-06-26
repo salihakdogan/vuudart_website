@@ -118,10 +118,10 @@
     <Content Include="yonetici_arayuz\giris_ekran.css" />
     <Content Include="yonetici_arayuz\index.aspx" />
     <Content Include="yonetici_arayuz\index.html" />
-    <Content Include="yonetici_arayuz\logo\vuudart-giris_ekran_logo.png" />
-    <Content Include="yonetici_arayuz\logo\vuudart16x16.png" />
-    <Content Include="yonetici_arayuz\logo\vuudart180x180.png" />
-    <Content Include="yonetici_arayuz\logo\vuudart32x32.png" />
+    <Content Include="yonetici_arayuz\img\logo\vuudart-giris_ekran_logo.png" />
+    <Content Include="yonetici_arayuz\img\logo\vuudart16x16.png" />
+    <Content Include="yonetici_arayuz\img\logo\vuudart180x180.png" />
+    <Content Include="yonetici_arayuz\img\logo\vuudart32x32.png" />
     <Content Include="yonetici_arayuz\main.css" />
     <Content Include="yonetici_arayuz\src\app.js" />
     <Content Include="yonetici_arayuz\src\assets\components\maps\maps-word-map.js" />
@@ -165,14 +165,15 @@
     <Content Include="yonetici_arayuz\uye_ekle.aspx" />
     <Content Include="yonetici_arayuz\uye_guncelle.aspx" />
     <Content Include="yonetici_arayuz\uye_liste.aspx" />
-    <Content Include="yonetici_arayuz\uye_profil\06112022_195527_alt.JPG" />
-    <Content Include="yonetici_arayuz\uye_profil\default_uye_profil.jpg" />
+    <Content Include="yonetici_arayuz\img\uye_profil\06112022_195527_alt.JPG" />
+    <Content Include="yonetici_arayuz\img\uye_profil\default_uye_profil.jpg" />
     <Content Include="yonetici_arayuz\uye_sil_guncelle.aspx" />
     <Content Include="yonetici_arayuz\webpack-dev.config.js" />
     <Content Include="yonetici_arayuz\webpack-prod.config.js" />
     <Content Include="yonetici_arayuz\webpack.config-helper.js" />
-    <Content Include="yonetici_arayuz\yonetici_profil\murat_catmali_profil.jpg" />
-    <Content Include="yonetici_arayuz\yonetici_profil\salih_profil.jpg" />
+    <Content Include="yonetici_arayuz\img\yonetici_profil\murat_catmali_profil.jpg" />
+    <Content Include="yonetici_arayuz\img\yonetici_profil\salih_profil.jpg" />
+    <Content Include="yonetici_arayuz\img\yonetici_profil\eren_profil.jpeg" />
     <Content Include="yonetici_giris.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -470,7 +471,7 @@
     <Content Include="yonetici_arayuz\src\layout\AppSidebar\sidebar.hbs" />
     <Content Include="yonetici_arayuz\src\layout\base.hbs" />
     <Content Include="yonetici_arayuz\src\layout\ThemeOptions\theme-options.hbs" />
-    <Content Include="yonetici_arayuz\uye_profil\06112022_200035_uye_profil" />
+    <Content Include="yonetici_arayuz\img\uye_profil\06112022_200035_uye_profil" />
     <Content Include="yonetici_arayuz\yonetici.Master" />
   </ItemGroup>
   <ItemGroup>

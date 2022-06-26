@@ -7,9 +7,9 @@
     
     <title>VuudArt - Yönetici Arayüzü Giriş Ekranı</title>
     
-    <link rel="apple-touch-icon" sizes="180x180" href="yonetici_arayuz/logo/vuudart180x180.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="yonetici_arayuz/logo/vuudart32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="yonetici_arayuz/logo/vuudart16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="yonetici_arayuz/img/logo/vuudart180x180.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="yonetici_arayuz/img/logo/vuudart32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="yonetici_arayuz/img/logo/vuudart16x16.png">
     
     <link href="yonetici_arayuz/giris_ekran.css" rel="stylesheet" />
     <link href="yonetici_arayuz/main.css" rel="stylesheet" />
@@ -73,7 +73,7 @@
                         
                <div class="card-body">
                  
-                   <asp:Image ID="Image1" runat="server" ImageUrl="yonetici_arayuz/logo/vuudart-giris_ekran_logo.png" Height="70" Width="120" CssClass="imagehizala"/>
+                   <asp:Image ID="Image1" runat="server" ImageUrl="yonetici_arayuz/img/logo/vuudart-giris_ekran_logo.png" Height="70" Width="120" CssClass="imagehizala"/>
                    
                    <div class="col-md-8 ortahizala">
                    <div class="texthizala" style="color:#406bd0">Yönetici Arayüzü Giriş Ekranı</div>
