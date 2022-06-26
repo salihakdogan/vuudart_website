@@ -181,6 +181,8 @@
     <Compile Include="cs\Droplist.cs" />
     <Compile Include="cs\DroplistCRUD.cs" />
     <Compile Include="cs\Sorgular.cs" />
+    <Compile Include="cs\Urun.cs" />
+    <Compile Include="cs\UrunCRUD.cs" />
     <Compile Include="cs\Uye.cs" />
     <Compile Include="cs\UyeCRUD.cs" />
     <Compile Include="cs\Yonetici.cs" />
@@ -475,6 +477,7 @@
     <Content Include="yonetici_arayuz\yonetici.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="yonetici_arayuz\img\urun_gorsel\" />
     <Folder Include="yonetici_arayuz\src\assets\fonts\" />
   </ItemGroup>
   <PropertyGroup>
