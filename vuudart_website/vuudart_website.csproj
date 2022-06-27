@@ -180,6 +180,8 @@
     <Compile Include="cs\Db.cs" />
     <Compile Include="cs\Droplist.cs" />
     <Compile Include="cs\DroplistCRUD.cs" />
+    <Compile Include="cs\Olcu.cs" />
+    <Compile Include="cs\OlcuCRUD.cs" />
     <Compile Include="cs\Sorgular.cs" />
     <Compile Include="cs\Urun.cs" />
     <Compile Include="cs\UrunCRUD.cs" />

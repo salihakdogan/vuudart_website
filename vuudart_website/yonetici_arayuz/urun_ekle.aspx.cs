@@ -118,7 +118,57 @@ namespace vuudart_website.yonetici_arayuz
             FileUpload3.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3));
             yeniurun.Gorsel3 = "img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3;
 
-            bool cevap = yeniurunCRUD.urunekle(yeniurun);
+            cs.Olcu yeniurunolcu = new cs.Olcu();
+            cs.OlcuCRUD yeniurunolcuCRUD = new cs.OlcuCRUD();
+
+            yeniurunolcu.Barkod = TextBox1.Text;
+
+            if (TextBox7.Text=="")
+            {
+                yeniurunolcu.Genislik = 0;
+            }
+            else
+            {
+                yeniurunolcu.Genislik = Convert.ToInt16(TextBox7.Text);
+            }
+
+            if (TextBox8.Text=="")
+            {
+                yeniurunolcu.Uzunluk = 0;
+            }
+            else
+            {
+                yeniurunolcu.Uzunluk = Convert.ToInt16(TextBox8.Text);
+            }
+
+            if (TextBox9.Text=="")
+            {
+                yeniurunolcu.Yukseklik = 0;
+            }
+            else
+            {
+                yeniurunolcu.Yukseklik = Convert.ToInt16(TextBox9.Text);
+            }
+
+            if (TextBox10.Text=="")
+            {
+                yeniurunolcu.Kalinlik = 0;
+            }
+            else
+            {
+                yeniurunolcu.Kalinlik = Convert.ToInt16(TextBox10.Text);
+            }
+
+            if (TextBox11.Text=="")
+            {
+                yeniurunolcu.Yaricap = 0;
+            }
+            else
+            {
+                yeniurunolcu.Yaricap = Convert.ToInt16(TextBox11.Text);
+            }
+                          
+            bool cevap = yeniurunCRUD.urunekle(yeniurun) && yeniurunolcuCRUD.olcuekle(yeniurunolcu);
 
             if (cevap == true)
             {
@@ -128,7 +178,7 @@ namespace vuudart_website.yonetici_arayuz
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "basarisizkayit", "basarisizkayit()", true);
             }
-
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e) /*temizle*/
