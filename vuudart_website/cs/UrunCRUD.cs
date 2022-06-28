@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -41,5 +42,32 @@ namespace vuudart_website.cs
 
             return sonuc;
         }
+        public DataTable urunlerilistele()
+        {
+            DataTable dt = new DataTable();
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select * from Urunler", db.baglanti);
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+
+            adp.Fill(dt);
+
+            db.kapat();
+            return dt;
+        }
+
+        public DataTable tumurunlistele()
+        {
+            DataTable dt = new DataTable();
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select Urunler.Barkod,Urunler.Ad, Kategoriler.Ad as Kategori, Hammaddeler.Ad as Hammadde, Urunler.Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap from Urunler, Kategoriler, Hammaddeler, Olculer where Urunler.Kategori=Kategoriler.KategoriID and Urunler.Hammadde=Hammaddeler.HammaddeID and Urunler.Barkod=Olculer.Barkod", db.baglanti);
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+
+            adp.Fill(dt);
+
+            db.kapat();
+            return dt;
+        }       
     }
 }

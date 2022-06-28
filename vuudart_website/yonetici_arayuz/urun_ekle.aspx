@@ -106,7 +106,7 @@
                        <div class="col-md-6">
                            <div class="position-relative form-group">
                                <asp:Label ID="Label5" runat="server" Text="Fiyat * "></asp:Label>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Fiyat alanı boş bırakılamaz!" ControlToValidate="TextBox3" ForeColor="#FF5840"></asp:RequiredFieldValidator>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Fiyat alanı boş bırakılamaz!" ControlToValidate="TextBox3" ForeColor="#FF5840" ValidationGroup="yu_kayit"></asp:RequiredFieldValidator>
                                     <div class="input-group">
                                         <asp:TextBox ID="TextBox3" runat="server" class="form-control" type="number" ValidationGroup="yu_kayit"></asp:TextBox>                                
                                         <div class="input-group-append"><span class="input-group-text">Tl</span></div>                                       
@@ -163,7 +163,7 @@
            
            <h5 class="card-title">ÜRÜN AÇIKLAMA VE RESİMLERİ</h5>
            <div class="position-relative form-group">
-               <p style="color:#406bd0"><h7 class="">(Doldurulması zorunlu olan alanlar.)</h7></p>
+               <p style="color:#406bd0"><h7 class="">(Doldurulması kısmen zorunlu olan alanlar.)</h7></p>
            </div>
                
                    
@@ -172,6 +172,7 @@
                        <div class="col-md-6">
                            <div class="position-relative form-group">
                                <asp:Label ID="Label9" runat="server" Text="Açıklama * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Açıklama alanı boş bırakılamaz!" ControlToValidate="TextBox6" ForeColor="#FF5840" ValidationGroup="yu_kayit"></asp:RequiredFieldValidator>
                                <asp:TextBox ID="TextBox6" runat="server" class="form-control" TextMode="MultiLine" Height="214px"></asp:TextBox>
                             </div>
                        </div>
@@ -179,7 +180,8 @@
                        <div class="col-md-6">
                            
                            <div class="position-relative form-group">
-                           <asp:Label ID="Label10" runat="server" Text="Görsel 1 * "></asp:Label>                        
+                           <asp:Label ID="Label10" runat="server" Text="Görsel 1 * "></asp:Label>
+                           <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="En az 1 adet resim seçilmelidir!" ControlToValidate="FileUpload1" ForeColor="#FF5840" ValidationGroup="yu_kayit"></asp:RequiredFieldValidator>                           
                            <asp:FileUpload ID="FileUpload1" runat="server" class="form-control-file"/>
                            </div>
 
@@ -193,7 +195,7 @@
                            <asp:FileUpload ID="FileUpload3" runat="server" class="form-control-file"/>
                            
                            <div class="position-relative form-group">
-                           <small class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                           <small class="form-text text-muted">Görsel boyutu 1mb dan fazla olamaz.</small>
                            </div>
 
                            </div>

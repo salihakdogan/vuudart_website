@@ -101,22 +101,41 @@ namespace vuudart_website.yonetici_arayuz
             string urungorsel1 = FileUpload1.FileName;
             string urungorseltarih1 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-            FileUpload1.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1));
-            yeniurun.Gorsel1 = "img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1;
-
+            if (FileUpload1.HasFile!=false)
+            {
+                FileUpload1.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1));
+                yeniurun.Gorsel1 = "img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1;
+            }
+            else
+            {
+                yeniurun.Gorsel1 = "";
+            }
 
             string urungorsel2 = FileUpload2.FileName;
             string urungorseltarih2 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-            FileUpload2.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2));
-            yeniurun.Gorsel2 = "img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2;
-
+            if (FileUpload2.HasFile!=false)
+            {
+                FileUpload2.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2));
+                yeniurun.Gorsel2 = "img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2;
+            }
+            else
+            {
+                yeniurun.Gorsel2 = "";
+            }
 
             string urungorsel3 = FileUpload3.FileName;
             string urungorseltarih3 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-            FileUpload3.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3));
-            yeniurun.Gorsel3 = "img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3;
+            if (FileUpload3.HasFile!=false)
+            {
+                FileUpload3.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3));
+                yeniurun.Gorsel3 = "img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3;
+            }
+            else
+            {
+                yeniurun.Gorsel3 = "";
+            }
 
             cs.Olcu yeniurunolcu = new cs.Olcu();
             cs.OlcuCRUD yeniurunolcuCRUD = new cs.OlcuCRUD();

@@ -162,6 +162,8 @@
     <Content Include="yonetici_arayuz\src\scripts-init\toastr.js" />
     <Content Include="yonetici_arayuz\tables-regular.html" />
     <Content Include="yonetici_arayuz\urun_ekle.aspx" />
+    <Content Include="yonetici_arayuz\urun_liste.aspx" />
+    <Content Include="yonetici_arayuz\urun_sil_guncelle.aspx" />
     <Content Include="yonetici_arayuz\uye_ekle.aspx" />
     <Content Include="yonetici_arayuz\uye_guncelle.aspx" />
     <Content Include="yonetici_arayuz\uye_liste.aspx" />
@@ -203,6 +205,20 @@
     </Compile>
     <Compile Include="yonetici_arayuz\urun_ekle.aspx.designer.cs">
       <DependentUpon>urun_ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\urun_liste.aspx.cs">
+      <DependentUpon>urun_liste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\urun_liste.aspx.designer.cs">
+      <DependentUpon>urun_liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\urun_sil_guncelle.aspx.cs">
+      <DependentUpon>urun_sil_guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\urun_sil_guncelle.aspx.designer.cs">
+      <DependentUpon>urun_sil_guncelle.aspx</DependentUpon>
     </Compile>
     <Compile Include="yonetici_arayuz\uye_ekle.aspx.cs">
       <DependentUpon>uye_ekle.aspx</DependentUpon>

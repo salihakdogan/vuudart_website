@@ -533,19 +533,19 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="components-tabs.html">
+                                        <a href="urun_ekle.aspx">
                                             <i class="metismenu-icon">
                                             </i>Ürün Ekle
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="components-accordions.html">
+                                        <a href="urun_liste.aspx">
                                             <i class="metismenu-icon">
                                             </i>Ürün Listele
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="components-notifications.html">
+                                        <a href="urun_sil_guncelle.aspx">
                                             <i class="metismenu-icon">
                                             </i>Ürün Sil / Güncelle
                                         </a>
