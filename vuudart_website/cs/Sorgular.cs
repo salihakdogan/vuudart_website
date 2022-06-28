@@ -89,5 +89,25 @@ namespace vuudart_website.cs
 
             return sonuc;
         }
+
+        public bool barkodkullanimdami(string pbarkod)
+        {
+            bool sonuc = true;
+            db.ac();
+            SqlCommand komut = new SqlCommand("select count(*) from Urunler where Barkod=@1", db.baglanti);
+
+            komut.Parameters.AddWithValue("@1", pbarkod);
+
+            int kytsayi = Convert.ToInt16(komut.ExecuteScalar());
+
+            if (kytsayi == 0)
+            {
+                sonuc = false;
+            }
+
+            db.kapat();
+
+            return sonuc;
+        }
     }
 }

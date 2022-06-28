@@ -83,120 +83,135 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button1_Click(object sender, EventArgs e) /*kayıt*/
         {
-            cs.Urun yeniurun = new cs.Urun();
-            cs.UrunCRUD yeniurunCRUD = new cs.UrunCRUD();
+            cs.Sorgular sorgu = new cs.Sorgular();
 
-            yeniurun.Barkod = TextBox1.Text;
-            yeniurun.Ad = TextBox2.Text;
-            yeniurun.Kategori = Convert.ToInt16(DropDownList1.SelectedValue);
-            yeniurun.Hammadde = Convert.ToInt16(DropDownList2.SelectedValue);
-            yeniurun.Fiyat = Convert.ToInt16(TextBox3.Text);
-            yeniurun.Stokadet = Convert.ToInt16(TextBox4.Text);
-            yeniurun.Kdvoran = Convert.ToInt16(DropDownList3.SelectedValue);
-            yeniurun.Kargokg = Convert.ToInt16(TextBox5.Text);
+            bool barkodcevap = sorgu.barkodkullanimdami(TextBox1.Text);
 
-            yeniurun.Aciklama = TextBox6.Text;
-
-
-            string urungorsel1 = FileUpload1.FileName;
-            string urungorseltarih1 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
-
-            if (FileUpload1.HasFile!=false)
+            if (barkodcevap == true)
             {
-                FileUpload1.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1));
-                yeniurun.Gorsel1 = "img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1;
+                ClientScript.RegisterStartupScript(this.GetType(), "barkodkullanimda", "barkodkullanimda()", true);
             }
             else
             {
-                yeniurun.Gorsel1 = "";
-            }
+                cs.Urun yeniurun = new cs.Urun();
+                cs.UrunCRUD yeniurunCRUD = new cs.UrunCRUD();
 
-            string urungorsel2 = FileUpload2.FileName;
-            string urungorseltarih2 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+                yeniurun.Barkod = TextBox1.Text;
+                yeniurun.Ad = TextBox2.Text;
+                yeniurun.Kategori = Convert.ToInt16(DropDownList1.SelectedValue);
+                yeniurun.Hammadde = Convert.ToInt16(DropDownList2.SelectedValue);
+                yeniurun.Fiyat = Convert.ToInt16(TextBox3.Text);
+                yeniurun.Stokadet = Convert.ToInt16(TextBox4.Text);
+                yeniurun.Kdvoran = Convert.ToInt16(DropDownList3.SelectedValue);
+                yeniurun.Kargokg = Convert.ToInt16(TextBox5.Text);
 
-            if (FileUpload2.HasFile!=false)
-            {
-                FileUpload2.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2));
-                yeniurun.Gorsel2 = "img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2;
-            }
-            else
-            {
-                yeniurun.Gorsel2 = "";
-            }
+                yeniurun.Aciklama = TextBox6.Text;
 
-            string urungorsel3 = FileUpload3.FileName;
-            string urungorseltarih3 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+                //gorsel 1
+                string urungorsel1 = FileUpload1.FileName;
+                string urungorseltarih1 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-            if (FileUpload3.HasFile!=false)
-            {
-                FileUpload3.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3));
-                yeniurun.Gorsel3 = "img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3;
-            }
-            else
-            {
-                yeniurun.Gorsel3 = "";
-            }
+                if (FileUpload1.HasFile != false)
+                {
+                    FileUpload1.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1));
+                    yeniurun.Gorsel1 = "img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1;
+                }
+                else
+                {
+                    yeniurun.Gorsel1 = "";
+                }
 
-            cs.Olcu yeniurunolcu = new cs.Olcu();
-            cs.OlcuCRUD yeniurunolcuCRUD = new cs.OlcuCRUD();
+                //gorsel 2
+                string urungorsel2 = FileUpload2.FileName;
+                string urungorseltarih2 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-            yeniurunolcu.Barkod = TextBox1.Text;
+                if (FileUpload2.HasFile != false)
+                {
+                    FileUpload2.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2));
+                    yeniurun.Gorsel2 = "img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2;
+                }
+                else
+                {
+                    yeniurun.Gorsel2 = "";
+                }
 
-            if (TextBox7.Text=="")
-            {
-                yeniurunolcu.Genislik = 0;
-            }
-            else
-            {
-                yeniurunolcu.Genislik = Convert.ToInt16(TextBox7.Text);
-            }
+                //gorsel3
+                string urungorsel3 = FileUpload3.FileName;
+                string urungorseltarih3 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-            if (TextBox8.Text=="")
-            {
-                yeniurunolcu.Uzunluk = 0;
-            }
-            else
-            {
-                yeniurunolcu.Uzunluk = Convert.ToInt16(TextBox8.Text);
-            }
+                if (FileUpload3.HasFile != false)
+                {
+                    FileUpload3.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3));
+                    yeniurun.Gorsel3 = "img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3;
+                }
+                else
+                {
+                    yeniurun.Gorsel3 = "";
+                }
 
-            if (TextBox9.Text=="")
-            {
-                yeniurunolcu.Yukseklik = 0;
-            }
-            else
-            {
-                yeniurunolcu.Yukseklik = Convert.ToInt16(TextBox9.Text);
-            }
+                cs.Olcu yeniurunolcu = new cs.Olcu();
+                cs.OlcuCRUD yeniurunolcuCRUD = new cs.OlcuCRUD();
 
-            if (TextBox10.Text=="")
-            {
-                yeniurunolcu.Kalinlik = 0;
-            }
-            else
-            {
-                yeniurunolcu.Kalinlik = Convert.ToInt16(TextBox10.Text);
-            }
+                yeniurunolcu.Barkod = TextBox1.Text;
 
-            if (TextBox11.Text=="")
-            {
-                yeniurunolcu.Yaricap = 0;
-            }
-            else
-            {
-                yeniurunolcu.Yaricap = Convert.ToInt16(TextBox11.Text);
-            }
-                          
-            bool cevap = yeniurunCRUD.urunekle(yeniurun) && yeniurunolcuCRUD.olcuekle(yeniurunolcu);
+                if (TextBox7.Text == "")
+                {
+                    yeniurunolcu.Genislik = 0;
+                }
+                else
+                {
+                    yeniurunolcu.Genislik = Convert.ToInt16(TextBox7.Text);
+                }
 
-            if (cevap == true)
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "basarilikayit", "basarilikayit()", true);
+                if (TextBox8.Text == "")
+                {
+                    yeniurunolcu.Uzunluk = 0;
+                }
+                else
+                {
+                    yeniurunolcu.Uzunluk = Convert.ToInt16(TextBox8.Text);
+                }
+
+                if (TextBox9.Text == "")
+                {
+                    yeniurunolcu.Yukseklik = 0;
+                }
+                else
+                {
+                    yeniurunolcu.Yukseklik = Convert.ToInt16(TextBox9.Text);
+                }
+
+                if (TextBox10.Text == "")
+                {
+                    yeniurunolcu.Kalinlik = 0;
+                }
+                else
+                {
+                    yeniurunolcu.Kalinlik = Convert.ToInt16(TextBox10.Text);
+                }
+
+                if (TextBox11.Text == "")
+                {
+                    yeniurunolcu.Yaricap = 0;
+                }
+                else
+                {
+                    yeniurunolcu.Yaricap = Convert.ToInt16(TextBox11.Text);
+                }
+
+                bool cevap = yeniurunCRUD.urunekle(yeniurun) && yeniurunolcuCRUD.olcuekle(yeniurunolcu);
+
+                if (cevap == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "basarilikayit", "basarilikayit()", true);
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "basarisizkayit", "basarisizkayit()", true);
+                }
             }
-            else
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "basarisizkayit", "basarisizkayit()", true);
-            }
+            
+            
             
         }
 

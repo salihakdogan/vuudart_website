@@ -294,6 +294,15 @@ namespace vuudart_website.yonetici_arayuz
         protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
+        /// vl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label vl1;
+
+        /// <summary>
         /// RequiredFieldValidator10 control.
         /// </summary>
         /// <remarks>
@@ -321,6 +330,15 @@ namespace vuudart_website.yonetici_arayuz
         protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
+        /// vl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label vl2;
+
+        /// <summary>
         /// FileUpload2 control.
         /// </summary>
         /// <remarks>
@@ -337,6 +355,15 @@ namespace vuudart_website.yonetici_arayuz
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label12;
+
+        /// <summary>
+        /// vl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label vl3;
 
         /// <summary>
         /// FileUpload3 control.

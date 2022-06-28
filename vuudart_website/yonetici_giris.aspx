@@ -100,7 +100,7 @@
                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Şifre alanı boş bırakılamaz!" ControlToValidate="TextBox1" ForeColor="#FF5840"></asp:RequiredFieldValidator>
                                
                                <div class="input-group">
-                               <asp:TextBox ID="TextBox2" runat="server" class="form-control"></asp:TextBox>
+                               <asp:TextBox ID="TextBox2" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
                                <div class="input-group-append"><span class="input-group-text"><i class="pe-7s-lock icon-gradient bg-premium-dark"></i></span></div>
                                </div>
 

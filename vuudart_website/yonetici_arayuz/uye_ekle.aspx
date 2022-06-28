@@ -114,14 +114,14 @@
                        <div class="col-md-6">
                            <div class="position-relative form-group">
                                <asp:Label ID="Label7" runat="server" Text="TC Kimlik Numarası"></asp:Label>
-                               <asp:TextBox ID="TextBox7" runat="server" class="form-control" MaxLength="11" type="number"></asp:TextBox>
+                               <asp:TextBox ID="TextBox7" runat="server" class="form-control" MaxLength="11" ></asp:TextBox>
                             </div>
                        </div>
                              
                        <div class="col-md-6">
                            <div class="position-relative form-group">
                                <asp:Label ID="Label8" runat="server" Text="Telefon numarası"></asp:Label>
-                               <asp:TextBox ID="TextBox8" runat="server" class="form-control" MaxLength="11" placeholder="05xxxxxxxxx" type="number"></asp:TextBox>
+                               <asp:TextBox ID="TextBox8" runat="server" class="form-control" MaxLength="11" placeholder="05xxxxxxxxx" ></asp:TextBox>
                            </div>
                        </div>
                    
