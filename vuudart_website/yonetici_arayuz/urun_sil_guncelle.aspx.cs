@@ -11,7 +11,23 @@ namespace vuudart_website.yonetici_arayuz
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string silinecekprm = Request.QueryString["silprm"];
 
+            if (silinecekprm != null)
+            {
+                vuudart_website.cs.UrunCRUD sil = new cs.UrunCRUD();
+
+                bool cevap = sil.urunsil(silinecekprm);
+
+                if (cevap == true)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "urunsilindi", "urunsilindi()", true);
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "urunsilinemedi", "urunsilinemedi()", true);
+                }
+            }
         }
     }
 }

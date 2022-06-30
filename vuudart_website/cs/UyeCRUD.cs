@@ -74,6 +74,7 @@ namespace vuudart_website.cs
             db.kapat();
             return cevap;
         }
+
         public DataTable uyegoster(string mailprm) //güncelleme işlemi için
         {
             DataTable gdt = new DataTable();

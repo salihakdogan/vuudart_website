@@ -35,5 +35,43 @@ namespace vuudart_website.cs
 
             return sonuc;
         }
+
+        //public DataTable urunolcugoster(string barkodprm) //güncelleme işlemi için
+        //{
+        //    DataTable gdt = new DataTable();
+        //    db.ac();
+
+        //    SqlCommand goster = new SqlCommand("select Urunler.Barkod,Urunler.Ad, Kategoriler.Ad as Kategori, Hammaddeler.Ad as Hammadde, Urunler.Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap from Urunler, Kategoriler, Hammaddeler, Olculer where Urunler.Kategori=Kategoriler.KategoriID and Urunler.Hammadde=Hammaddeler.HammaddeID and Urunler.Barkod=Olculer.Barkod and Urunler.Barkod=@1", db.baglanti);
+        //    goster.Parameters.AddWithValue("@1", barkodprm);
+        //    SqlDataAdapter adp = new SqlDataAdapter(goster);
+        //    adp.Fill(gdt);
+
+        //    db.kapat();
+        //    return gdt;
+        //}
+
+        public bool urunolcuguncelle(Olcu olcugoster)
+        {
+            bool cevap = true;
+            db.ac();
+            SqlCommand guncelle = new SqlCommand("update Olculer set Genislik=@a, Uzunluk=@b, Yukseklik=@c, Kalinlik=@d, Yaricap=@e where Barkod=@f", db.baglanti);
+
+            guncelle.Parameters.AddWithValue("@a", olcugoster.Genislik);
+            guncelle.Parameters.AddWithValue("@b", olcugoster.Uzunluk);
+            guncelle.Parameters.AddWithValue("@c", olcugoster.Yukseklik);
+            guncelle.Parameters.AddWithValue("@d", olcugoster.Kalinlik);
+            guncelle.Parameters.AddWithValue("@e", olcugoster.Yaricap);
+            guncelle.Parameters.AddWithValue("@f", olcugoster.Barkod);
+
+            int donus = guncelle.ExecuteNonQuery();
+
+            if (donus == 0)
+            {
+                cevap = false;
+            }
+
+            db.kapat();
+            return cevap;
+        }
     }
 }

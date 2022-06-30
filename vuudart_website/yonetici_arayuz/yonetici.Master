@@ -55,6 +55,7 @@
         }
 
     </style>
+    
     <%--sweet alert javascript bitis--%>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -387,6 +388,94 @@
             Toast.fire({
                 icon: 'error',
                 title: 'Girilen barkod numarası zaten kullanımda bilgileri gözden geçirip daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
+    <script id="urunsilindi">
+        function urunsilindi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Seçilen ürün başarıyla silindi.'
+            })
+        }
+    </script>
+
+    <script id="urunsilinemedi">
+        function urunsilinemedi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Seçilen ürün silinemedi lütfen daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
+    <script id="basariliguncelleme">
+        function basariliguncelleme() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'İşlem başarılı girilen bilgiler başarıyla güncellendi.'
+            })
+        }
+    </script>
+
+    <script id="basarisizguncelleme">
+        function basarisizguncelleme() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'İşlem başarısız girilen bilgiler güncellenemedi daha sonra tekrar deneyin.'
             })
         }
     </script>

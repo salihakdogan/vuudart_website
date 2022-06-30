@@ -81,8 +81,8 @@ namespace vuudart_website.yonetici_arayuz
             }
             else
             {
-                vuudart_website.cs.UyeCRUD yenibilgiCRUD = new vuudart_website.cs.UyeCRUD();
-                vuudart_website.cs.Uye yenibilgi = new vuudart_website.cs.Uye();
+                cs.UyeCRUD yenibilgiCRUD = new cs.UyeCRUD();
+                cs.Uye yenibilgi = new cs.Uye();
 
                 yenibilgi.Kullaniciad = TextBoxKadi.Value;
                 yenibilgi.Mail = TextBox2.Text;

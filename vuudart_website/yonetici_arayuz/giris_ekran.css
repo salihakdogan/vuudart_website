@@ -13,9 +13,9 @@
     transition: transform .2s;
 }
 
-    .imagehizala:hover {
-        transform: scale(1.2);
-    }
+.imagehizala:hover {
+    transform: scale(1.2);
+}
 
 .texthizala {
     line-height: 3;

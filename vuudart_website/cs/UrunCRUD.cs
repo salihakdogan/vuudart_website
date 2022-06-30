@@ -68,6 +68,67 @@ namespace vuudart_website.cs
 
             db.kapat();
             return dt;
+        }
+
+        public bool urunsil(string urunprm)
+        {
+            bool cevap = true; //silindi
+            db.ac();
+            SqlCommand silme = new SqlCommand("delete from Urunler where Barkod=@1", db.baglanti);
+            silme.Parameters.AddWithValue("@1", urunprm);
+            int bilgi = silme.ExecuteNonQuery();
+
+            if (bilgi == 0)
+            {
+                cevap = false; //silinemedi
+            }
+
+            db.kapat();
+            return cevap;
+        }
+
+        public DataTable urungoster(string barkodprm) //güncelleme işlemi için
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select Urunler.Barkod, Ad, Kategori, Hammadde, Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap  from Urunler, Olculer where Olculer.Barkod = Urunler.Barkod and Urunler.Barkod=@1", db.baglanti);
+            goster.Parameters.AddWithValue("@1", barkodprm);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
+        public bool urunguncelle(Urun urungoster) //güncelleme işlemi için
+        {
+            bool cevap = true;
+            db.ac();
+            SqlCommand guncelle = new SqlCommand("update Urunler set Ad=@a, Kategori=@b, Hammadde=@c, Aciklama=@d, Gorsel1=@e, Gorsel2=@f, Gorsel3=@g, Fiyat=@h, StokAdet=@i, KdvOran=@j, KargoKg=@k where Barkod=@l", db.baglanti);
+
+            guncelle.Parameters.AddWithValue("@a", urungoster.Ad);
+            guncelle.Parameters.AddWithValue("@b", urungoster.Kategori);
+            guncelle.Parameters.AddWithValue("@c", urungoster.Hammadde);
+            guncelle.Parameters.AddWithValue("@d", urungoster.Aciklama);
+            guncelle.Parameters.AddWithValue("@e", urungoster.Gorsel1);
+            guncelle.Parameters.AddWithValue("@f", urungoster.Gorsel2);
+            guncelle.Parameters.AddWithValue("@g", urungoster.Gorsel3);
+            guncelle.Parameters.AddWithValue("@h", urungoster.Fiyat);
+            guncelle.Parameters.AddWithValue("@i", urungoster.Stokadet);
+            guncelle.Parameters.AddWithValue("@j", urungoster.Kdvoran);
+            guncelle.Parameters.AddWithValue("@k", urungoster.Kargokg);
+            guncelle.Parameters.AddWithValue("@l", urungoster.Barkod);
+
+            int donus = guncelle.ExecuteNonQuery();
+
+            if (donus == 0)
+            {
+                cevap = false;
+            }
+
+            db.kapat();
+            return cevap;
         }       
     }
 }
