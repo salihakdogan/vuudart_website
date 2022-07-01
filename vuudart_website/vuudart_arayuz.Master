@@ -81,7 +81,7 @@
 
         Toast.fire({
             icon: 'success',
-            title: 'Kaydınızı tamamlamak için mail adresine gelen aktivasyon kodununa tıklayın.'
+            title: 'Kayıt işlemi başarılı hesabınızı doğrulamak için mail adresinize gelen kodu giriniz.'
         })
     }
 </script>

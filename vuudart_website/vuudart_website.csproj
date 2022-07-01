@@ -178,6 +178,7 @@
     <Content Include="product-detail.html" />
     <Content Include="product.html" />
     <Content Include="shoping-cart.html" />
+    <Content Include="uyelik_dogrulama.aspx" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -389,6 +390,13 @@
       <DependentUpon>giris_kayit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uyelik_dogrulama.aspx.cs">
+      <DependentUpon>uyelik_dogrulama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyelik_dogrulama.aspx.designer.cs">
+      <DependentUpon>uyelik_dogrulama.aspx</DependentUpon>
+    </Compile>
     <Compile Include="vuudart_arayuz.Master.cs">
       <DependentUpon>vuudart_arayuz.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

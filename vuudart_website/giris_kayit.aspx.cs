@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.Data;
 
 namespace vuudart_website
 {
@@ -60,6 +64,32 @@ namespace vuudart_website
                 else
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "basarisizkayit", "basarisizkayit()", true);
+                }
+
+                string to = TextBox4.Text; //kime mail gidecek
+                string from = "vuudart@vuudart.site"; //bizim mail adreismiz
+
+                MailMessage message = new MailMessage(from, to);
+
+                string mailbody = "Sayın " + TextBox5.Text + " " + TextBox6.Text + " VuudArt'a Hoş Geldiniz! Kaydınızı tamamlamak için doğrulama kodunuz: " + aktkod;
+                message.Subject = "Aramıza Hoş geldiniz VuudArt üyelik doğrulama kodunuz";
+                message.Body = mailbody;
+                message.BodyEncoding = Encoding.UTF8;
+                message.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient("mail.vuudart.site", 587); //guzelhosting smtp
+                System.Net.NetworkCredential basicCredential = new
+                System.Net.NetworkCredential("vuudart@vuudart.site", "Va-2022*webtasarim"); //gonderen mail adresi şifresi 
+                client.EnableSsl = false;
+                client.UseDefaultCredentials = true;
+                client.Credentials = basicCredential;
+
+                try
+                {
+                    client.Send(message);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }         
         }

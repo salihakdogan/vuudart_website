@@ -33,7 +33,7 @@
 							</div>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:TextBox ID="TextBox2" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Şifre"></asp:TextBox>
+							<asp:TextBox ID="TextBox2" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Şifre" TextMode="Password"></asp:TextBox>
 							<i class="fa fa-unlock-alt how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
 						</div>
 
@@ -69,6 +69,7 @@
 
 							<div class="m-b-20">
 								<asp:RequiredFieldValidator ID="RequiredFieldValidator4" class="" runat="server" ErrorMessage="* Mail alanı boş geçilemez!" ControlToValidate="TextBox4" ValidationGroup="kayit" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
+								<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Mail adresi yanlış veya formatı hatalı!" ControlToValidate="TextBox4" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"></asp:RegularExpressionValidator>
 							</div>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
@@ -90,21 +91,23 @@
 							</div>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:TextBox ID="TextBox7" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Şifre"></asp:TextBox>
+							<asp:TextBox ID="TextBox7" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Şifre" TextMode="Password"></asp:TextBox>
 							<i class="fa fa-unlock-alt how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
 						</div>
 
 							<div class="m-b-20">
 								<asp:RequiredFieldValidator ID="RequiredFieldValidator7" class="" runat="server" ErrorMessage="* Şifre alanı boş geçilemez!" ControlToValidate="TextBox7" ValidationGroup="kayit" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
+								<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Şifre en az 6 en fazla 18 karakter içerebilir. En az bir küçük, bir büyük, bir özel karakter içermelidir." ValidationExpression='^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{6,16}$' ControlToValidate="TextBox7" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RegularExpressionValidator>
 							</div>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:TextBox ID="TextBox8" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Şifre tekrarı"></asp:TextBox>
+							<asp:TextBox ID="TextBox8" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Şifre tekrarı" TextMode="Password"></asp:TextBox>
 							<i class="fa fa-unlock-alt how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
 						</div>
 
 							<div class="m-b-20">
 								<asp:RequiredFieldValidator ID="RequiredFieldValidator8" class="" runat="server" ErrorMessage="* Şifre tekrarı alanı boş geçilemez!" ControlToValidate="TextBox8" ValidationGroup="kayit" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
+								<asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Şifreler uyuşmuyor!" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small" ControlToCompare="TextBox7" ControlToValidate="TextBox8" Display="Dynamic"></asp:CompareValidator>
 							</div>
 
 						<asp:Button ID="Button2" runat="server" Text="Kayıt ol" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" OnClick="Button2_Click" ValidationGroup="kayit"/>
