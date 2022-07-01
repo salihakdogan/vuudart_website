@@ -21,7 +21,19 @@ namespace vuudart_website
 
         protected void Button1_Click(object sender, EventArgs e) /*giriş*/
         {
-                    
+            cs.UyeCRUD uye = new cs.UyeCRUD();
+            bool cevap = uye.uyegirissite(TextBox1.Text,TextBox2.Text);
+
+            if (cevap)
+            {
+                Session["uyegirisi"] = "ok";
+                Session["uyemail"] = TextBox1.Text;
+                Response.Redirect("default.aspx");
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "sifremailhatali", "sifremailhatali()", true);
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e) /*kayıt*/

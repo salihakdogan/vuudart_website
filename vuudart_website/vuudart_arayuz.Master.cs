@@ -13,5 +13,12 @@ namespace vuudart_website
         {
 
         }
+
+        protected void cikis_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Session.RemoveAll();
+            Response.Redirect("default.aspx");
+        }
     }
 }

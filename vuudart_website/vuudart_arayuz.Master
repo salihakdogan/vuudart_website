@@ -10,81 +10,28 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="yonetici_arayuz/img/logo/vuudart16x16.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
 
-	<%--sweet alert javascript--%>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11.4.17"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    <script src="sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">   
-    
-    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4@5.0.11/bootstrap-4.css" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
+	<script id="basarilikayit">
+        function basarilikayit() {
 
-    <style>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
 
-        body {
-        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+            Toast.fire({
+                icon: 'success',
+                title: 'Kayıt işlemi başarılı hesabınızı doğrulamak için mail adresinize gelen kodu giriniz.'
+            })
         }
-
-    </style>
-    
-    <%--sweet alert javascript bitis--%>
-
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
-
-<script id="basarilikayit">
-    function basarilikayit() {
-
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 4000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-
-        Toast.fire({
-            icon: 'success',
-            title: 'Kayıt işlemi başarılı hesabınızı doğrulamak için mail adresinize gelen kodu giriniz.'
-        })
-    }
-</script>
+    </script>
 
     <script id="basarisizkayit">
         function basarisizkayit() {
@@ -152,6 +99,82 @@
         }
     </script>
 
+	<script id="sifremailhatali">
+        function sifremailhatali() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Girilen mail adresi ya da şifre hatalı. Bilgileri gözden geçirip daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+	<%--sweet alert javascript--%>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11.4.17"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">   
+    
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4@5.0.11/bootstrap-4.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
+
+    <style>
+
+        body {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+        }
+
+    </style>
+    
+    <%--sweet alert javascript bitis--%>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
 <body class="animsition">
 	
 	<!-- Header -->
@@ -162,16 +185,38 @@
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Hoşgeldiniz		
+						<div style="float:left; margin-right:6px;">Hoşgeldiniz</div><div style="color:#6f81e7; float:left;"><%=Session["uyemail"]%></div>	
 					</div>
+
+
 					<div class="right-top-bar flex-w h-full">
+						
+						
+						<%if (Session["uyegirisi"]==null)
+                          {%>
+
+						<a href="giris_kayit.aspx" class="flex-c-m trans-04 p-lr-25">
+							Giriş yap / Kayıt ol
+						</a>
+
+                        <%}
+                          else
+                          {%>
+
+						<a href="hesabim.aspx" class="flex-c-m trans-04 p-lr-25">
+							Hesabım
+						</a>
+
+						<a role="button" class="flex-c-m trans-04 p-lr-25" runat="server" onserverclick="cikis_Click">
+							<i class="fa fa-sign-out" aria-hidden="true"></i> Çıkış yap
+						</a>
+
+                        <%}%>
+						
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							Destek & SSS
 						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Hesabım
-						</a>
+						
 
 						<%--<a href="#" class="flex-c-m trans-04 p-lr-25">
 							EN
@@ -443,6 +488,7 @@
 	</div>
 
     <form id="form1" runat="server">
+		<asp:Button ID="cikis" runat="server" Text="Button" OnClick="cikis_Click" visible="false"/>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
