@@ -17,20 +17,23 @@ namespace vuudart_website.cs
             bool sonuc = true;
             db.ac();
 
-            SqlCommand komut = new SqlCommand("insert into Uyeler values(@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12)", db.baglanti);
+            SqlCommand komut = new SqlCommand("insert into Uyeler values(@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)", db.baglanti);
 
             komut.Parameters.AddWithValue("@1", yeniuye.Kullaniciad);
             komut.Parameters.AddWithValue("@2", yeniuye.Mail);
             komut.Parameters.AddWithValue("@3", yeniuye.Ad);
             komut.Parameters.AddWithValue("@4", yeniuye.Soyad);
-            komut.Parameters.AddWithValue("@5", yeniuye.Sifre); 
-            komut.Parameters.AddWithValue("@6", yeniuye.Tc);
-            komut.Parameters.AddWithValue("@7", yeniuye.Telefon);
+            komut.Parameters.AddWithValue("@5", yeniuye.Sifre);   
+            komut.Parameters.AddWithValue("@6", yeniuye.Tc);      
+            komut.Parameters.AddWithValue("@7", yeniuye.Telefon);                   
             komut.Parameters.AddWithValue("@8", yeniuye.Ulke);
             komut.Parameters.AddWithValue("@9", yeniuye.Sehir);
             komut.Parameters.AddWithValue("@10", yeniuye.Postakod);
             komut.Parameters.AddWithValue("@11", yeniuye.Adres);
             komut.Parameters.AddWithValue("@12", yeniuye.Pfotograf);
+            komut.Parameters.AddWithValue("@13", yeniuye.Dkod);
+            komut.Parameters.AddWithValue("@14", yeniuye.Durum);
+           
 
             int durum = Convert.ToInt16(komut.ExecuteNonQuery());
 
@@ -117,6 +120,33 @@ namespace vuudart_website.cs
 
             db.kapat();
             return cevap;
+        }
+
+        public bool uyeeklesite(Uye yeniuye)
+        {
+            bool sonuc = true;
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("insert into Uyeler (KullaniciAdi, UyeMail, Ad, Soyad, Sifre, DKod, Durum) values(@a, @b, @c, @d, @e, @f, @g)", db.baglanti);
+
+            komut.Parameters.AddWithValue("@a", yeniuye.Kullaniciad);
+            komut.Parameters.AddWithValue("@b", yeniuye.Mail);
+            komut.Parameters.AddWithValue("@c", yeniuye.Ad);
+            komut.Parameters.AddWithValue("@d", yeniuye.Soyad);
+            komut.Parameters.AddWithValue("@e", yeniuye.Sifre);
+            komut.Parameters.AddWithValue("@f", yeniuye.Dkod);
+            komut.Parameters.AddWithValue("@g", yeniuye.Durum);
+
+            int durum = Convert.ToInt16(komut.ExecuteNonQuery());
+
+            if (durum == 0)
+            {
+                sonuc = false;
+            }
+
+            db.kapat();
+
+            return sonuc;
         }
     }
 }

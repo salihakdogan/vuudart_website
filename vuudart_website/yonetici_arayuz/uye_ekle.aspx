@@ -34,7 +34,7 @@
                <p style="color:#406bd0"><h7 class="">(Doldurulması zorunlu olan alanlar.)</h7></p>
            </div>
                
-               <form>
+               
                    
                    <div class="form-row">
                        
@@ -175,7 +175,6 @@
 
                    </div>
 
-               
        </div>
 
        <div class="card-body">
@@ -199,8 +198,6 @@
                        <div class="col-md-4"></div>
 
                    </div>
-
-           </form>
 
        </div>
 

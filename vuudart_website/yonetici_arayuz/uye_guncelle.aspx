@@ -34,7 +34,7 @@
                <p style="color:#406bd0"><h7 class="">(Doldurulması zorunlu olan alanlar.)</h7></p>
            </div>
                
-               <form>
+               <%--<form>--%>
                    
                    <div class="form-row">
                        
@@ -42,7 +42,7 @@
                            <div class="position-relative form-group">
                                <asp:Label ID="Label2" runat="server" Text="Kullanıcı adı * "></asp:Label>
                                <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Kullanıcı adı alanı boş bırakılamaz!" ControlToValidate="TextBox1" ForeColor="#FF5840"></asp:RequiredFieldValidator>--%>
-<%--                               <asp:TextBox ID="TextBox1" runat="server" class="form-control" Enabled="false"></asp:TextBox>--%>
+                               <%--<asp:TextBox ID="TextBox1" runat="server" class="form-control" Enabled="false"></asp:TextBox>--%>
                                <input id="TextBoxKadi" class="form-control" disabled="disabled" runat="server" value="">
                             </div>
                        </div>
@@ -201,7 +201,7 @@
 
                    </div>
 
-           </form>
+           <%--</form>--%>
 
        </div>
 

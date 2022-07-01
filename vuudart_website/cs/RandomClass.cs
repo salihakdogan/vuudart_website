@@ -55,5 +55,24 @@ namespace vuudart_website.cs
             builder.Append(rnd.Next(1, 9));
             return builder.ToString();
         }
+
+        public string kodUret11() //bir harf, bir sayı örüntüsü olmak üzere 11 karakterli bir kod oluşturur
+        {
+
+            Random rnd = new Random();
+            StringBuilder builder = new StringBuilder();
+            builder.Append(RasteleHarf(1, false));
+            builder.Append(rnd.Next(1, 9));
+            builder.Append(RasteleHarf(1, false));
+            builder.Append(rnd.Next(1, 9));
+            builder.Append(RasteleHarf(1, false));
+            builder.Append(rnd.Next(1, 9));
+            builder.Append(RasteleHarf(1, false));
+            builder.Append(rnd.Next(1, 9));
+            builder.Append(RasteleHarf(1, false));
+            builder.Append(rnd.Next(1, 9));
+            builder.Append(RasteleHarf(1, false));
+            return builder.ToString();
+        }
     }
 }

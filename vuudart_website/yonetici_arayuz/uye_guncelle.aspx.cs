@@ -99,16 +99,17 @@ namespace vuudart_website.yonetici_arayuz
 
                 if (!FileUpload1.HasFile)
                 {
-                    yenibilgi.Pfotograf = "uye_profil/default_uye_profil.jpg";
+                    yenibilgi.Pfotograf = "img/uye_profil/default_uye_profil.jpg";
                 }
                 else
                 {
+                    //string upfotograf = FileUpload1.FileName.Replace(FileUpload1.FileName, "uye_profil");
                     string upfotograf = FileUpload1.FileName;
                     string upfotograftarih = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
 
-                    FileUpload1.SaveAs(Server.MapPath("uye_profil/" + upfotograftarih + "_" + upfotograf));
+                    FileUpload1.SaveAs(Server.MapPath("img/uye_profil/" + upfotograftarih + "_" + upfotograf));
 
-                    yenibilgi.Pfotograf = "uye_profil/" + upfotograftarih + "_" + upfotograf;
+                    yenibilgi.Pfotograf = "img/uye_profil/" + upfotograftarih + "_" + upfotograf;
                 }
 
                 bool cevap = yenibilgiCRUD.uyeguncelle(yenibilgi);
