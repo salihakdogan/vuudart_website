@@ -52,7 +52,11 @@ namespace vuudart_website.yonetici_arayuz
                 yeniuye.Mail = TextBox2.Text;
                 yeniuye.Ad = TextBox3.Text;
                 yeniuye.Soyad = TextBox4.Text;
-                yeniuye.Sifre = TextBox5.Text;
+
+                cs.Sifreleme sifreleme = new cs.Sifreleme();
+                string encryptedsifre = sifreleme.Encrypt(TextBox5.Text);
+
+                yeniuye.Sifre = encryptedsifre;
                 
                 yeniuye.Tc = TextBox7.Text;
                 yeniuye.Telefon = TextBox8.Text;

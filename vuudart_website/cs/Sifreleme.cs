@@ -12,7 +12,7 @@ namespace vuudart_website.cs
 {
     public class Sifreleme
     {
-        public string hash = "va0077";
+        public string hash = "?*-Va2177**wtasarim:;";
         public string Encrypt(string sifre)
         {
             byte[] data = UTF8Encoding.UTF8.GetBytes(sifre);

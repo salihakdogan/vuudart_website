@@ -83,7 +83,7 @@
                            <div class="position-relative form-group">
                                <asp:Label ID="Label5" runat="server" Text="Şifre * "></asp:Label>
                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Şifre alanı boş bırakılamaz!" ControlToValidate="TextBox5" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
-                               <asp:TextBox ID="TextBox5" runat="server" class="form-control"></asp:TextBox>
+                               <asp:TextBox ID="TextBox5" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Şifre en az 6 en fazla 18 karakter içerebilir. En az bir küçük, bir büyük, bir özel karakter içermelidir." ValidationExpression='^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{6,16}$' ControlToValidate="TextBox5" Display="Dynamic" ForeColor="#FF5840"></asp:RegularExpressionValidator>
 
                             </div>
@@ -94,7 +94,7 @@
                                <asp:Label ID="Label6" runat="server" Text="Şifre tekrarı * "></asp:Label>
                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Şifre tekrarı alanı boş bırakılamaz!" ControlToValidate="TextBox6" ForeColor="#FF5840" Display="Dynamic"></asp:RequiredFieldValidator>
                                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Şifreler uyuşmuyor!" ForeColor="#FF5840" ControlToCompare="TextBox5" ControlToValidate="TextBox6" Display="Dynamic"></asp:CompareValidator>
-                               <asp:TextBox ID="TextBox6" runat="server" class="form-control"></asp:TextBox>
+                               <asp:TextBox ID="TextBox6" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
                            </div>
                        </div>
                    

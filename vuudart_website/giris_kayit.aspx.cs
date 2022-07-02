@@ -21,8 +21,11 @@ namespace vuudart_website
 
         protected void Button1_Click(object sender, EventArgs e) /*giriş*/
         {
+            cs.Sifreleme sifreleme = new cs.Sifreleme();
+            string encryptedsifre = sifreleme.Encrypt(TextBox2.Text);
+
             cs.UyeCRUD uye = new cs.UyeCRUD();
-            bool cevap = uye.uyegirissite(TextBox1.Text,TextBox2.Text);
+            bool cevap = uye.uyegirissite(TextBox1.Text,encryptedsifre);
 
             if (cevap)
             {
@@ -62,7 +65,11 @@ namespace vuudart_website
                 yeniuye.Mail = TextBox4.Text;
                 yeniuye.Ad = TextBox5.Text;
                 yeniuye.Soyad = TextBox6.Text;
-                yeniuye.Sifre = TextBox7.Text;           
+
+                cs.Sifreleme sifreleme = new cs.Sifreleme();
+                string encryptedsifre = sifreleme.Encrypt(TextBox7.Text);
+
+                yeniuye.Sifre = encryptedsifre;          
 
                 yeniuye.Dkod = aktkod;
                 yeniuye.Durum = 0;
