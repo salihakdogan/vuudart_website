@@ -25,12 +25,12 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:TextBox ID="TextBox1" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Kullanıcı Adı"></asp:TextBox>
+							<asp:TextBox ID="TextBox1" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Kullanıcı Adı veya Mail"></asp:TextBox>
 							<i class="fa fa-at how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
 						</div>
 						
 							<div class="m-b-20">
-								<asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="" runat="server" ErrorMessage="* Kullanıcı adı alanı boş geçilemez!" ControlToValidate="TextBox1" ValidationGroup="giris" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="" runat="server" ErrorMessage="* Kullanıcı adı veya mail alanı boş geçilemez!" ControlToValidate="TextBox1" ValidationGroup="giris" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
 							</div>
 
 						<div class="bor8 m-b-20 how-pos4-parent">

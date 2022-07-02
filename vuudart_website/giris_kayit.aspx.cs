@@ -9,6 +9,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Data;
+using System.Web.UI.HtmlControls;
 
 namespace vuudart_website
 {
@@ -25,9 +26,11 @@ namespace vuudart_website
             string encryptedsifre = sifreleme.Encrypt(TextBox2.Text);
 
             cs.UyeCRUD uye = new cs.UyeCRUD();
-            bool cevap = uye.uyegirissite(TextBox1.Text,encryptedsifre);
+            bool mailgiris = uye.uyegirissitemail(TextBox1.Text,encryptedsifre);
 
-            if (cevap)
+            bool kadigiris = uye.uyegirissitekadi(TextBox1.Text, encryptedsifre);
+
+            if (mailgiris)
             {
                 Session["uyegirisi"] = "ok";
                 Session["uyemail"] = TextBox1.Text;
@@ -35,7 +38,18 @@ namespace vuudart_website
             }
             else
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "sifremailhatali", "sifremailhatali()", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "girishatali", "girishatali()", true);
+            }
+
+            if (kadigiris)
+            {
+                Session["uyegirisi"] = "ok";
+                Session["uyemail"] = TextBox1.Text;
+                Response.Redirect("default.aspx");
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "girishatali", "girishatali()", true);
             }
         }
 
@@ -78,7 +92,7 @@ namespace vuudart_website
 
                 if (cevap == true)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "basarilikayit", "basarilikayit()", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "basarilikayit", "basarilikayit()", true);                  
                 }
                 else
                 {
@@ -86,7 +100,7 @@ namespace vuudart_website
                 }
 
                 string to = TextBox4.Text; //kime mail gidecek
-                string from = "vuudart@vuudart.site"; //bizim mail adreismiz
+                string from = "vuudart@vuudart.site"; //bizim mail adreisimiz
 
                 MailMessage message = new MailMessage(from, to);
 

@@ -13,66 +13,91 @@
 
 	<script id="basarilikayit">
         function basarilikayit() {
+        
+            let timerInterval
 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 4000,
+            Swal.fire({
+                title: 'Kayıt başarılı',
+                html: 'Hesabınızı doğrulamak için sayfaya yönlendiriliyorsunuz.',
+                icon: 'info',
+                timer: 5000,
                 timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
                 }
             })
 
-            Toast.fire({
-                icon: 'success',
-                title: 'Kayıt işlemi başarılı hesabınızı doğrulamak için mail adresinize gelen kodu giriniz.'
-            })
         }
     </script>
 
     <script id="basarisizkayit">
         function basarisizkayit() {
+    
+            let timerInterval
 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 4000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
-
-            Toast.fire({
+            Swal.fire({
+                title: 'Kayıt yapılamadı',
+                html: 'İşlem başarısız girilen bilgiler kaydedilemedi daha sonra tekrar deneyin.',
                 icon: 'error',
-                title: 'İşlem başarısız girilen bilgiler kaydedilemedi daha sonra tekrar deneyin.'
+                timer: 4500,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
             })
         }
     </script>
 
 	<script id="kadikullanimda">
-        function kadikullanimda() {
+		function kadikullanimda() {
 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 4000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
+            let timerInterval
 
-            Toast.fire({
+            Swal.fire({
+                title: 'Kayıt yapılamadı',
+                html: 'Girilen kullanıcı adı zaten kullanımda bilgileri gözden geçirip daha sonra tekrar deneyin.',
                 icon: 'error',
-                title: 'Girilen kullanıcı adı zaten kullanımda bilgileri gözden geçirip daha sonra tekrar deneyin.'
+                timer: 4500,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
             })
         }
     </script>
@@ -80,49 +105,65 @@
     <script id="mailkullanimda">
         function mailkullanimda() {
 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 4000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
+            let timerInterval
 
-            Toast.fire({
+            Swal.fire({
+                title: 'Kayıt yapılamadı',
+                html: 'Girilen mail adresi zaten kullanımda bilgileri gözden geçirip daha sonra tekrar deneyin.',
                 icon: 'error',
-                title: 'Girilen mail adresi zaten kullanımda bilgileri gözden geçirip daha sonra tekrar deneyin.'
+                timer: 4500,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
             })
         }
     </script>
 
-	<script id="sifremailhatali">
-        function sifremailhatali() {
+	<script id="girishatali">
+		function girishatali() { 
 
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 4000,
+            let timerInterval
+
+            Swal.fire({
+				title: 'Giriş yapılamadı',
+                html: 'Kullanıcı bilgileriniz hatalı bilgilerinizi gözden geçirip daha sonra tekrar deneyin',
+                icon: 'error',      
+                timer: 4500,
                 timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
                 }
-            })
-
-            Toast.fire({
-                icon: 'error',
-                title: 'Girilen mail adresi ya da şifre hatalı. Bilgileri gözden geçirip daha sonra tekrar deneyin.'
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
             })
         }
     </script>
 
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+	<%--<link rel="icon" type="image/png" href="images/icons/favicon.png"/>--%>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -233,8 +274,9 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+					<a href="default.aspx" class="logo">
+						<%--<img src="images/icons/logo-01.png" alt="IMG-LOGO">--%>
+						<img src="yonetici_arayuz/img/logo/vuudart-giris_ekran_logo.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -293,7 +335,8 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<%--<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>--%>
+				<a href="default.aspx"><img src="yonetici_arayuz/img/logo/vuudart-giris_ekran_logo.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
