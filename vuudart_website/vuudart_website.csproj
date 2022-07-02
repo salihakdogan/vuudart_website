@@ -297,6 +297,9 @@
     <Content Include="yonetici_arayuz\forms-validation.html" />
     <Content Include="yonetici_arayuz\giris_ekran.css" />
     <Content Include="yonetici_arayuz\img\logo\vuudart-fotograf-logo.png" />
+    <Content Include="yonetici_arayuz\img\slider_gorsel\slider1.png" />
+    <Content Include="yonetici_arayuz\img\slider_gorsel\slider2.png" />
+    <Content Include="yonetici_arayuz\img\slider_gorsel\slider3.png" />
     <Content Include="yonetici_arayuz\index.aspx" />
     <Content Include="yonetici_arayuz\index.html" />
     <Content Include="yonetici_arayuz\img\logo\vuudart-giris_ekran_logo.png" />
@@ -368,6 +371,8 @@
     <Compile Include="cs\OlcuCRUD.cs" />
     <Compile Include="cs\RandomClass.cs" />
     <Compile Include="cs\Sifreleme.cs" />
+    <Compile Include="cs\Slider.cs" />
+    <Compile Include="cs\SliderCRUD.cs" />
     <Compile Include="cs\Sorgular.cs" />
     <Compile Include="cs\Urun.cs" />
     <Compile Include="cs\UrunCRUD.cs" />
