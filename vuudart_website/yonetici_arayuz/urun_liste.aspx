@@ -261,7 +261,7 @@
          {%>    
             <tr>
                 
-                <td><img alt="" src="<%=dt.Rows[i][5] %>" Height="45" Width="45"/></td>
+                <td><img alt="" src="<%=dt.Rows[i][5] %>" Height="40" Width="60"/></td>
                 <td><%=dt.Rows[i][0] %></td>
                 <td><%=dt.Rows[i][1] %></td>
                 <td><%=dt.Rows[i][2] %></td>

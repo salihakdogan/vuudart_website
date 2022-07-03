@@ -19,7 +19,7 @@ namespace vuudart_website.yonetici_arayuz
                 DataTable kategoridt = droplistelistele.urunbarkodadliste();
 
                 DropDownList1.DataValueField = "Barkod";
-                DropDownList1.DataTextField = "Barkod";
+                DropDownList1.DataTextField = "BarkodAd";
                 DropDownList1.DataSource = kategoridt;
                 DropDownList1.DataBind();
                 DropDownList1.Items.Insert(0, new ListItem("Lütfen seçim yapın", "0"));              

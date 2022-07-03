@@ -129,6 +129,19 @@ namespace vuudart_website.cs
 
             db.kapat();
             return cevap;
-        }       
+        }
+
+        public DataTable son3kategori() //son eklenen 3 kategoriyi on yuzdeki default aspx e listeler
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select top 3 * from Kategoriler Order By KategoriID desc", db.baglanti);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
     }
 }
