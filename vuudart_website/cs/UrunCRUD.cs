@@ -143,5 +143,108 @@ namespace vuudart_website.cs
             db.kapat();
             return gdt;
         }
+
+        public DataTable anasayfakateurungoster(string pkategori)
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select * from Urunler where Kategori = @1", db.baglanti);
+            goster.Parameters.AddWithValue("@1", pkategori);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
+        public DataTable son12urun() //son eklenen 12 urunu default aspx e listeler
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select top 12 Urunler.Barkod,Urunler.Ad, Kategoriler.Ad as Kategori, Hammaddeler.Ad as Hammadde, Urunler.Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap from Urunler, Kategoriler, Hammaddeler, Olculer where Urunler.Kategori=Kategoriler.KategoriID and Urunler.Hammadde=Hammaddeler.HammaddeID and Urunler.Barkod=Olculer.Barkod order by Barkod desc", db.baglanti);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
+        public DataTable endusuk4urun() //fiyatı en dusuk 4 urunu default aspx e listeler
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select top 4 Urunler.Barkod,Urunler.Ad, Kategoriler.Ad as Kategori, Hammaddeler.Ad as Hammadde, Urunler.Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap  from Urunler, Kategoriler, Hammaddeler, Olculer where Urunler.Kategori=Kategoriler.KategoriID and Urunler.Hammadde=Hammaddeler.HammaddeID and Urunler.Barkod=Olculer.Barkod order by Fiyat", db.baglanti);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
+        public Urun urundetay(string prmbarkod)
+        {
+            Urun urun = new Urun();
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select Urunler.Barkod,Urunler.Ad, Kategoriler.Ad as Kategori, Hammaddeler.Ad as Hammadde, Urunler.Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap from Urunler, Kategoriler, Hammaddeler, Olculer where Urunler.Kategori=Kategoriler.KategoriID and Urunler.Hammadde=Hammaddeler.HammaddeID and Urunler.Barkod=Olculer.Barkod and Urunler.Barkod=@a", db.baglanti);
+            komut.Parameters.AddWithValue("@a", prmbarkod);
+            SqlDataReader dr = komut.ExecuteReader();
+
+            while (dr.Read())
+            {
+                urun.Barkod = dr[0].ToString();
+                urun.Ad = dr[1].ToString();
+                urun.Kategoriad = dr[2].ToString();
+                urun.Hammaddead = dr[3].ToString();
+                urun.Aciklama = dr[4].ToString();
+                urun.Gorsel1 = dr[5].ToString();
+                urun.Gorsel2 = dr[6].ToString();
+                urun.Gorsel3 = dr[7].ToString();
+                urun.Fiyat = Convert.ToInt16(dr[8]);
+                urun.Stokadet = Convert.ToInt16(dr[9]);
+                urun.Kdvoran = Convert.ToInt16(dr[10]);
+                urun.Kargokg = Convert.ToInt16(dr[11]);           
+            }
+            db.kapat();
+            return urun;
+        }
+
+        public Olcu urundetayolcu(string prmbarkod)
+        {
+            Olcu olcu = new Olcu();
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select Urunler.Barkod,Urunler.Ad, Kategoriler.Ad as Kategori, Hammaddeler.Ad as Hammadde, Urunler.Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap from Urunler, Kategoriler, Hammaddeler, Olculer where Urunler.Kategori=Kategoriler.KategoriID and Urunler.Hammadde=Hammaddeler.HammaddeID and Urunler.Barkod=Olculer.Barkod and Urunler.Barkod=@a", db.baglanti);
+            komut.Parameters.AddWithValue("@a", prmbarkod);
+            SqlDataReader dr = komut.ExecuteReader();
+
+            while (dr.Read())
+            {
+                olcu.Genislik = Convert.ToInt16(dr[12]);
+                olcu.Uzunluk = Convert.ToInt16(dr[13]);
+                olcu.Yukseklik = Convert.ToInt16(dr[14]);
+                olcu.Kalinlik = Convert.ToInt16(dr[15]);
+                olcu.Yaricap = Convert.ToInt16(dr[16]);
+            }
+            db.kapat();
+            return olcu;
+        }
+
+        public DataTable ilgili4urun(string prmkategori) //barkod kategorisine göre ilgili fiyatı en azdan çoka göre 4 ürünü listeler
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select top 4 Urunler.Barkod,Urunler.Ad, Kategoriler.Ad as Kategori, Hammaddeler.Ad as Hammadde, Urunler.Aciklama, Gorsel1, Gorsel2, Gorsel3, Fiyat, StokAdet, KdvOran, KargoKg, Genislik, Uzunluk, Yukseklik, Kalinlik, Yaricap  from Urunler, Kategoriler, Hammaddeler, Olculer where Urunler.Kategori=Kategoriler.KategoriID and Urunler.Hammadde=Hammaddeler.HammaddeID and Urunler.Barkod=Olculer.Barkod and Kategoriler.Ad=@a order by Fiyat", db.baglanti);
+            komut.Parameters.AddWithValue("@a", prmkategori);
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
     }
 }
