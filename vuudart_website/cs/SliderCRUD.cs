@@ -20,5 +20,29 @@ namespace vuudart_website.cs
             db.kapat();
             return dt;
         }
+
+        public bool slidergorselekle(Slider yeniurun)
+        {
+            bool sonuc = true;
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("insert into Slider values(@1,@2,@3)", db.baglanti);
+
+            komut.Parameters.AddWithValue("@1", yeniurun.Barkod);
+            komut.Parameters.AddWithValue("@2", yeniurun.Baslik);
+            komut.Parameters.AddWithValue("@3", yeniurun.Slidergorsel);
+
+            int durum = Convert.ToInt16(komut.ExecuteNonQuery());
+
+            if (durum == 0)
+            {
+                sonuc = false;
+            }
+
+            db.kapat();
+
+            return sonuc;
+        }
+
     }
 }

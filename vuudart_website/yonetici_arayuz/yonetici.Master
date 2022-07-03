@@ -480,6 +480,50 @@
         }
     </script>
 
+    <script id="sliderkayitbasarili">
+        function sliderkayitbasarili() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'İşlem başarılı kayan görsel (slider) bilgileri kaydedildi.'
+            })
+        }
+    </script>
+
+    <script id="sliderkayitbasarisiz">
+        function sliderkayitbasarisiz() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'İşlem başarısız kayan görsel (slider) bilgileri kaydedilemedi.'
+            })
+        }
+    </script>
+
 <body>
     
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -664,10 +708,26 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-car"></i>
+                                    Site Arayüzü İşlemleri
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="slider_gorsel_ekle.aspx">
+                                            <i class="metismenu-icon">
+                                            </i>Kayan (Slider) Görsel Ekle
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             
                             <li class="app-sidebar__heading"></li>
                             <li>
-                                <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/" target="_blank">
+                                <a href="default.aspx" target="_blank">
                                     <i class="metismenu-icon pe-7s-graph2">
                                     </i>
                                     VuudArt - Mağaza

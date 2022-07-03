@@ -300,6 +300,7 @@
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider1.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider2.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider3.png" />
+    <Content Include="yonetici_arayuz\img\slider_gorsel\slider_talimat.png" />
     <Content Include="yonetici_arayuz\index.aspx" />
     <Content Include="yonetici_arayuz\index.html" />
     <Content Include="yonetici_arayuz\img\logo\vuudart-giris_ekran_logo.png" />
@@ -307,6 +308,7 @@
     <Content Include="yonetici_arayuz\img\logo\vuudart180x180.png" />
     <Content Include="yonetici_arayuz\img\logo\vuudart32x32.png" />
     <Content Include="yonetici_arayuz\main.css" />
+    <Content Include="yonetici_arayuz\slider_gorsel_ekle.aspx" />
     <Content Include="yonetici_arayuz\src\app.js" />
     <Content Include="yonetici_arayuz\src\assets\components\maps\maps-word-map.js" />
     <Content Include="yonetici_arayuz\src\assets\demo-ui\images\logo.png" />
@@ -415,6 +417,13 @@
     </Compile>
     <Compile Include="yonetici_arayuz\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\slider_gorsel_ekle.aspx.cs">
+      <DependentUpon>slider_gorsel_ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\slider_gorsel_ekle.aspx.designer.cs">
+      <DependentUpon>slider_gorsel_ekle.aspx</DependentUpon>
     </Compile>
     <Compile Include="yonetici_arayuz\urun_ekle.aspx.cs">
       <DependentUpon>urun_ekle.aspx</DependentUpon>

@@ -79,5 +79,17 @@ namespace vuudart_website.cs
             return dt;
         }
 
+        public DataTable urunbarkodadliste()
+        {
+            DataTable dt = new DataTable();
+
+            db.ac();
+            SqlCommand komut1 = new SqlCommand("select Barkod,Ad,Gorsel1 from Urunler", db.baglanti);
+            SqlDataAdapter adp1 = new SqlDataAdapter(komut1);
+            adp1.Fill(dt);
+            db.kapat();
+            return dt;
+        }
+
     }
 }
