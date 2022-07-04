@@ -20,5 +20,10 @@ namespace vuudart_website
             Session.RemoveAll();
             Response.Redirect("default.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "girisgereklisepet", "girisgereklisepet()", true);
+        }
     }
 }

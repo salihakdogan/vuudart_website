@@ -11,7 +11,12 @@ namespace vuudart_website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["prmurun"]!=null)
+            {
+                string prmurun = Request.QueryString["prmurun"];
+                cs.SepetCRUD sepeteeklenenurun = new cs.SepetCRUD();
+                sepeteeklenenurun.sepeteekle(prmurun, Session["uyemail"].ToString());
+            }
         }
     }
 }

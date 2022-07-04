@@ -25,6 +25,12 @@ namespace vuudart_website
                 DropDownList1.Items.Insert(0, new ListItem("Kategoriler", "0"));
                 DropDownList1.Items.Insert(1, new ListItem("Tüm Ürünler", "1"));
             }
+
+            if (!IsPostBack)
+            {
+                string kategori = Request.QueryString["kategoriprm"];
+                DropDownList1.SelectedValue = kategori;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

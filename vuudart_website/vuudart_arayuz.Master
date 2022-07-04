@@ -282,6 +282,36 @@
         }
     </script>
 
+	<script id="girisgereklisepet">
+        function girisgereklisepet() {
+
+            let timerInterval
+
+            Swal.fire({
+                title: 'Giriş gerekli',
+                html: 'Sepetinizi görüntülemek için giriş yapmanız gerekmektedir.',
+                icon: 'info',
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+        }
+    </script>
+
 <!--===============================================================================================-->	
 	<%--<link rel="icon" type="image/png" href="images/icons/favicon.png"/>--%>
 <!--===============================================================================================-->
@@ -453,9 +483,24 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
+						<%if (Session["uyegirisi"]==null)
+                          {%>
+
+						<a role="button" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" runat="server" onserverclick="Button1_Click">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</a>
+
+						<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" Visible="false"/>
+
+                        <%}
+                          else
+                          {%>
+
 						<a href="sepet.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="10">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</a>
+
+                        <%}%>
 
 						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
