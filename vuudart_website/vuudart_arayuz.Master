@@ -496,7 +496,10 @@
                           else
                           {%>
 
-						<a href="sepet.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="10">
+						<%vuudart_website.cs.SepetCRUD sepet = new vuudart_website.cs.SepetCRUD();
+                          int sepettoplamdeturun = sepet.sepettoplamadeturun((Session["uyemail"]).ToString());%>
+
+						<a href="sepet.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="<%=sepettoplamdeturun %>">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</a>
 
