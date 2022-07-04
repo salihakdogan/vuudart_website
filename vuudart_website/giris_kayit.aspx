@@ -42,9 +42,16 @@
 								<asp:RequiredFieldValidator ID="RequiredFieldValidator2" class="" runat="server" ErrorMessage="* Şifre alanı boş geçilemez!" ControlToValidate="TextBox2" ValidationGroup="giris" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
 							</div>
 
+						<div class="m-b-20">
+						    <asp:CheckBox ID="CheckBox1" runat="server" style="float:left; margin-right:10px; margin-top:5px;" />
+					        <asp:Label ID="Label1" runat="server" Text="Giriş bilgilerimi hatırla" style="float:left;" CssClass="m-b-20"></asp:Label>	
+						</div>
+
 						<asp:Button ID="Button1" runat="server" Text="Giriş yap" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" OnClick="Button1_Click" ValidationGroup="giris"/>
 					
 				</div>
+								
+
 
 
 				<%--kayıt ol--%>
@@ -111,6 +118,11 @@
 								<asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Şifreler uyuşmuyor!" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small" ControlToCompare="TextBox7" ControlToValidate="TextBox8" Display="Dynamic"></asp:CompareValidator>
 							</div>
 
+						<div class="m-b-20">
+						    <asp:CheckBox ID="CheckBox3" runat="server" style="float:left; margin-right:10px; margin-top:5px;" />
+					        <asp:Label ID="Label3" runat="server" Text="Ürün reklamı ve bilgilendirmeler için mail gönderilmesini onaylıyorum" style="float:left;" CssClass="m-b-20"></asp:Label>	
+						</div>
+						
 						<asp:Button ID="Button2" runat="server" Text="Kayıt ol" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" OnClick="Button2_Click" ValidationGroup="kayit"/>
 					
 				</div>

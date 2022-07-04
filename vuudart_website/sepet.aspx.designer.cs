@@ -15,6 +15,24 @@ namespace vuudart_website
     {
 
         /// <summary>
+        /// adet_azalt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button adet_azalt;
+
+        /// <summary>
+        /// adet_arttir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button adet_arttir;
+
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>

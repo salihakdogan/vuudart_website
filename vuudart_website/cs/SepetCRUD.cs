@@ -72,25 +72,12 @@ namespace vuudart_website.cs
             return dt;
         }
 
-        public int sepetfarkliadeturun(string pmail)
+        public int sepetadeturun(string pmail)
         {
             int cesitadet;
 
             db.ac();
             SqlCommand komut = new SqlCommand("select count(*) from Sepet where Durum=0 and UyeMail=@a", db.baglanti);
-            komut.Parameters.AddWithValue("@a", pmail);
-            cesitadet = Convert.ToInt16(komut.ExecuteScalar());
-
-            db.kapat();
-            return cesitadet;
-        }
-
-        public int sepettoplamadeturun(string pmail)
-        {
-            int cesitadet;
-
-            db.ac();
-            SqlCommand komut = new SqlCommand("select sum(UrunAdet) from Sepet where Durum=0 and UyeMail=@a", db.baglanti);
             komut.Parameters.AddWithValue("@a", pmail);
             cesitadet = Convert.ToInt16(komut.ExecuteScalar());
 

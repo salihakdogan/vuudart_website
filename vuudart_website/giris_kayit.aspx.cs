@@ -15,9 +15,27 @@ namespace vuudart_website
 {
     public partial class giris_kayit : System.Web.UI.Page
     {
+        HttpCookie kuki = new HttpCookie("vuudartuyegiris");
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["vuudartuyegiris"] != null)
+                {
+                    kuki = Request.Cookies["vuudartuyegiris"];
+                    TextBox1.Text = kuki["uyemail"].ToString();
+                }
+            }
 
+            if (Session["dogrulamayatasi"] != null)
+            {
+                TextBox1.Text = Session["dogrulamayatasi"].ToString();
+            }
+
+            if (Session["kayitsonrasidogrulamayatasi"] != null)
+            {
+                TextBox1.Text = Session["kayitsonrasidogrulamayatasi"].ToString();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e) /*giriş*/
@@ -28,20 +46,46 @@ namespace vuudart_website
             cs.UyeCRUD uye = new cs.UyeCRUD();
             bool mailgiris = uye.uyegirissitemail(TextBox1.Text,encryptedsifre);
 
+            cs.UyeCRUD dogrulanmismi = new cs.UyeCRUD();
+            DataTable dtuye = dogrulanmismi.uyelerilistele();
+
+            bool dogrulanmisuye = dogrulanmismi.dogrulanmisuye(TextBox1.Text, Convert.ToString(dtuye.Rows[0][13]));
+
+            Session["dogrulamayatasi"] = TextBox1.Text;
+
             if (mailgiris)
             {
-                Session["uyegirisi"] = "ok";
-                Session["uyemail"] = TextBox1.Text;
-                Response.Redirect("default.aspx");
+                if (dogrulanmisuye == false)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "dogrulamagerekli", "dogrulamagerekli()", true);
+                }
+                else
+                {
+                    Session["uyemail"] = TextBox1.Text;
+
+                    if (CheckBox1.Checked)
+                    {
+                        kuki["uyemail"] = TextBox1.Text;
+
+                        kuki.Expires = DateTime.Now.AddDays(10);
+                        Response.Cookies.Add(kuki);
+                    }
+                    Session["uyegirisi"] = "ok";
+
+                    Response.Redirect("default.aspx");
+                }
             }
             else
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "girishatali", "girishatali()", true);
             }
+
         }
 
         protected void Button2_Click(object sender, EventArgs e) /*kayıt*/
         {
+            Session["kayitsonrasidogrulamayatasi"] = TextBox4.Text;
+            
             cs.Sorgular sorgu = new cs.Sorgular();
             bool kadicevap = sorgu.kadikullanimdami(TextBox3.Text);
             bool mailcevap = sorgu.mailkullanimdami(TextBox4.Text);
@@ -74,6 +118,15 @@ namespace vuudart_website
 
                 yeniuye.Dkod = aktkod;
                 yeniuye.Durum = 0;
+
+                if (CheckBox3.Checked)
+                {
+                    yeniuye.Mailonay = 1;
+                }
+                else
+                {
+                    yeniuye.Mailonay = 0;
+                }
 
                 bool cevap = yeniuyeCRUD.uyeeklesite(yeniuye);
 

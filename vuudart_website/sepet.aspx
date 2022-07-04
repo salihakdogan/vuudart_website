@@ -52,15 +52,27 @@
 									<td class="column-3"><%=urunbilgi.Fiyat %> TL</td>
 									<td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+											
+											<a role="button" class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m" runat="server" onserverclick="adet_azalt_Click"><%--1 azalt--%>
 												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
+											</a>
+											<asp:Button ID="adet_azalt" runat="server" Text="Button" OnClick="adet_azalt_Click" visible="false"/>
+
+											<%--<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+												<i class="fs-16 zmdi zmdi-minus"></i>
+											</div>--%>
 
 											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="<%=sepetdt.Rows[i][2] %>">
 
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+											<%--<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
 												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
+											</div>--%>
+
+											<a role="button" class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m" runat="server" onserverclick="adet_arttir_Click"><%--1 arttir--%>
+												<i class="fs-16 zmdi zmdi-plus"></i>
+											</a>
+											<asp:Button ID="adet_arttir" runat="server" Text="Button" OnClick="adet_arttir_Click" Visible="false" />
+
 										</div>
 									</td>
 									<td class="column-5"><%=Convert.ToInt16(urunbilgi.Fiyat) * Convert.ToInt16(sepetdt.Rows[i][2]) %> TL</td>

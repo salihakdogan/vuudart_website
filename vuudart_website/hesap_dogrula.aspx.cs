@@ -12,7 +12,15 @@ namespace vuudart_website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = Session["uyemail"].ToString();
+            if (Session["dogrulamayatasi"]!=null)
+            {
+                TextBox1.Text = Session["dogrulamayatasi"].ToString();
+            }
+
+            if (Session["kayitsonrasidogrulamayatasi"]!=null)
+            {
+                TextBox1.Text = Session["kayitsonrasidogrulamayatasi"].ToString();
+            }          
         }
 
         protected void Button1_Click(object sender, EventArgs e)

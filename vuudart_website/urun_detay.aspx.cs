@@ -18,10 +18,5 @@ namespace vuudart_website
         {
             ClientScript.RegisterStartupScript(this.GetType(), "girisgerekli", "girisgerekli()", true);
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            ClientScript.RegisterStartupScript(this.GetType(), "dogrulamagerekli", "dogrulamagerekli()", true);
-        }
     }
 }

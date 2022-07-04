@@ -18,7 +18,7 @@
 
             Swal.fire({
                 title: 'Kayıt başarılı',
-                html: 'Hesabınızı doğrulamak için sayfaya yönlendiriliyorsunuz.',
+                html: 'Mail hesabınza hesap doğrulama kodu iletildi. Hesabınızı doğrulamak için sayfaya yönlendiriliyorsunuz.',
                 icon: 'info',
                 timer: 5000,
                 timerProgressBar: true,
@@ -36,9 +36,12 @@
                 /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
                     console.log('I was closed by the timer')
-                }
-            })
+				}
 
+            }).then(function () {
+                window.location = "hesap_dogrula.aspx";
+
+            })
         }
     </script>
 
@@ -170,7 +173,7 @@
             Swal.fire({
                 title: 'Giriş gerekli',
                 html: 'Sepetinize ürün eklemek için giriş yapmanız gerekmektedir.',
-                icon: 'info',
+                icon: 'warning',
                 timer: 4500,
                 timerProgressBar: true,
                 didOpen: () => {
@@ -199,8 +202,8 @@
 
             Swal.fire({
                 title: 'Hesabınız henüz doğrulanmamış',
-                html: 'Sepetinize ürün eklemek için hesabınızı doğrulamanız gerekmektedir.',
-                icon: 'info',
+                html: 'Giriş yapabilmek için hesabınızı doğrulamanız gerekmektedir. Doğrulama sayfasına yönlendiriliyorsunuz.',
+                icon: 'warning',
                 timer: 4500,
                 timerProgressBar: true,
                 didOpen: () => {
@@ -217,7 +220,11 @@
                 /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
                     console.log('I was closed by the timer')
-                }
+				}
+
+            }).then(function () {
+                window.location = "hesap_dogrula.aspx";
+
             })
         }
     </script>
@@ -229,7 +236,7 @@
 
             Swal.fire({
                 title: 'Hesabınız doğrulandı',
-                html: 'Doğrulama işlemi başarılı keyifli alışverişler dileriz.',
+                html: 'Doğrulama işlemi başarılı giriş sayfasına yönlendiriliyorsunuz. Keyifli alışverişler dileriz.',
                 icon: 'success',
                 timer: 4000,
                 timerProgressBar: true,
@@ -247,7 +254,11 @@
                 /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
                     console.log('I was closed by the timer')
-                }
+				}
+
+            }).then(function () {
+                window.location = "giris_kayit.aspx";
+
             })
         }
     </script>
@@ -290,7 +301,7 @@
             Swal.fire({
                 title: 'Giriş gerekli',
                 html: 'Sepetinizi görüntülemek için giriş yapmanız gerekmektedir.',
-                icon: 'info',
+                icon: 'warning',
                 timer: 3000,
                 timerProgressBar: true,
                 didOpen: () => {
@@ -393,21 +404,7 @@
                         <%}
                           else
                           {%>
-								<%vuudart_website.cs.UyeCRUD dogrulanmismi = new vuudart_website.cs.UyeCRUD();
-                                  System.Data.DataTable dtuye = new System.Data.DataTable();
-                                  dtuye = dogrulanmismi.uyelerilistele();
-
-                                  bool cevap = dogrulanmismi.dogrulanmisuye(Session["uyemail"].ToString(), Convert.ToString(dtuye.Rows[0][13]));%>
-
-								  <%if (cevap==false)
-                                    {%>
-
-									<a href="hesap_dogrula.aspx" class="flex-c-m trans-04 p-lr-25">
-										<div style="color:#C2A127; float:left;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Hesabınız henüz doğrulanmadı !</div>
-									</a>
-
-                                  <%}%>
-
+							
 						<a href="hesabim.aspx" class="flex-c-m trans-04 p-lr-25">
 							Hesabım
 						</a>
@@ -486,7 +483,7 @@
 						<%if (Session["uyegirisi"]==null)
                           {%>
 
-						<a role="button" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" runat="server" onserverclick="Button1_Click">
+						<a role="button" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0" runat="server" onserverclick="Button1_Click">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</a>
 
@@ -495,14 +492,12 @@
                         <%}
                           else
                           {%>
+								<%vuudart_website.cs.SepetCRUD sepet = new vuudart_website.cs.SepetCRUD();
+								  int sepeturunsayi = sepet.sepetadeturun(Session["uyemail"].ToString());%>
 
-						<%vuudart_website.cs.SepetCRUD sepet = new vuudart_website.cs.SepetCRUD();
-                          int sepettoplamdeturun = sepet.sepettoplamadeturun((Session["uyemail"]).ToString());%>
-
-						<a href="sepet.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="<%=sepettoplamdeturun %>">
-							<i class="zmdi zmdi-shopping-cart"></i>
-						</a>
-
+										<a href="sepet.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="<%=sepeturunsayi %>">
+											<i class="zmdi zmdi-shopping-cart"></i>
+										</a>									  				    
                         <%}%>
 
 						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
@@ -527,9 +522,23 @@
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
+				<%if (Session["uyegirisi"]==null)
+                  {%>
+						<a role="button" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0" runat="server" onserverclick="Button1_Click">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</a>
+
+						<asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button1_Click" Visible="false"/>
+                <%}
+                  else
+                  {%>
+						<%vuudart_website.cs.SepetCRUD sepet = new vuudart_website.cs.SepetCRUD();
+								int sepeturunsayi = sepet.sepetadeturun(Session["uyemail"].ToString());%>
+		
+								<a href="sepet.aspx" class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="<%=sepeturunsayi%>">
+									<i class="zmdi zmdi-shopping-cart"></i>
+								</a>									  				    
+                <%}%>
 
 				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
 					<i class="zmdi zmdi-favorite-outline"></i>
@@ -577,7 +586,7 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="default.aspx">Anasayfa</a>
 					<ul class="sub-menu-m">
 						<li><a href="index.html">Homepage 1</a></li>
 						<li><a href="home-02.html">Homepage 2</a></li>
@@ -627,7 +636,7 @@
 		</div>
 	</header>
 
-	<!-- Cart -->
+	<%--<!-- Cart -->
 	<div class="wrap-header-cart js-panel-cart">
 		<div class="s-full js-hide-cart"></div>
 
@@ -710,7 +719,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>--%>
 
     <form id="form1" runat="server">
 		<asp:Button ID="cikis" runat="server" Text="Button" OnClick="cikis_Click" visible="false"/>
@@ -873,7 +882,7 @@ Telif hakkı &copy;<script>document.write(new Date().getFullYear());</script> T�
 		</span>
 	</div>
 
-	<%vuudart_website.cs.UrunCRUD tumurunler = new vuudart_website.cs.UrunCRUD();
+	<%--<%vuudart_website.cs.UrunCRUD tumurunler = new vuudart_website.cs.UrunCRUD();
 	  System.Data.DataTable dt = new System.Data.DataTable();
       dt= tumurunler.tumurunlistele();%>
 
@@ -1033,9 +1042,6 @@ Telif hakkı &copy;<script>document.write(new Date().getFullYear());</script> T�
 			</div>
 		</div>
 	</div>--%>
-
-	<%}%>
-
 	
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

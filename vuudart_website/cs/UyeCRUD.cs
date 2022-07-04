@@ -127,7 +127,7 @@ namespace vuudart_website.cs
             bool sonuc = true;
             db.ac();
 
-            SqlCommand komut = new SqlCommand("insert into Uyeler (KullaniciAdi, UyeMail, Ad, Soyad, Sifre, DKod, Durum) values(@a, @b, @c, @d, @e, @f, @g)", db.baglanti);
+            SqlCommand komut = new SqlCommand("insert into Uyeler (KullaniciAdi, UyeMail, Ad, Soyad, Sifre, DKod, Durum, MailOnay) values(@a, @b, @c, @d, @e, @f, @g, @h)", db.baglanti);
 
             komut.Parameters.AddWithValue("@a", yeniuye.Kullaniciad);
             komut.Parameters.AddWithValue("@b", yeniuye.Mail);
@@ -136,6 +136,7 @@ namespace vuudart_website.cs
             komut.Parameters.AddWithValue("@e", yeniuye.Sifre);
             komut.Parameters.AddWithValue("@f", yeniuye.Dkod);
             komut.Parameters.AddWithValue("@g", yeniuye.Durum);
+            komut.Parameters.AddWithValue("@h", yeniuye.Mailonay);
 
             int durum = Convert.ToInt16(komut.ExecuteNonQuery());
 

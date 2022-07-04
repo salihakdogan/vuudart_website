@@ -8,7 +8,7 @@ namespace vuudart_website.cs
     public class Uye
     {
         string kullaniciad, mail, ad, soyad, sifre, tc, telefon, ulke, sehir, postakod, adres, pfotograf, dkod;        
-        int durum;
+        int durum,  mailonay;
 
         public string Kullaniciad { get => kullaniciad; set => kullaniciad = value; }
         public string Mail { get => mail; set => mail = value; }
@@ -24,5 +24,6 @@ namespace vuudart_website.cs
         public string Pfotograf { get => pfotograf; set => pfotograf = value; }
         public string Dkod { get => dkod; set => dkod = value; }
         public int Durum { get => durum; set => durum = value; }
+        public int Mailonay { get => mailonay; set => mailonay = value; }
     }
 }

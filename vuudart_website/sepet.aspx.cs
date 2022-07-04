@@ -11,12 +11,27 @@ namespace vuudart_website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["prmurun"]!=null)
+            if (!IsPostBack)
             {
-                string prmurun = Request.QueryString["prmurun"];
-                cs.SepetCRUD sepeteeklenenurun = new cs.SepetCRUD();
-                sepeteeklenenurun.sepeteekle(prmurun, Session["uyemail"].ToString());
-            }
+                if (Request.QueryString["prmurun"] != null)
+                {
+                    string prmurun = Request.QueryString["prmurun"];
+                    cs.SepetCRUD sepeteeklenenurun = new cs.SepetCRUD();
+                    sepeteeklenenurun.sepeteekle(prmurun, Session["uyemail"].ToString());
+                    Response.Redirect("sepet.aspx");
+                }              
+            }    
+        }
+
+        protected void adet_azalt_Click(object sender, EventArgs e)
+        {
+            cs.DroplistCRUD azalt = new cs.DroplistCRUD();
+
+        }
+
+        protected void adet_arttir_Click(object sender, EventArgs e)
+        {
+            cs.DroplistCRUD arttir = new cs.DroplistCRUD();
         }
     }
 }
