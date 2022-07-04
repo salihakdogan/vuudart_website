@@ -106,7 +106,9 @@
 
 									<%if (Session["uyegirisi"]!=null)
                                       {%>
-
+											
+											
+											
 											<a href="sepet.aspx?prmurun=<%=urunbilgi.Barkod %>" class="btn flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 												Sepete Ekle
 											</a>

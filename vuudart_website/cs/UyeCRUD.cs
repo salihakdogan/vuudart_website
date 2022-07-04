@@ -170,28 +170,5 @@ namespace vuudart_website.cs
             db.kapat();
             return sonuc;
         }
-
-        public bool uyegirissitekadi(string pkadi, string psfr)
-        {
-            bool sonuc;
-            DataTable dt = new DataTable();
-            db.ac();
-            SqlCommand komut = new SqlCommand("select * from Uyeler where KullaniciAdi=@a and Sifre=@b", db.baglanti);
-            komut.Parameters.AddWithValue("@a", pkadi);
-            komut.Parameters.AddWithValue("@b", psfr);
-
-            SqlDataAdapter adp = new SqlDataAdapter(komut);
-            adp.Fill(dt);
-            if (dt.Rows.Count == 0)
-            {
-                sonuc = false;
-            }
-            else
-            {
-                sonuc = true;
-            }
-            db.kapat();
-            return sonuc;
-        }
     }
 }

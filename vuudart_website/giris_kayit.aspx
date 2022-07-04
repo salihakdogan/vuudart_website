@@ -25,7 +25,7 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:TextBox ID="TextBox1" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Kullanıcı Adı veya Mail"></asp:TextBox>
+							<asp:TextBox ID="TextBox1" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Mail adresi"></asp:TextBox>
 							<i class="fa fa-at how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
 						</div>
 						

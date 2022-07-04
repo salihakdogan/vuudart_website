@@ -28,20 +28,7 @@ namespace vuudart_website
             cs.UyeCRUD uye = new cs.UyeCRUD();
             bool mailgiris = uye.uyegirissitemail(TextBox1.Text,encryptedsifre);
 
-            bool kadigiris = uye.uyegirissitekadi(TextBox1.Text, encryptedsifre);
-
             if (mailgiris)
-            {
-                Session["uyegirisi"] = "ok";
-                Session["uyemail"] = TextBox1.Text;
-                Response.Redirect("default.aspx");
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "girishatali", "girishatali()", true);
-            }
-
-            if (kadigiris)
             {
                 Session["uyegirisi"] = "ok";
                 Session["uyemail"] = TextBox1.Text;
