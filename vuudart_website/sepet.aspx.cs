@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace vuudart_website
 {
-    public partial class urun_detay : System.Web.UI.Page
+    public partial class sepet : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            ClientScript.RegisterStartupScript(this.GetType(), "girisgerekli", "girisgerekli()", true);
         }
     }
 }
