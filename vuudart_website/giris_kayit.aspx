@@ -30,7 +30,7 @@
 						</div>
 						
 							<div class="m-b-20">
-								<asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="" runat="server" ErrorMessage="* Kullanıcı adı veya mail alanı boş geçilemez!" ControlToValidate="TextBox1" ValidationGroup="giris" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="" runat="server" ErrorMessage="* Mail adresi alanı boş geçilemez!" ControlToValidate="TextBox1" ValidationGroup="giris" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
 							</div>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
@@ -55,7 +55,7 @@
 						</h4>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:TextBox ID="TextBox3" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Kullanıcı Adı"></asp:TextBox>
+							<asp:TextBox ID="TextBox3" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Kullanıcı adı"></asp:TextBox>
 							<i class="fa fa-at how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
 						</div>
 
@@ -64,12 +64,12 @@
 							</div>
 
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<asp:TextBox ID="TextBox4" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Mail"></asp:TextBox>
+							<asp:TextBox ID="TextBox4" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Mail adresi"></asp:TextBox>
 							<i class="fa fa-envelope how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
 						</div>
 
 							<div class="m-b-20">
-								<asp:RequiredFieldValidator ID="RequiredFieldValidator4" class="" runat="server" ErrorMessage="* Mail alanı boş geçilemez!" ControlToValidate="TextBox4" ValidationGroup="kayit" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
+								<asp:RequiredFieldValidator ID="RequiredFieldValidator4" class="" runat="server" ErrorMessage="* Mail adresi alanı boş geçilemez!" ControlToValidate="TextBox4" ValidationGroup="kayit" Display="Dynamic" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small"></asp:RequiredFieldValidator>
 								<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Mail adresi yanlış veya formatı hatalı!" ControlToValidate="TextBox4" ForeColor="#6f81e7" Font-Italic="False" Font-Size="Small" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"></asp:RegularExpressionValidator>
 							</div>
 

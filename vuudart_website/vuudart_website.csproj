@@ -87,6 +87,7 @@
     <Content Include="fonts\Montserrat\OFL.txt" />
     <Content Include="fonts\PlayfairDisplay\OFL.txt" />
     <Content Include="giris_kayit.aspx" />
+    <Content Include="hesap_dogrula.aspx" />
     <Content Include="home-02.html" />
     <Content Include="home-03.html" />
     <Content Include="images\about-01.jpg" />
@@ -109,6 +110,7 @@
     <Content Include="images\blog-04.jpg" />
     <Content Include="images\blog-05.jpg" />
     <Content Include="images\blog-06.jpg" />
+    <Content Include="images\dogrulama_talimat.png" />
     <Content Include="images\gallery-01.jpg" />
     <Content Include="images\gallery-02.jpg" />
     <Content Include="images\gallery-03.jpg" />
@@ -181,7 +183,6 @@
     <Content Include="shoping-cart.html" />
     <Content Include="urunler.aspx" />
     <Content Include="urun_detay.aspx" />
-    <Content Include="uyelik_dogrulama.aspx" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -401,6 +402,13 @@
     <Compile Include="giris_kayit.aspx.designer.cs">
       <DependentUpon>giris_kayit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hesap_dogrula.aspx.cs">
+      <DependentUpon>hesap_dogrula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hesap_dogrula.aspx.designer.cs">
+      <DependentUpon>hesap_dogrula.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sepet.aspx.cs">
       <DependentUpon>sepet.aspx</DependentUpon>
@@ -422,13 +430,6 @@
     </Compile>
     <Compile Include="urun_detay.aspx.designer.cs">
       <DependentUpon>urun_detay.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="uyelik_dogrulama.aspx.cs">
-      <DependentUpon>uyelik_dogrulama.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="uyelik_dogrulama.aspx.designer.cs">
-      <DependentUpon>uyelik_dogrulama.aspx</DependentUpon>
     </Compile>
     <Compile Include="vuudart_arayuz.Master.cs">
       <DependentUpon>vuudart_arayuz.Master</DependentUpon>

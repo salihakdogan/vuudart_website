@@ -222,6 +222,66 @@
         }
     </script>
 
+	<script id="dogrulamabasarili">
+        function dogrulamabasarili() {
+
+            let timerInterval
+
+            Swal.fire({
+                title: 'Hesabınız doğrulandı',
+                html: 'Doğrulama işlemi başarılı keyifli alışverişler dileriz.',
+                icon: 'success',
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+        }
+    </script>
+
+	<script id="dogrulamabasarisiz">
+        function dogrulamabasarisiz() {
+
+            let timerInterval
+
+            Swal.fire({
+                title: 'Hesabınız doğrulanamadı',
+                html: 'Doğrulama işlemi başarısız doğrulama kodunuz ya da mail bilgileriniz hatalı.',
+                icon: 'error',
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+        }
+    </script>
+
 <!--===============================================================================================-->	
 	<%--<link rel="icon" type="image/png" href="images/icons/favicon.png"/>--%>
 <!--===============================================================================================-->
@@ -303,6 +363,20 @@
                         <%}
                           else
                           {%>
+								<%vuudart_website.cs.UyeCRUD dogrulanmismi = new vuudart_website.cs.UyeCRUD();
+                                  System.Data.DataTable dtuye = new System.Data.DataTable();
+                                  dtuye = dogrulanmismi.uyelerilistele();
+
+                                  bool cevap = dogrulanmismi.dogrulanmisuye(Session["uyemail"].ToString(), Convert.ToString(dtuye.Rows[0][13]));%>
+
+								  <%if (cevap==false)
+                                    {%>
+
+									<a href="hesap_dogrula.aspx" class="flex-c-m trans-04 p-lr-25">
+										<div style="color:#C2A127; float:left;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Hesabınız henüz doğrulanmadı !</div>
+									</a>
+
+                                  <%}%>
 
 						<a href="hesabim.aspx" class="flex-c-m trans-04 p-lr-25">
 							Hesabım

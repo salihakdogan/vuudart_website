@@ -170,5 +170,66 @@ namespace vuudart_website.cs
             db.kapat();
             return sonuc;
         }
+
+        public bool dogrulanmisuye(string pmail, string onay)
+        {
+            bool sonuc;
+            DataTable dt = new DataTable();
+            db.ac();
+            SqlCommand komut = new SqlCommand("select * from Uyeler where UyeMail=@a and Durum=1", db.baglanti);
+            komut.Parameters.AddWithValue("@a", pmail);
+            
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+            adp.Fill(dt);
+            if (dt.Rows.Count == 0)
+            {
+                sonuc = false;
+            }
+            else
+            {
+                sonuc = true;
+            }
+            db.kapat();
+            return sonuc;
+        }
+
+        public DataTable dogrulanmamis(string pmail)
+        {
+            DataTable dt = new DataTable();
+            
+            db.ac();
+            SqlCommand komut = new SqlCommand("select * from Uyeler where UyeMail=@a and Durum=0", db.baglanti);
+            komut.Parameters.AddWithValue("@a", pmail);
+
+
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+            adp.Fill(dt);
+
+            db.kapat();
+            return dt;
+        }
+
+        public bool dogrula(string pmail, string pkod)
+        {
+            bool cevap = true;
+            db.ac();
+            SqlCommand komut = new SqlCommand("update Uyeler set Durum=1 where UyeMail=@a and DKod=@b", db.baglanti);
+            komut.Parameters.AddWithValue("@a", pmail);
+            komut.Parameters.AddWithValue("@b", pkod);
+
+            int kayitsay = komut.ExecuteNonQuery();
+            if (kayitsay == 0)
+            {
+                cevap = false;
+            }
+            else
+            {
+                cevap = true;
+            }
+            db.kapat();
+
+            return cevap;
+
+        }
     }
 }

@@ -107,11 +107,32 @@
 									<%if (Session["uyegirisi"]!=null)
                                       {%>
 											
+											<%vuudart_website.cs.UyeCRUD dogrulanmismi = new vuudart_website.cs.UyeCRUD();
+                                                System.Data.DataTable dtuye = new System.Data.DataTable();
+                                                dtuye = dogrulanmismi.uyelerilistele();
+
+                                                bool cevap = dogrulanmismi.dogrulanmisuye(Session["uyemail"].ToString(), Convert.ToString(dtuye.Rows[0][13]));%>
+
+										    <%if (cevap==false)
+                                              {%>
+
+													<a class="btn flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" runat="server" onserverclick="Button2_Click">
+														Sepete Ekle
+													</a>
+											
+													<asp:Button ID="Button2" runat="server" Text="Button" onclick="Button2_Click" Visible="false"/>
+
+                                            <%}
+                                              else
+                                              {%>
+
+													<a href="sepet.aspx?prmurun=<%=urunbilgi.Barkod %>" class="btn flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+														Sepete Ekle
+													</a>
+
+                                            <%}%>
 											
 											
-											<a href="sepet.aspx?prmurun=<%=urunbilgi.Barkod %>" class="btn flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-												Sepete Ekle
-											</a>
 
                                     <%}else
                                       {%>
