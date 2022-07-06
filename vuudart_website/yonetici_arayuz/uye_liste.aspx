@@ -164,7 +164,7 @@
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">
                                 <div class="page-title-icon">
-                                    <i class="pe-7s-users icon-gradient bg-mean-fruit">
+                                    <i class="pe-7s-user icon-gradient bg-night-fade">
                                     </i>
                                 </div>
                                 <div>

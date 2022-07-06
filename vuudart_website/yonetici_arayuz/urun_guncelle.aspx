@@ -10,17 +10,17 @@
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">
                                 <div class="page-title-icon">
-                                    <i class="pe-7s-add-user icon-gradient bg-mean-fruit">
+                                    <i class="pe-7s-box1 icon-gradient bg-plum-plate">
                                     </i>
                                 </div>
                                 <div>
-                                    Üye Ekleme Ekranı
+                                    Ürün Güncelleme Ekranı
                                     <div class="page-title-subheading">
-                                        Bu sayfada ürün ekleme işlemlerini gerçekleştirebilirsin.
+                                        Bu sayfada seçilen ürünün bilgilerini güncelleyebilirsin.
                                         <ol class="breadcrumb">
                                                 <li class="breadcrumb-item"><a href="index.aspx">Anasayfa</a></li>   
                                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Ürün İşlemleri</a></li>
-                                                <li class="active breadcrumb-item" aria-current="page">Ürün Ekle</li>
+                                                <li class="active breadcrumb-item" aria-current="page">Ürün Güncelle</li>
                                         </ol>
                                     </div>
                                 </div>

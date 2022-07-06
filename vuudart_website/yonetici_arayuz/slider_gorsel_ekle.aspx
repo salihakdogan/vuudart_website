@@ -16,11 +16,11 @@
                                 <div>
                                     Kayan Görsel Ekleme Ekranı
                                     <div class="page-title-subheading">
-                                        Bu sayfada kayan (slider) görsel ekleme işlemlerini gerçekleştirebilirsin.
+                                        Bu sayfada slider (kayan) görsel ekleme işlemlerini gerçekleştirebilirsin.
                                         <ol class="breadcrumb">
                                                 <li class="breadcrumb-item"><a href="index.aspx">Anasayfa</a></li>   
                                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Site Arayüzü İşlemleri</a></li>
-                                                <li class="active breadcrumb-item" aria-current="page">Kayan Görsel Ekle</li>
+                                                <li class="active breadcrumb-item" aria-current="page">Slider Görsel Ekle</li>
                                         </ol>
                                     </div>
                                 </div>

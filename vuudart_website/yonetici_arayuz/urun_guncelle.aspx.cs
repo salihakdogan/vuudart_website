@@ -43,11 +43,7 @@ namespace vuudart_website.yonetici_arayuz
                 TextBox8.Text = urundt.Rows[0][13].ToString();
                 TextBox9.Text = urundt.Rows[0][14].ToString();
                 TextBox10.Text = urundt.Rows[0][15].ToString();
-                TextBox11.Text = urundt.Rows[0][16].ToString();
-              
-                //Gorsel1.Src = urundt.Rows[0][5].ToString();
-                //Gorsel2.Src = urundt.Rows[0][6].ToString();
-                //Gorsel3.Src = urundt.Rows[0][7].ToString();
+                TextBox11.Text = urundt.Rows[0][16].ToString();           
             }
     
             if (!IsPostBack)

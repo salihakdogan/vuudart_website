@@ -49,17 +49,17 @@
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">
                                 <div class="page-title-icon">
-                                    <i class="pe-7s-users icon-gradient bg-mean-fruit">
+                                    <i class="pe-7s-box1 icon-gradient bg-plum-plate">
                                     </i>
                                 </div>
                                 <div>
-                                    Ürün Listeleme Ekranı
+                                    Ürün Silme / Güncelleme Ekranı
                                     <div class="page-title-subheading">
                                         Bu sayfada ürün silme ve güncelleme işlemlerini gerçekleştirebilirsin.
                                         <ol class="breadcrumb">
                                                 <li class="breadcrumb-item"><a href="index.aspx">Anasayfa</a></li>   
                                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Ürün İşlemleri</a></li>
-                                                <li class="active breadcrumb-item" aria-current="page">Ürün Listele</li>
+                                                <li class="active breadcrumb-item" aria-current="page">Ürün Sil / Guncelle</li>
                                         </ol>
                                     </div>
                                 </div>

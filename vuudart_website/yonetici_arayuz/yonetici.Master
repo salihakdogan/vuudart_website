@@ -646,14 +646,14 @@
                             <li class="app-sidebar__heading">Arayüz</li>
                             <li>
                                 <a href="index.aspx" class="mm-active">
-                                    <i class="metismenu-icon pe-7s-home"></i>
+                                    <i class="metismenu-icon pe-7s-home icon-gradient bg-premium-dark"></i>
                                     Anasayfa
                                 </a>
                             </li>
                             <li class="app-sidebar__heading">İŞLEMLER</li>
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-users"></i>
+                                    <i class="metismenu-icon pe-7s-user"></i>
                                     Üye İşlemleri
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
@@ -682,7 +682,7 @@
 
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-car"></i>
+                                    <i class="metismenu-icon pe-7s-box1"></i>
                                     Ürün İşlemleri
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
@@ -710,7 +710,35 @@
 
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-car"></i>
+                                    <i class="metismenu-icon pe-7s-magic-wand"></i>
+                                    Yönetici İşlemleri
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="slider_gorsel_ekle.aspx">
+                                            <i class="metismenu-icon">
+                                            </i>Yönetici Ekle
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="slider_gorsel_ekle.aspx">
+                                            <i class="metismenu-icon">
+                                            </i>Yönetici Listele
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="slider_gorsel_ekle.aspx">
+                                            <i class="metismenu-icon">
+                                            </i>Yönetici Sil / Güncelle
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-tools"></i>
                                     Site Arayüzü İşlemleri
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
@@ -718,13 +746,18 @@
                                     <li>
                                         <a href="slider_gorsel_ekle.aspx">
                                             <i class="metismenu-icon">
-                                            </i>Kayan (Slider) Görsel Ekle
+                                            </i>Slider Görsel Ekle
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="slider_gorsel_ekle.aspx">
+                                            <i class="metismenu-icon">
+                                            </i>Slider Görselleri
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-
-                            
+                                                     
                             <li class="app-sidebar__heading"></li>
                             <li>
                                 <a href="default.aspx" target="_blank">

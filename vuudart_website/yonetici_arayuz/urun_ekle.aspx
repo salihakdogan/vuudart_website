@@ -10,11 +10,11 @@
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">
                                 <div class="page-title-icon">
-                                    <i class="pe-7s-add-user icon-gradient bg-mean-fruit">
+                                    <i class="pe-7s-box1 icon-gradient bg-grow-early">
                                     </i>
                                 </div>
                                 <div>
-                                    Üye Ekleme Ekranı
+                                    Ürün Ekleme Ekranı
                                     <div class="page-title-subheading">
                                         Bu sayfada ürün ekleme işlemlerini gerçekleştirebilirsin.
                                         <ol class="breadcrumb">
