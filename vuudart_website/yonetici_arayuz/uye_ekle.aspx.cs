@@ -68,6 +68,7 @@ namespace vuudart_website.yonetici_arayuz
 
                 yeniuye.Dkod = aktkod;
                 yeniuye.Durum = 0;
+                yeniuye.Mailonay = 0;
 
                 if (!FileUpload1.HasFile)
                 {

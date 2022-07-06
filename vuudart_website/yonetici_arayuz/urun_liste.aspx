@@ -1,42 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/yonetici_arayuz/yonetici.Master" AutoEventWireup="true" CodeBehind="urun_liste.aspx.cs" Inherits="vuudart_website.yonetici_arayuz.urun_liste" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-   <style>
-
-        .gorsel1 {
-	        height:245px;
-	        width:360px;
-	        float:left;
-	        margin-right:5px;
-	        margin-top:5px; 
-	        margin-bottom:5px;
-        }
-
-        .gorsel2 {
-	        height:120px;
-	        width:180px;	     
-	        float:left;
-	        margin-bottom:5px;	
-	        margin-top:5px;
-	        margin-right:5px;
-        }
-
-        .gorsel3 {
-	        height:120px;
-	        width:180px;
-	        float:left;
-	        margin-bottom:5px;
-	        margin-right:5px;	
-        }
-
-        .kanvas {
-	        height:255px;
-	        width:550px;
-            float:left;
-        }
-
-   </style>
-
        <%vuudart_website.cs.UrunCRUD urunlerlistesi = new vuudart_website.cs.UrunCRUD();
          System.Data.DataTable dt = new System.Data.DataTable();
          dt = urunlerlistesi.tumurunlistele();%>
@@ -62,21 +26,21 @@
 				   <tr>
                     <td colspan="2">
                         <asp:Label ID="Label1" runat="server" Text="Ürün görselleri :" style="font-weight:bold;"></asp:Label>
-                        <br>
                         
-                        <div class="kanvas">
+                        
+                        <div id="gorseller" style=" margin: auto; width: 85%;">
 
-                        <div class="gorsel1">
-                            <img alt="" src="<%=dt.Rows[i][5] %>" style="width:360px; height:245px;"/>
+                        <div id="gorsel1" style="float:left; width:200px; height:320px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+                            <img alt="" src="<%=dt.Rows[i][5] %>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);"/>
                         </div>
                             
-                        <div class="gorsel2">
-                            <img alt="" src="<%=dt.Rows[i][6] %>" style="width:180px; height:120px;"/>
+                        <div id="gorsel2" style="float:left; width:200px; height:320px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+                            <img alt="" src="<%=dt.Rows[i][6] %>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);"/>
                         </div>
 
-                        <div class="gorsel3">
-                            <img alt="" src="<%=dt.Rows[i][7] %>" style="width:180px; height:120px;"/>
-                        </div> 
+                        <div id="gorsel3" style="float:left; width:200px; height:320px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+                            <img alt="" src="<%=dt.Rows[i][7] %>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);"/>
+                        </div>
                                                
                         </div>
 
@@ -261,7 +225,13 @@
          {%>    
             <tr>
                 
-                <td><img alt="" src="<%=dt.Rows[i][5] %>" Height="40" Width="60"/></td>
+                <td>
+                    <div style="width:50px; height:60px; position:relative; background-color: #E2E6E8;">
+                    <img alt="" src="<%=dt.Rows[i][5] %>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);" />
+                    </div>
+
+                </td>
+
                 <td><%=dt.Rows[i][0] %></td>
                 <td><%=dt.Rows[i][1] %></td>
                 <td><%=dt.Rows[i][2] %></td>

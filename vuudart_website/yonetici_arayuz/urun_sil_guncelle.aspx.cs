@@ -26,7 +26,7 @@ namespace vuudart_website.yonetici_arayuz
                 else
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "urunsilinemedi", "urunsilinemedi()", true);
-                }
+                }              
             }
         }
     }

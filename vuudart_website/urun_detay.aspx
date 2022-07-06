@@ -36,12 +36,12 @@
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
 						<div class="wrap-slick3 flex-sb flex-w">
 							<div class="wrap-slick3-dots"></div>
-							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+							<div class=""></div>
 
 							<div class="slick3 gallery-lb">
 								<div class="item-slick3" data-thumb="<%="yonetici_arayuz/"+urunbilgi.Gorsel1 %>">
-									<div class="wrap-pic-w pos-relative">
-										<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel1 %>" alt="IMG-PRODUCT">
+									<div class="wrap-pic-w pos-relative" style="width:325px; height:462px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+										<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel1 %>" alt="IMG-PRODUCT" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<%="yonetici_arayuz/"+urunbilgi.Gorsel1 %>">
 											<i class="fa fa-expand"></i>
@@ -49,9 +49,12 @@
 									</div>
 								</div>
 
+								<%if (urunbilgi.Gorsel2 != "")
+                                  {%>
+
 								<div class="item-slick3" data-thumb="<%="yonetici_arayuz/"+urunbilgi.Gorsel2 %>">
-									<div class="wrap-pic-w pos-relative">
-										<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel2 %>" alt="IMG-PRODUCT">
+									<div class="wrap-pic-w pos-relative" style="width:325px; height:462px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+										<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel2 %>" alt="IMG-PRODUCT" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<%="yonetici_arayuz/"+urunbilgi.Gorsel2 %>">
 											<i class="fa fa-expand"></i>
@@ -59,15 +62,23 @@
 									</div>
 								</div>
 
+                                <%}%>							
+
+                                <%if (urunbilgi.Gorsel3 != "")
+                                  {%>
+
 								<div class="item-slick3" data-thumb="<%="yonetici_arayuz/"+urunbilgi.Gorsel3 %>">
-									<div class="wrap-pic-w pos-relative">
-										<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel3 %>" alt="IMG-PRODUCT">
+									<div class="wrap-pic-w pos-relative" style="width:325px; height:462px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+										<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel3 %>" alt="IMG-PRODUCT" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<%="yonetici_arayuz/"+urunbilgi.Gorsel3 %>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
 								</div>
+
+                                <%}%>
+					
 							</div>
 						</div>
 					</div>
@@ -401,8 +412,8 @@
 					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
 						<!-- Block2 -->
 						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src="<%="yonetici_arayuz/"+dt4urun.Rows[i][5] %>" alt="IMG-PRODUCT">
+							<div class="block2-pic hov-img0" style="width:275px; height:412px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+								<img src="<%="yonetici_arayuz/"+dt4urun.Rows[i][5] %>" alt="IMG-PRODUCT" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);"/>
 
 								<a href="urun_detay.aspx?prmbarkod=<%=dt4urun.Rows[i][0] %>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 									İNCELE
@@ -411,7 +422,7 @@
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="urun_detay.aspx?prmbarkod=<%=dt4urun.Rows[i][0] %>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										<%=dt4urun.Rows[i][1] %>
 									</a>
 
@@ -430,8 +441,7 @@
 						</div>
 					</div>
 	   <%}%>
-
-					
+				
 				</div>
 			</div>
 		</div>

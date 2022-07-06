@@ -3,43 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<style>
-
-.kanvas{
-	height:213px;
-	width:457px;
-	
-}
-
-.gorsel1 {
-	height:213px;
-	width:320px;
-	float:left;
-	margin-right:5px;
-}
-
-.logo {
-	height:27px;
-	width:132px;
-	float:right;
-}
-
-.gorsel2 {
-	height:88px;
-	width:132px;
-	float:right;
-	margin-top:5px;
-}
-
-.gorsel3 {
-	height:88px;
-	width:132px;
-	float:right;
-	margin-top:5px;
-}
-
-</style>
-
     <form id="tumsayfaform">
     
     <div id="tumsayfa" runat="server">
@@ -219,19 +182,35 @@
 
                    <div class="form-row">
 
+                <% string barkodprm;
+
+                barkodprm = Request.QueryString["prmbarkod"];
+                vuudart_website.cs.UrunCRUD urunCRUD = new vuudart_website.cs.UrunCRUD();
+                System.Data.DataTable urundt = urunCRUD.urungoster(barkodprm);
+
+                string Gorsel1 = urundt.Rows[0][5].ToString();
+                string Gorsel2 = urundt.Rows[0][6].ToString();
+                string Gorsel3 = urundt.Rows[0][7].ToString();%>
+
+
+
                        <div class="col-md-6" style="height:auto; width:auto;">
                            <asp:Label ID="Label18" runat="server" Text="Güncellenecek Görseller * "></asp:Label>
                            
                                    
-                           <div class="kanvas">
+                           <div id="gorseller" style="float:left; margin: auto; width: 100%;">
 
-                            <div class="gorsel1"><asp:Image ID="Image1" runat="server" style="height:213px; width:320px;"/></div>
+                           <div id="gorsel1" style="float:left; width:130px; height:250px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+                                <img id="Gorsel1" src="<%=Gorsel1%>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);" />
+                           </div>
+                           
+                           <div id="gorsel2" style="float:left; width:130px; height:250px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+                                <img id="Gorsel2" src="<%=Gorsel2%>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);" />
+                           </div>
 
-                            <div class="logo"><asp:Image ID="Image4" runat="server" style="height:27px; width:132px; opacity: 0.5;" ImageUrl="img/logo/vuudart-fotograf-logo.png"/></div>
-
-                            <div class="gorsel2"><asp:Image ID="Image2" runat="server" style="height:88px; width:132px;"/></div>
-
-                            <div class="gorsel3"><asp:Image ID="Image3" runat="server" style="height:88px; width:132px;"/></div>
+                           <div id="gorsel3" style="float:left; width:130px; height:250px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+                                <img id="Gorsel3" src="<%=Gorsel3%>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);" />
+                           </div>
 
                            </div>
                                                                          

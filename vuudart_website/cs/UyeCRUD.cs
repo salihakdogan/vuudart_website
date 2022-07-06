@@ -17,7 +17,7 @@ namespace vuudart_website.cs
             bool sonuc = true;
             db.ac();
 
-            SqlCommand komut = new SqlCommand("insert into Uyeler values(@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14)", db.baglanti);
+            SqlCommand komut = new SqlCommand("insert into Uyeler values(@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15)", db.baglanti);
 
             komut.Parameters.AddWithValue("@1", yeniuye.Kullaniciad);
             komut.Parameters.AddWithValue("@2", yeniuye.Mail);
@@ -33,6 +33,7 @@ namespace vuudart_website.cs
             komut.Parameters.AddWithValue("@12", yeniuye.Pfotograf);
             komut.Parameters.AddWithValue("@13", yeniuye.Dkod);
             komut.Parameters.AddWithValue("@14", yeniuye.Durum);
+            komut.Parameters.AddWithValue("@15", yeniuye.Mailonay);
            
 
             int durum = Convert.ToInt16(komut.ExecuteNonQuery());

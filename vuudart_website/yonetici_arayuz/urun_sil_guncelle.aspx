@@ -96,7 +96,13 @@
          {%>    
             <tr>
                 
-                <td><img alt="" src="<%=dt.Rows[i][5] %>" Height="40" Width="60"/></td>
+                <td>
+                    <div style="width:50px; height:60px; position:relative; background-color: #E2E6E8;">
+                    <img alt="" src="<%=dt.Rows[i][5] %>" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);"/>
+                    </div>
+
+                </td>
+
                 <td><%=dt.Rows[i][0] %></td>
                 <td><%=dt.Rows[i][1] %></td>
                 <td><button type="button" class="mb-2 mr-2 btn btn-outline-danger btn-sm btn-block" data-toggle="modal" data-target="#silonay<%=dt.Rows[i][0] %>">Sil</button></td>
