@@ -47,9 +47,12 @@
 
 								<tr>
 									<td class="" style="">
-										<div class="how-itemcart1" style="margin:auto;">
-											<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel1 %>" alt="IMG">
-										</div>
+										<a href="urun_detay.aspx?prmbarkod=<%=urunbilgi.Barkod %>">
+											<div class="how-itemcart1" style="margin:auto;">
+												<img src="<%="yonetici_arayuz/"+urunbilgi.Gorsel1 %>" alt="IMG">
+											</div>
+										</a>										
+										
 									</td>
 
 									<%double urunkdvadettutar = (Convert.ToDouble(urunbilgi.Fiyat) * Convert.ToDouble(urunbilgi.Kdvoran)) / 100; %>
@@ -58,7 +61,11 @@
 
 									<%double toplamkdvurun = (Convert.ToDouble(sepetdt.Rows[i][2]) * urunkdvadettutar);  %>
 
-									<td class="" style="text-align:center;"><%=urunbilgi.Ad %></td>
+									<td class="" style="text-align:center;">
+										<a href="urun_detay.aspx?prmbarkod=<%=urunbilgi.Barkod %>">
+											<%=urunbilgi.Ad %>
+										</a>
+									</td>
 									
 									<td class="" style="text-align:center;"><%=urunbilgi.Fiyat %> TL <br />
 										<div style="font-size:12px; opacity:0.6"><%=toplamfiyaturun %> TL</div>

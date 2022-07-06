@@ -35,8 +35,8 @@
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
 					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="<%="yonetici_arayuz/"+dturunler.Rows[i][5] %>" alt="IMG-PRODUCT">
+						<div class="block2-pic hov-img0" style="width:275px; height:412px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+							<img src="<%="yonetici_arayuz/"+dturunler.Rows[i][5] %>" alt="IMG-PRODUCT" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);">
 
 							<a href="urun_detay.aspx?prmbarkod=<%=dturunler.Rows[i][0] %>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 								İNCELE
@@ -45,7 +45,7 @@
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="urun_detay.aspx?prmbarkod=<%=dturunler.Rows[i][0] %>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									<%=dturunler.Rows[i][1] %>
 								</a>
 
@@ -79,8 +79,8 @@
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
 					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="<%="yonetici_arayuz/"+dtkateurunler.Rows[i][5] %>" alt="IMG-PRODUCT">
+						<div class="block2-pic hov-img0" style="width:275px; height:412px; outline-style: solid; outline-color: #D9D9D9; outline-width: thin; position:relative; background-color: #E2E6E8;">
+							<img src="<%="yonetici_arayuz/"+dtkateurunler.Rows[i][5] %>" alt="IMG-PRODUCT" style="width:100%; height:auto; margin:0; position:absolute; top:50%; -ms-transform:translateY(-50%); transform:translateY(-50%);">
 
 							<a href="urun_detay.aspx?prmbarkod=<%=dtkateurunler.Rows[i][0] %>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 								İNCELE
@@ -89,7 +89,7 @@
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="urun_detay.aspx?prmbarkod=<%=dtkateurunler.Rows[i][0] %>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									<%=dtkateurunler.Rows[i][1] %>
 								</a>
 
