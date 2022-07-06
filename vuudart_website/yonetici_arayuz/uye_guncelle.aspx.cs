@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.Data;
+using System.Web.UI.HtmlControls;
 
 namespace vuudart_website.yonetici_arayuz
 {
@@ -24,8 +29,12 @@ namespace vuudart_website.yonetici_arayuz
                 TextBox2.Text = uyedt.Rows[0][1].ToString();
                 TextBox3.Text = uyedt.Rows[0][2].ToString();
                 TextBox4.Text = uyedt.Rows[0][3].ToString();
-                TextBox5.Text = uyedt.Rows[0][4].ToString();
-                TextBox6.Text = uyedt.Rows[0][4].ToString();
+
+                cs.Sifreleme sifreleme = new cs.Sifreleme();
+                string decryptedsifre = sifreleme.Decrypt(uyedt.Rows[0][4].ToString());
+
+                TextBox5.Text = decryptedsifre;
+                TextBox6.Text = decryptedsifre;
 
                 if (uyedt.Rows[0][5] != "")
                 {
@@ -88,7 +97,11 @@ namespace vuudart_website.yonetici_arayuz
                 yenibilgi.Mail = TextBox2.Text;
                 yenibilgi.Ad = TextBox3.Text;
                 yenibilgi.Soyad = TextBox4.Text;
-                yenibilgi.Sifre = TextBox5.Text;
+
+                cs.Sifreleme sifreleme = new cs.Sifreleme();
+                string encryptedsifre = sifreleme.Encrypt(TextBox5.Text);
+
+                yenibilgi.Sifre = encryptedsifre;
 
                 yenibilgi.Tc = TextBox7.Text;
                 yenibilgi.Telefon = TextBox8.Text;
@@ -126,51 +139,7 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (IsPostBack)
-            {
-                string kadiprm;
-                kadiprm = Request.QueryString["prmkadi"];
-                vuudart_website.cs.UyeCRUD uyeCRUD = new cs.UyeCRUD();
-                DataTable uyedt = uyeCRUD.uyegoster(kadiprm);
-
-                //TextBox1.Text = uyedt.Rows[0][0].ToString();
-                TextBoxKadi.Value = uyedt.Rows[0][0].ToString();
-                TextBox2.Text = uyedt.Rows[0][1].ToString();
-                TextBox3.Text = uyedt.Rows[0][2].ToString();
-                TextBox4.Text = uyedt.Rows[0][3].ToString();
-                TextBox5.Text = uyedt.Rows[0][4].ToString();
-                TextBox6.Text = uyedt.Rows[0][4].ToString();
-
-                if (uyedt.Rows[0][5] != "")
-                {
-                    TextBox7.Text = uyedt.Rows[0][5].ToString();
-                }
-
-                if (uyedt.Rows[0][6] != "")
-                {
-                    TextBox8.Text = uyedt.Rows[0][6].ToString();
-                }
-
-                if (uyedt.Rows[0][7] != "")
-                {
-                    TextBox9.Text = uyedt.Rows[0][7].ToString();
-                }
-
-                if (uyedt.Rows[0][8] != "")
-                {
-                    TextBox10.Text = uyedt.Rows[0][8].ToString();
-                }
-
-                if (uyedt.Rows[0][9] != "")
-                {
-                    TextBox11.Text = uyedt.Rows[0][9].ToString();
-                }
-
-                if (uyedt.Rows[0][10] != "")
-                {
-                    TextBox12.Text = uyedt.Rows[0][10].ToString();
-                }
-            }
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

@@ -334,13 +334,13 @@
 
                        <div class="col-md-2">
                            <div class="position-relative form-group">
-                               <asp:Button ID="Button1" runat="server" Text="Bilgileri kaydet" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="Button1_Click" ValidationGroup="yu_kayit" />
+                               <asp:Button ID="Button1" runat="server" Text="Bilgileri güncelle" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="Button1_Click" />
                            </div>
                        </div>
 
                        <div class="col-md-2">
                            <div class="position-relative form-group">
-                               <asp:Button ID="Button2" runat="server" Text="Formu temizle" CssClass="mb-2 mr-2 btn btn-danger btn-block" OnClick="Button2_Click" />
+                               <asp:Button ID="Button2" runat="server" Text="Formu temizle" CssClass="mb-2 mr-2 btn btn-info btn-block" OnClick="Button2_Click" ValidationGroup="temizle"/>
                            </div>
                        </div>
 

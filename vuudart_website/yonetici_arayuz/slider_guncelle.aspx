@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/yonetici_arayuz/yonetici.Master" AutoEventWireup="true" CodeBehind="slider_gorsel_ekle.aspx.cs" Inherits="vuudart_website.yonetici_arayuz.slider_gorsel_ekle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/yonetici_arayuz/yonetici.Master" AutoEventWireup="true" CodeBehind="slider_guncelle.aspx.cs" Inherits="vuudart_website.yonetici_arayuz.slider_guncelle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -14,13 +14,13 @@
                                     </i>
                                 </div>
                                 <div>
-                                    Slider Görseli Ekleme Ekranı
+                                    Slider Görselleri Düzenleme Ekranı
                                     <div class="page-title-subheading">
-                                        Bu sayfada slider görseli ekleme işlemlerini gerçekleştirebilirsin.
+                                        Bu sayfada slider görsellerini güncelleme işlemlerini gerçekleştirebilirsin.
                                         <ol class="breadcrumb">
                                                 <li class="breadcrumb-item"><a href="index.aspx">Anasayfa</a></li>   
                                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Site Arayüzü İşlemleri</a></li>
-                                                <li class="active breadcrumb-item" aria-current="page">Slider Görsel Ekle</li>
+                                                <li class="active breadcrumb-item" aria-current="page">Slider Görseli Düzenle</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -32,7 +32,7 @@
        
        <div class="card-body">
 
-         <h5 class="card-title">GÖRSEL EKLEME TALİMATLARI</h5>
+         <h5 class="card-title">GÖRSEL EKLEME & GÜNCELLEME TALİMATLARI</h5>
            <div class="position-relative form-group">
                <p style="color:#406bd0"><h7 class="">(Butona tıklayıp talimatları okuyabilirsiniz.)</h7></p>
            </div>
@@ -63,7 +63,7 @@
      
        <div class="card-body">
            
-           <h5 class="card-title">EKLENECEK GÖRSEL VE ÜRÜN BİLGİLERİ</h5>
+           <h5 class="card-title">GÜNCELLENECEK GÖRSEL VE ÜRÜN BİLGİLERİ</h5>
            <div class="position-relative form-group">
                <p style="color:#406bd0"><h7 class="">(Doldurulması zorunlu olan alanlar.)</h7></p>
            </div>
@@ -74,8 +74,9 @@
                        <div class="col-md-6">
                            <div class="position-relative form-group">
                                <asp:Label ID="Label1" runat="server" Text="Ürün barkod numarası* "></asp:Label>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ürün alanı boş bırakılamaz!" ControlToValidate="DropDownList1" InitialValue="0" ForeColor="#FF5840" Display="Dynamic" ValidationGroup="yu_kayit"></asp:RequiredFieldValidator>                     
-                               <asp:DropDownList ID="DropDownList1" runat="server" class="form-control"></asp:DropDownList>     
+                               <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Ürün alanı boş bırakılamaz!" ControlToValidate="DropDownList1" InitialValue="0" ForeColor="#FF5840" Display="Dynamic" ValidationGroup="yu_kayit"></asp:RequiredFieldValidator>                     
+                               <asp:DropDownList ID="DropDownList1" runat="server" class="form-control"></asp:DropDownList>--%>
+                               <input id="TextBoxBarkod" class="form-control" disabled="disabled" runat="server" value="">
                          
                            </div>
                        </div>
@@ -92,9 +93,19 @@
 
                    <div class="form-row">
                        
-                       <div class="col-md-4"></div>
+                       <div class="col-md-6">
+                           <div class="position-relative form-group">
+                               <div class="position-relative form-group">
+                           <asp:Label ID="Label3" runat="server" Text="Güncellenecek görsel * "></asp:Label>
+                           <asp:Image ID="Image2" runat="server" style="width:457px; height:221px;" />
+                           
+                           </div>
+                           </div>
 
-                       <div class="col-md-4">
+
+                       </div>
+
+                       <div class="col-md-6">
                            <div class="position-relative form-group">
                                <div class="position-relative form-group">
                            <asp:Label ID="Label10" runat="server" Text="Görsel * "></asp:Label>
@@ -121,13 +132,13 @@
 
                        <div class="col-md-2">
                            <div class="position-relative form-group">
-                               <asp:Button ID="Button1" runat="server" Text="Bilgileri kaydet" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="Button1_Click" />
+                               <asp:Button ID="Button1" runat="server" Text="Bilgileri güncelle" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="Button1_Click" />
                            </div>
                        </div>
 
                        <div class="col-md-2">
                            <div class="position-relative form-group">
-                               <asp:Button ID="Button2" runat="server" Text="Formu temizle" CssClass="mb-2 mr-2 btn btn-danger btn-block" OnClick="Button2_Click" ValidationGroup="temizle" />
+                               <asp:Button ID="Button2" runat="server" Text="Formu temizle" CssClass="mb-2 mr-2 btn btn-info btn-block" OnClick="Button2_Click" ValidationGroup="temizle" />
                            </div>
                        </div>
 

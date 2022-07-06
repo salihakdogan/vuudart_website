@@ -524,6 +524,50 @@
         }
     </script>
 
+    <script id="slidersilindi">
+        function slidersilindi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Seçilen slider görseli başarıyla silindi.'
+            })
+        }
+    </script>
+
+    <script id="slidersilinemedi">
+        function slidersilinemedi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Seçilen slider görseli silinemedi lütfen daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
 <body>
     
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -716,19 +760,19 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="slider_gorsel_ekle.aspx">
+                                        <a href="">
                                             <i class="metismenu-icon">
                                             </i>Yönetici Ekle
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="slider_gorsel_ekle.aspx">
+                                        <a href="">
                                             <i class="metismenu-icon">
                                             </i>Yönetici Listele
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="slider_gorsel_ekle.aspx">
+                                        <a href="">
                                             <i class="metismenu-icon">
                                             </i>Yönetici Sil / Güncelle
                                         </a>
@@ -750,7 +794,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="slider_gorsel_ekle.aspx">
+                                        <a href="slider_gorsel_liste.aspx">
                                             <i class="metismenu-icon">
                                             </i>Slider Görselleri
                                         </a>

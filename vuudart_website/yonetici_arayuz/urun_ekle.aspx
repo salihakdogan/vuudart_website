@@ -473,13 +473,13 @@
 
                        <div class="col-md-2">
                            <div class="position-relative form-group">
-                               <asp:Button ID="yh_kayit_button" runat="server" Text="Kaydet" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="yh_kayit_button_Click" ValidationGroup="yh_ekle"/>
+                               <asp:Button ID="Button3" runat="server" Text="Bilgileri kaydet" CssClass="mb-2 mr-2 btn btn-success btn-block" OnClick="Button1_Click" />
                            </div>
                        </div>
 
                        <div class="col-md-2">
                            <div class="position-relative form-group">
-                               <asp:Button ID="yh_iptal_button" runat="server" Text="İptal" CssClass="mb-2 mr-2 btn btn-danger btn-block" OnClick="yh_iptal_button_Click"/>
+                               <asp:Button ID="Button4" runat="server" Text="Formu temizle" CssClass="mb-2 mr-2 btn btn-danger btn-block" OnClick="Button2_Click" ValidationGroup="temizle" />
                            </div>
                        </div>
 

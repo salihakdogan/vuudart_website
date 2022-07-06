@@ -191,7 +191,7 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button2_Click(object sender, EventArgs e) /*temizle*/
         {
-
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

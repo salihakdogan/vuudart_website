@@ -14,7 +14,7 @@
 				
 	   <%for (int i = 0; i <dtslider.Rows.Count; i++)
 		 {%>				
-				<div class="item-slick1" style="background-image: url(<%=dtslider.Rows[i][2]%>);">
+				<div class="item-slick1" style="background-image: url(<%="yonetici_arayuz/"+dtslider.Rows[i][2]%>);">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">

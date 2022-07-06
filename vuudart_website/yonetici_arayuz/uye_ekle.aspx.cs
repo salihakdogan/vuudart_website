@@ -100,18 +100,7 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
-            TextBox9.Text = "";
-            TextBox10.Text = "";
-            TextBox11.Text = "";
-            TextBox12.Text = "";
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

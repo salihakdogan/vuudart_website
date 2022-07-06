@@ -44,5 +44,56 @@ namespace vuudart_website.cs
             return sonuc;
         }
 
+        public bool slidersil(string prmbarkod)
+        {
+            bool cevap = true; //silindi
+            db.ac();
+            SqlCommand silme = new SqlCommand("delete from Slider where Barkod=@1", db.baglanti);
+            silme.Parameters.AddWithValue("@1", prmbarkod);
+            int bilgi = silme.ExecuteNonQuery();
+
+            if (bilgi == 0)
+            {
+                cevap = false; //silinemedi
+            }
+
+            db.kapat();
+            return cevap;
+        }
+
+        public DataTable slidergoster(string prmbarkod) //güncelleme işlemi için
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select * from Slider where Barkod=@1", db.baglanti);
+            goster.Parameters.AddWithValue("@1", prmbarkod);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
+        public bool sliderguncelle(Slider slidergoster) //güncelleme işlemi için
+        {
+            bool cevap = true;
+            db.ac();
+            SqlCommand guncelle = new SqlCommand("update Slider set Baslik=@a, SliderGorsel=@b where Barkod=@c", db.baglanti);
+         
+            guncelle.Parameters.AddWithValue("@a", slidergoster.Baslik);
+            guncelle.Parameters.AddWithValue("@b", slidergoster.Slidergorsel);
+            guncelle.Parameters.AddWithValue("@c", slidergoster.Barkod);
+
+            int donus = guncelle.ExecuteNonQuery();
+
+            if (donus == 0)
+            {
+                cevap = false;
+            }
+
+            db.kapat();
+            return cevap;
+        }
     }
 }

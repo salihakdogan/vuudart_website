@@ -35,7 +35,7 @@ namespace vuudart_website.yonetici_arayuz
             yenislider.Baslik = TextBox1.Text;
   
             FileUpload1.SaveAs(Server.MapPath("img/slider_gorsel/" + FileUpload1.FileName));
-            yenislider.Slidergorsel = "yonetici_arayuz/img/slider_gorsel/" + FileUpload1.FileName;
+            yenislider.Slidergorsel = "img/slider_gorsel/" + FileUpload1.FileName;
             
 
             bool cevap = yenisliderCRUD.slidergorselekle(yenislider);

@@ -600,21 +600,21 @@ namespace vuudart_website.yonetici_arayuz
         protected global::System.Web.UI.WebControls.TextBox yh_textbox2;
 
         /// <summary>
-        /// yh_kayit_button control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button yh_kayit_button;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// yh_iptal_button control.
+        /// Button4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button yh_iptal_button;
+        protected global::System.Web.UI.WebControls.Button Button4;
     }
 }
