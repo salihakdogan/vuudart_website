@@ -90,19 +90,9 @@
 							Barkod: <%=urunbilgi.Barkod %><br />
 						</p>
 						
-							<div class="flex-w flex-r-m p-b-10">
-								<div class="size-204 flex-w flex-m respon6-next">
-									<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-											<i class="fs-16 zmdi zmdi-minus"></i>
-										</div>
-
-										<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-										<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-											<i class="fs-16 zmdi zmdi-plus"></i>
-										</div>
-									</div>
+							<div class="p-b-25" style="float:left;">
+								<div class="size-204 flex-w flex-m respon6-next" style="padding-top:25px;">
+									
 
 									<%if (Session["uyegirisi"]!=null)
                                       {%>
@@ -110,7 +100,7 @@
 											<a href="sepet.aspx?prmurun=<%=urunbilgi.Barkod %>" class="btn flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 												Sepete Ekle
 											</a>
-                        										
+									                     										
                                     <%}else
                                       {%>
 	                                        <a class="btn flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" runat="server" onserverclick="Button1_Click">
@@ -126,7 +116,7 @@
 						</div>
 
 						<!--  -->
-						<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+						<%--<div class="flex-w flex-m respon7" style="float:left;">
 							<div class="flex-m bor9 p-r-10 m-r-11">
 								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Favorilere Ekle">
 									<i class="zmdi zmdi-favorite"></i>
@@ -144,7 +134,7 @@
 							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
 								<i class="fa fa-google-plus"></i>
 							</a>
-						</div>
+						</div>--%>
 					</div>
 				</div>
 			</div>

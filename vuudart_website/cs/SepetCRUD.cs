@@ -85,20 +85,6 @@ namespace vuudart_website.cs
             return cesitadet;
         }
 
-        public DataTable sepetfiyattoplami(string pmail)
-        {
-            DataTable dt = new DataTable();
-
-            db.ac();
-
-            SqlCommand komut = new SqlCommand("select sum(Fiyat*UrunAdet) from Sepet,Urunler  where Sepet.UrunBarkod = Urunler.Barkod and UyeMail = @a", db.baglanti);
-            komut.Parameters.AddWithValue("@a", pmail);
-            SqlDataAdapter adp = new SqlDataAdapter(komut);
-            adp.Fill(dt);
-
-            return dt;
-        }
-
         public bool sepetadetarttir(string pbarkod, string pmail)
         {
             bool sonuc = false;
@@ -143,6 +129,74 @@ namespace vuudart_website.cs
 
             db.kapat();
             return sonuc;
+        }
+
+        public bool sepeturunsil(string pbarkod, string pmail)
+        {
+            bool sonuc = false;
+            int cevap;
+
+            db.ac();
+
+            SqlCommand adetarttir = new SqlCommand("delete from Sepet where UyeMail=@a and UrunBarkod=@b", db.baglanti);
+
+            adetarttir.Parameters.AddWithValue("@a", pmail);
+            adetarttir.Parameters.AddWithValue("@b", pbarkod);
+
+            cevap = adetarttir.ExecuteNonQuery();
+
+            if (cevap == 1)
+            {
+                sonuc = true;
+            }
+
+            db.kapat();
+            return sonuc;
+        }
+
+        public DataTable sepeturunfiyattoplami(string pmail)
+        {
+            DataTable dt = new DataTable();
+
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select sum(Fiyat*UrunAdet) from Sepet,Urunler where Sepet.UrunBarkod = Urunler.Barkod and UyeMail = @a", db.baglanti);
+            komut.Parameters.AddWithValue("@a", pmail);
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+            adp.Fill(dt);
+
+            db.kapat();
+            return dt;
+        }
+
+        public DataTable sepetkdvfiyattoplami(string pmail)
+        {
+            DataTable dt = new DataTable();
+
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select sum(Fiyat*KdvOran/100*UrunAdet) from Sepet,Urunler where Sepet.UrunBarkod = Urunler.Barkod and UyeMail = @a", db.baglanti);
+            komut.Parameters.AddWithValue("@a", pmail);
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+            adp.Fill(dt);
+
+            db.kapat();
+            return dt;
+        }
+
+        public DataTable sepetfiyattoplami(string pmail)
+        {
+            DataTable dt = new DataTable();
+
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select sum((Fiyat*UrunAdet)+(Fiyat*KdvOran/100*UrunAdet)) from Sepet,Urunler where Sepet.UrunBarkod = Urunler.Barkod and UyeMail = @a", db.baglanti);
+            komut.Parameters.AddWithValue("@a", pmail);
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+            adp.Fill(dt);
+
+            db.kapat();
+            return dt;
         }
     }
 }

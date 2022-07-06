@@ -19,19 +19,50 @@ namespace vuudart_website
                     cs.SepetCRUD sepeteeklenenurun = new cs.SepetCRUD();
                     sepeteeklenenurun.sepeteekle(prmurun, Session["uyemail"].ToString());
                     Response.Redirect("sepet.aspx");
-                }              
+                }
+
+                if (Request.QueryString["prmazalturun"] != null)
+                {
+                    string prmazalturun = Request.QueryString["prmazalturun"].ToString();
+
+                    if (Convert.ToInt16(Request.QueryString["prmurunadet"]) != 1)
+                    {
+                        cs.SepetCRUD azalt = new cs.SepetCRUD();                      
+                        bool click = azalt.sepetadetazalt(prmazalturun, Session["uyemail"].ToString());
+                        Response.Redirect("sepet.aspx");
+                    }
+
+                    if (Convert.ToInt16(Request.QueryString["prmurunadet"]) == 1)
+                    {
+                        int silurun = Convert.ToInt16(Request.QueryString["prmurunadet"]);
+
+                        if (silurun == 1)
+                        {
+                            cs.SepetCRUD sil = new cs.SepetCRUD();
+                            bool click0 = sil.sepeturunsil(prmazalturun, Session["uyemail"].ToString());
+                            Response.Redirect("sepet.aspx");
+                        }
+                    }
+                }
+
+                if (Request.QueryString["prmarttirurun"] != null)
+                {
+                    cs.SepetCRUD arttir = new cs.SepetCRUD();
+
+                    string prmarttirurun = Request.QueryString["prmarttirurun"].ToString();
+                    bool click = arttir.sepetadetarttir(prmarttirurun, Session["uyemail"].ToString());
+                    Response.Redirect("sepet.aspx");
+                }
+
+                if (Request.QueryString["prmsilurun"] != null)
+                {
+                    cs.SepetCRUD sil = new cs.SepetCRUD();
+
+                    string prmsilurun = Request.QueryString["prmsilurun"].ToString();
+                    bool click1 = sil.sepeturunsil(prmsilurun, Session["uyemail"].ToString());
+                    Response.Redirect("sepet.aspx");
+                }
             }    
-        }
-
-        protected void adet_azalt_Click(object sender, EventArgs e)
-        {
-            cs.DroplistCRUD azalt = new cs.DroplistCRUD();
-
-        }
-
-        protected void adet_arttir_Click(object sender, EventArgs e)
-        {
-            cs.DroplistCRUD arttir = new cs.DroplistCRUD();
         }
     }
 }
