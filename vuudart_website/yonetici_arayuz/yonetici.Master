@@ -238,6 +238,50 @@
         }
     </script>
 
+    <script id="yoneticisilindi">
+        function yoneticisilindi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Seçilen yönetici başarıyla silindi.'
+            })
+        }
+    </script>
+
+    <script id="yoneticisilinemedi">
+        function yoneticisilinemedi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Seçilen yönetici silinemedi lütfen daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
     <script id="kategorieklendi">
         function kategorieklendi() {
 

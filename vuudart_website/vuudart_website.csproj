@@ -370,6 +370,9 @@
     <Content Include="yonetici_arayuz\img\yonetici_profil\salih_profil.jpg" />
     <Content Include="yonetici_arayuz\img\yonetici_profil\eren_profil.jpeg" />
     <Content Include="yonetici_arayuz\yonetici_ekle.aspx" />
+    <Content Include="yonetici_arayuz\yonetici_guncelle.aspx" />
+    <Content Include="yonetici_arayuz\yonetici_liste.aspx" />
+    <Content Include="yonetici_arayuz\yonetici_sil_guncelle.aspx" />
     <Content Include="yonetici_giris.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -538,6 +541,27 @@
     </Compile>
     <Compile Include="yonetici_arayuz\yonetici_ekle.aspx.designer.cs">
       <DependentUpon>yonetici_ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici_guncelle.aspx.cs">
+      <DependentUpon>yonetici_guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici_guncelle.aspx.designer.cs">
+      <DependentUpon>yonetici_guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici_liste.aspx.cs">
+      <DependentUpon>yonetici_liste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici_liste.aspx.designer.cs">
+      <DependentUpon>yonetici_liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici_sil_guncelle.aspx.cs">
+      <DependentUpon>yonetici_sil_guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\yonetici_sil_guncelle.aspx.designer.cs">
+      <DependentUpon>yonetici_sil_guncelle.aspx</DependentUpon>
     </Compile>
     <Compile Include="yonetici_giris.aspx.cs">
       <DependentUpon>yonetici_giris.aspx</DependentUpon>

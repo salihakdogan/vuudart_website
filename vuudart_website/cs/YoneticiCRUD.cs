@@ -38,20 +38,6 @@ namespace vuudart_website.cs
             return sonuc;
         }
 
-        public DataTable yoneticigoster(string mailprm)
-        {
-            DataTable gdt = new DataTable();
-            db.ac();
-
-            SqlCommand goster = new SqlCommand("select YoneticiTc, Ad, Soyad, Mail, Sifre, Telefon, Unvanlar.Unvan, Pfotograf from Yoneticiler,Unvanlar where Yoneticiler.Unvan=Unvanlar.UnvanId and Mail=@1", db.baglanti);
-            goster.Parameters.AddWithValue("@1", mailprm);
-            SqlDataAdapter adp = new SqlDataAdapter(goster);
-            adp.Fill(gdt);
-
-            db.kapat();
-            return gdt;
-        }
-
         public bool yoneticiekle(Yonetici yeniyonetici)
         {
             bool sonuc = true;
@@ -67,7 +53,7 @@ namespace vuudart_website.cs
             komut.Parameters.AddWithValue("@6", yeniyonetici.Telefon);
             komut.Parameters.AddWithValue("@7", yeniyonetici.Unvan);
             komut.Parameters.AddWithValue("@8", yeniyonetici.Pfotograf);
-            
+
             int durum = Convert.ToInt16(komut.ExecuteNonQuery());
 
             if (durum == 0)
@@ -78,6 +64,76 @@ namespace vuudart_website.cs
             db.kapat();
 
             return sonuc;
+        }
+
+        public DataTable tumyoneticilistele()
+        {
+            DataTable dt = new DataTable();
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("select YoneticiTc, Ad, Soyad, Mail, Telefon, Unvanlar.Unvan, Pfotograf from Yoneticiler, Unvanlar where Yoneticiler.Unvan = Unvanlar.UnvanId ", db.baglanti);
+            SqlDataAdapter adp = new SqlDataAdapter(komut);
+
+            adp.Fill(dt);
+
+            db.kapat();
+            return dt;
+        }
+
+        public bool yoneticisil(string yoneticiprm)
+        {
+            bool cevap = true; //silindi
+            db.ac();
+            SqlCommand silme = new SqlCommand("delete from Yoneticiler where YoneticiTc=@1", db.baglanti);
+            silme.Parameters.AddWithValue("@1", yoneticiprm);
+            int bilgi = silme.ExecuteNonQuery();
+
+            if (bilgi == 0)
+            {
+                cevap = false; //silinemedi
+            }
+
+            db.kapat();
+            return cevap;
+        }
+
+        public DataTable yoneticigoster(string tcprm)
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select * from Yoneticiler where YoneticiTc=@a", db.baglanti);
+            goster.Parameters.AddWithValue("@a", tcprm);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
+        public bool yoneticiguncelle(Yonetici yoneticigoster) //güncelleme işlemi için
+        {
+            bool cevap = true;
+            db.ac();
+            SqlCommand guncelle = new SqlCommand("update Yoneticiler set Ad=@a, Soyad=@b, Mail=@c, Sifre=@d, Telefon=@e, Unvan=@f, Pfotograf=@g where YoneticiTc=@h", db.baglanti);
+
+            guncelle.Parameters.AddWithValue("@a", yoneticigoster.Ad);
+            guncelle.Parameters.AddWithValue("@b", yoneticigoster.Soyad);
+            guncelle.Parameters.AddWithValue("@c", yoneticigoster.Mail);
+            guncelle.Parameters.AddWithValue("@d", yoneticigoster.Sifre);
+            guncelle.Parameters.AddWithValue("@e", yoneticigoster.Telefon);
+            guncelle.Parameters.AddWithValue("@f", yoneticigoster.Unvan);
+            guncelle.Parameters.AddWithValue("@g", yoneticigoster.Pfotograf);
+            guncelle.Parameters.AddWithValue("@h", yoneticigoster.Yoneticitc);
+            int donus = guncelle.ExecuteNonQuery();
+
+            if (donus == 0)
+            {
+                cevap = false;
+            }
+
+            db.kapat();
+            return cevap;
         }
     }
 }

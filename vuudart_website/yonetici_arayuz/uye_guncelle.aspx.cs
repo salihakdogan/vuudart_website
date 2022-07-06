@@ -75,7 +75,7 @@ namespace vuudart_website.yonetici_arayuz
             vuudart_website.cs.UyeCRUD uyeCRUD = new cs.UyeCRUD();
             DataTable uyedt = uyeCRUD.uyegoster(kadiprm);
 
-            string aynikadi = uyedt.Rows[0][1].ToString();
+            string aynimail = uyedt.Rows[0][1].ToString();
             string aynitc = uyedt.Rows[0][5].ToString();
             string aynitel = uyedt.Rows[0][6].ToString();
 
@@ -85,7 +85,7 @@ namespace vuudart_website.yonetici_arayuz
             bool tccevap = sorgu.tckullanimdami(TextBox7.Text);
             bool telefoncevap = sorgu.telefonkullanimdami(TextBox8.Text);
 
-            if (mailcevap == true && aynikadi != TextBox2.Text)
+            if (mailcevap == true && aynimail != TextBox2.Text)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "mailkullanimda", "mailkullanimda()", true);
             }
@@ -121,7 +121,7 @@ namespace vuudart_website.yonetici_arayuz
 
                 if (!FileUpload1.HasFile)
                 {
-                    yenibilgi.Pfotograf = "img/uye_profil/default_uye_profil.jpg";
+                    yenibilgi.Pfotograf = "img/uye_profil/default_uye_profil.png";
                 }
                 else
                 {
@@ -137,11 +137,11 @@ namespace vuudart_website.yonetici_arayuz
                 bool cevap = yenibilgiCRUD.uyeguncelle(yenibilgi);
                 if (cevap)
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "basarilikayit", "basarilikayit()", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "basariliguncelleme", "basariliguncelleme()", true);
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "basarisizkayit", "basarisizkayit()", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "basarisizguncelleme", "basarisizguncelleme()", true);
                 }
             }            
         }
