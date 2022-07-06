@@ -23,7 +23,6 @@ namespace vuudart_website
                 DropDownList1.DataSource = kategoridt;
                 DropDownList1.DataBind();
                 DropDownList1.Items.Insert(0, new ListItem("Kategoriler", "0"));
-                DropDownList1.Items.Insert(1, new ListItem("Tüm Ürünler", "1"));
             }
 
             if (!IsPostBack)
