@@ -10,13 +10,13 @@
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">
                                 <div class="page-title-icon">
-                                    <i class="pe-7s-add-user icon-gradient bg-mean-fruit">
+                                    <i class="pe-7s-paint icon-gradient bg-plum-plate">
                                     </i>
                                 </div>
                                 <div>
-                                    Slider Görselleri Düzenleme Ekranı
+                                    Slider Görselleri Güncelleme Ekranı
                                     <div class="page-title-subheading">
-                                        Bu sayfada slider görsellerini güncelleme işlemlerini gerçekleştirebilirsin.
+                                        Bu sayfada seçilen slider görselini güncelleme işlemlerini gerçekleştirebilirsin.
                                         <ol class="breadcrumb">
                                                 <li class="breadcrumb-item"><a href="index.aspx">Anasayfa</a></li>   
                                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Site Arayüzü İşlemleri</a></li>

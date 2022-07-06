@@ -70,21 +70,30 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string kadiprm;
+            kadiprm = Request.QueryString["prmkadi"];
+            vuudart_website.cs.UyeCRUD uyeCRUD = new cs.UyeCRUD();
+            DataTable uyedt = uyeCRUD.uyegoster(kadiprm);
+
+            string aynikadi = uyedt.Rows[0][1].ToString();
+            string aynitc = uyedt.Rows[0][5].ToString();
+            string aynitel = uyedt.Rows[0][6].ToString();
+
             cs.Sorgular sorgu = new cs.Sorgular();
           
             bool mailcevap = sorgu.mailkullanimdami(TextBox2.Text);
             bool tccevap = sorgu.tckullanimdami(TextBox7.Text);
             bool telefoncevap = sorgu.telefonkullanimdami(TextBox8.Text);
 
-            if (mailcevap == true)
+            if (mailcevap == true && aynikadi != TextBox2.Text)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "mailkullanimda", "mailkullanimda()", true);
             }
-            else if (tccevap == true)
+            else if (tccevap == true && TextBox7.Text != "" && aynitc != TextBox7.Text)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "tckullanimda", "tckullanimda()", true);
             }
-            else if (telefoncevap == true)
+            else if (telefoncevap == true && TextBox8.Text != "" && aynitel != TextBox8.Text)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "telefonkullanimda", "telefonkullanimda()", true);
             }

@@ -780,10 +780,12 @@
                                 </ul>
                             </li>
 
+                            <li class="app-sidebar__heading">Arayüz İşlemleri</li>
+
                             <li>
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-tools"></i>
-                                    Site Arayüzü İşlemleri
+                                    <i class="metismenu-icon pe-7s-paint"></i>
+                                    Slider İşlemleri
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul>
