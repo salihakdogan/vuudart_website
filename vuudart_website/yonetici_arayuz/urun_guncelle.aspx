@@ -195,7 +195,7 @@
 
 
                        <div class="col-md-6" style="height:auto; width:auto;">
-                           <asp:Label ID="Label18" runat="server" Text="Güncellenecek Görseller * "></asp:Label>
+                           <asp:Label ID="Label18" runat="server" Text="Güncellenecek eski görseller * "></asp:Label>
                            
                                    
                            <div id="gorseller" style="float:left; margin: auto; width: 100%;">
@@ -219,8 +219,8 @@
                        <div class="col-md-6">
 
                            <div class="position-relative form-group">
-                           <asp:Label ID="Label10" runat="server" Text="Görsel 1 * "></asp:Label>
-                           <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="En az 1 adet resim seçilmelidir!" ControlToValidate="FileUpload1" ForeColor="#FF5840" ValidationGroup="yu_kayit"></asp:RequiredFieldValidator>                           
+                           <asp:Label ID="Label10" runat="server" Text="Görsel 1"></asp:Label>
+                       <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="En az 1 adet resim seçilmelidir!" ControlToValidate="FileUpload1" ForeColor="#FF5840" ValidationGroup="yu_kayit"></asp:RequiredFieldValidator>--%>
                            <asp:FileUpload ID="FileUpload1" runat="server" class="form-control-file"/>
                            </div>
 
@@ -234,7 +234,7 @@
                            <asp:FileUpload ID="FileUpload3" runat="server" class="form-control-file"/>
                            
                            <div class="position-relative form-group">
-                           <small class="form-text text-muted">Görsel boyutu 1mb dan fazla olamaz.</small>
+                           <small class="form-text text-muted">Güncelleme sırasında görsel seçmezseniz ürün eski görselleriyle kayıt edilir.</small>
                            </div>
 
                            </div>

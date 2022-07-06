@@ -85,48 +85,61 @@ namespace vuudart_website.yonetici_arayuz
 
             yenibilgi.Aciklama = TextBox6.Text;
 
-            //gorsel 1
-            string urungorsel1 = FileUpload1.FileName;
-            string urungorseltarih1 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+            string barkodprm;
 
-            if (FileUpload1.HasFile != false)
+            barkodprm = Request.QueryString["prmbarkod"];
+            cs.UrunCRUD urunCRUD = new cs.UrunCRUD();
+            DataTable urundt = urunCRUD.urungoster(barkodprm);
+
+            string aynigorsel1 = urundt.Rows[0][5].ToString();
+            string aynigorsel2 = urundt.Rows[0][6].ToString();
+            string aynigorsel3 = urundt.Rows[0][7].ToString();
+
+            if (FileUpload1.HasFile == false)
             {
+                yenibilgi.Gorsel1 = aynigorsel1;
+            }
+            else
+            {
+                //gorsel 1
+                string urungorsel1 = FileUpload1.FileName;
+                string urungorseltarih1 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+             
                 FileUpload1.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1));
                 yenibilgi.Gorsel1 = "img/urun_gorsel/" + urungorseltarih1 + "_" + urungorsel1;
+                                            
+            }
+
+            if (FileUpload2.HasFile == false)
+            {
+                yenibilgi.Gorsel2 = aynigorsel2;
             }
             else
             {
-                yenibilgi.Gorsel1 = "";
-            }
-
-            //gorsel 2
-            string urungorsel2 = FileUpload2.FileName;
-            string urungorseltarih2 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
-
-            if (FileUpload2.HasFile != false)
-            {
+                //gorsel 2
+                string urungorsel2 = FileUpload2.FileName;
+                string urungorseltarih2 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+     
                 FileUpload2.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2));
                 yenibilgi.Gorsel2 = "img/urun_gorsel/" + urungorseltarih2 + "_" + urungorsel2;
+        
+            }
+
+            if (FileUpload3.HasFile == false)
+            {
+                yenibilgi.Gorsel3 = aynigorsel3;
             }
             else
             {
-                yenibilgi.Gorsel2 = "";
-            }
-
-            //gorsel3
-            string urungorsel3 = FileUpload3.FileName;
-            string urungorseltarih3 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
-
-            if (FileUpload3.HasFile != false)
-            {
+                //gorsel3
+                string urungorsel3 = FileUpload3.FileName;
+                string urungorseltarih3 = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+       
                 FileUpload3.SaveAs(Server.MapPath("img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3));
                 yenibilgi.Gorsel3 = "img/urun_gorsel/" + urungorseltarih3 + "_" + urungorsel3;
+                         
             }
-            else
-            {
-                yenibilgi.Gorsel3 = "";
-            }
-
+            
             cs.Olcu yeniurunolcu = new cs.Olcu();
             cs.OlcuCRUD yeniurunolcuCRUD = new cs.OlcuCRUD();
 
