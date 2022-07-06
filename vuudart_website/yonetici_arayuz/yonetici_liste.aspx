@@ -128,7 +128,7 @@
                 
                 <td> <img class="rounded-circle" alt="" src="<%=dt.Rows[i][6] %>" width="70" height="70"/></td>
                 <td><%=dt.Rows[i][1] %> <%=dt.Rows[i][2] %></td>
-                <td><%=dt.Rows[i][3] %></td>
+                <td><a href="bireysel_mail.aspx?yoneticimail=<%=dt.Rows[i][3] %>"><%=dt.Rows[i][3] %>  <i class="fa fa-solid fa-paper-plane"></i></a></td>
                 <td><%=dt.Rows[i][5] %></td>
                 <td><button type="button" class="mb-2 mr-2 btn btn-outline-primary btn-sm btn-block" data-toggle="modal" data-target="#gprm<%=dt.Rows[i][0] %>">İncele</button></td>
                 

@@ -270,6 +270,7 @@
     <Content Include="yonetici_arayuz\assets\images\logo.png" />
     <Content Include="yonetici_arayuz\assets\images\logo1.png" />
     <Content Include="yonetici_arayuz\assets\scripts\main.js" />
+    <Content Include="yonetici_arayuz\bireysel_mail.aspx" />
     <Content Include="yonetici_arayuz\charts-chartjs.html" />
     <Content Include="yonetici_arayuz\components-accordions.html" />
     <Content Include="yonetici_arayuz\components-calendar.html" />
@@ -300,6 +301,7 @@
     <Content Include="yonetici_arayuz\forms-layouts.html" />
     <Content Include="yonetici_arayuz\forms-validation.html" />
     <Content Include="yonetici_arayuz\giris_ekran.css" />
+    <Content Include="yonetici_arayuz\gonderilen_mail.aspx" />
     <Content Include="yonetici_arayuz\img\logo\vuudart-fotograf-logo.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider1.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider2.png" />
@@ -353,6 +355,7 @@
     <Content Include="yonetici_arayuz\src\scripts-init\scrollbar.js" />
     <Content Include="yonetici_arayuz\src\scripts-init\toastr.js" />
     <Content Include="yonetici_arayuz\tables-regular.html" />
+    <Content Include="yonetici_arayuz\toplu_mail.aspx" />
     <Content Include="yonetici_arayuz\urun_ekle.aspx" />
     <Content Include="yonetici_arayuz\urun_guncelle.aspx" />
     <Content Include="yonetici_arayuz\urun_liste.aspx" />
@@ -379,6 +382,8 @@
     <Compile Include="cs\Db.cs" />
     <Compile Include="cs\Droplist.cs" />
     <Compile Include="cs\DroplistCRUD.cs" />
+    <Compile Include="cs\GonderilenMail.cs" />
+    <Compile Include="cs\GonderilenMailCRUD.cs" />
     <Compile Include="cs\Olcu.cs" />
     <Compile Include="cs\OlcuCRUD.cs" />
     <Compile Include="cs\RandomClass.cs" />
@@ -444,6 +449,20 @@
     <Compile Include="vuudart_arayuz.Master.designer.cs">
       <DependentUpon>vuudart_arayuz.Master</DependentUpon>
     </Compile>
+    <Compile Include="yonetici_arayuz\bireysel_mail.aspx.cs">
+      <DependentUpon>bireysel_mail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\bireysel_mail.aspx.designer.cs">
+      <DependentUpon>bireysel_mail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\gonderilen_mail.aspx.cs">
+      <DependentUpon>gonderilen_mail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\gonderilen_mail.aspx.designer.cs">
+      <DependentUpon>gonderilen_mail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="yonetici_arayuz\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -471,6 +490,13 @@
     </Compile>
     <Compile Include="yonetici_arayuz\slider_guncelle.aspx.designer.cs">
       <DependentUpon>slider_guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\toplu_mail.aspx.cs">
+      <DependentUpon>toplu_mail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\toplu_mail.aspx.designer.cs">
+      <DependentUpon>toplu_mail.aspx</DependentUpon>
     </Compile>
     <Compile Include="yonetici_arayuz\urun_ekle.aspx.cs">
       <DependentUpon>urun_ekle.aspx</DependentUpon>

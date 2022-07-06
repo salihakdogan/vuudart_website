@@ -678,6 +678,50 @@
         }
     </script>
 
+    <script id="mailgonderildi">
+        function mailgonderildi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Mail başarıyla gönderildi.'
+            })
+        }
+    </script>
+
+    <script id="mailgonderilemedi">
+        function mailgonderilemedi() {
+
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: 'Mail gönderilemedi daha sonra tekrar deneyin.'
+            })
+        }
+    </script>
+
 <body>
     
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -804,6 +848,42 @@
                                     Anasayfa
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-mail"></i>
+                                    Mail Kutusu
+                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="bireysel_mail.aspx">
+                                            <i class="metismenu-icon"></i>
+                                            Bireysel mail gönder
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="toplu_mail.aspx">
+                                            <i class="metismenu-icon"></i>
+                                            Toplu mail gönder
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="gonderilen_mail.aspx">
+                                            <i class="metismenu-icon">
+                                            </i>Gönderilen mailler
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="gelen_mail.aspx">
+                                            <i class="metismenu-icon">
+                                            </i>Gelen mailler
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+
                             <li class="app-sidebar__heading">İŞLEMLER</li>
                             <li>
                                 <a href="#">

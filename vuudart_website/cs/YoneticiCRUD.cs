@@ -38,6 +38,20 @@ namespace vuudart_website.cs
             return sonuc;
         }
 
+        public DataTable yoneticibilgigoster(string mailprm)
+        {
+            DataTable gdt = new DataTable();
+            db.ac();
+
+            SqlCommand goster = new SqlCommand("select YoneticiTc, Ad, Soyad, Mail,Sifre, Telefon, Unvanlar.Unvan, Pfotograf from Yoneticiler, Unvanlar where Yoneticiler.Unvan = Unvanlar.UnvanId and Mail=@a", db.baglanti);
+            goster.Parameters.AddWithValue("@a", mailprm);
+            SqlDataAdapter adp = new SqlDataAdapter(goster);
+            adp.Fill(gdt);
+
+            db.kapat();
+            return gdt;
+        }
+
         public bool yoneticiekle(Yonetici yeniyonetici)
         {
             bool sonuc = true;

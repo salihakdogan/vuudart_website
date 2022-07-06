@@ -214,7 +214,7 @@
                 <td><%=dt.Rows[i][0] %></td>
                 <td><%=dt.Rows[i][2] %></td>
                 <td><%=dt.Rows[i][3] %></td>
-                <td><%=dt.Rows[i][1] %></td>
+                <td><a href="bireysel_mail.aspx?uyemail=<%=dt.Rows[i][1] %>"><%=dt.Rows[i][1] %>  <i class="fa fa-solid fa-paper-plane"></i></a></td> 
                 <td><button type="button" class="mb-2 mr-2 btn btn-outline-primary btn-sm btn-block" data-toggle="modal" data-target="#gprm<%=dt.Rows[i][0] %>">İncele</button></td>
                 
             </tr>
