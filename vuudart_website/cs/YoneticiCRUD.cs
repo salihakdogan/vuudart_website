@@ -51,5 +51,33 @@ namespace vuudart_website.cs
             db.kapat();
             return gdt;
         }
+
+        public bool yoneticiekle(Yonetici yeniyonetici)
+        {
+            bool sonuc = true;
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("insert into Yoneticiler values(@1,@2,@3,@4,@5,@6,@7,@8)", db.baglanti);
+
+            komut.Parameters.AddWithValue("@1", yeniyonetici.Yoneticitc);
+            komut.Parameters.AddWithValue("@2", yeniyonetici.Ad);
+            komut.Parameters.AddWithValue("@3", yeniyonetici.Soyad);
+            komut.Parameters.AddWithValue("@4", yeniyonetici.Mail);
+            komut.Parameters.AddWithValue("@5", yeniyonetici.Sifre);
+            komut.Parameters.AddWithValue("@6", yeniyonetici.Telefon);
+            komut.Parameters.AddWithValue("@7", yeniyonetici.Unvan);
+            komut.Parameters.AddWithValue("@8", yeniyonetici.Pfotograf);
+            
+            int durum = Convert.ToInt16(komut.ExecuteNonQuery());
+
+            if (durum == 0)
+            {
+                sonuc = false;
+            }
+
+            db.kapat();
+
+            return sonuc;
+        }
     }
 }

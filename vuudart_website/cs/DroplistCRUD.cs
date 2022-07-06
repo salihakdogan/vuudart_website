@@ -91,5 +91,38 @@ namespace vuudart_website.cs
             return dt;
         }
 
+        public bool yunvanekle(Droplist yeniunvan)
+        {
+            bool sonuc = true;
+            db.ac();
+
+            SqlCommand komut = new SqlCommand("insert into Unvanlar values (@1,@2)", db.baglanti);
+
+            komut.Parameters.AddWithValue("@1", yeniunvan.Unvanad);
+            komut.Parameters.AddWithValue("@2", yeniunvan.Unvanaciklama);
+
+            int durum = Convert.ToInt16(komut.ExecuteNonQuery());
+
+            if (durum == 0)
+            {
+                sonuc = false;
+            }
+
+            db.kapat();
+
+            return sonuc;
+        }
+
+        public DataTable unvanliste()
+        {
+            DataTable dt = new DataTable();
+
+            db.ac();
+            SqlCommand komut1 = new SqlCommand("select UnvanID, Unvan, Aciklama from Unvanlar", db.baglanti);
+            SqlDataAdapter adp1 = new SqlDataAdapter(komut1);
+            adp1.Fill(dt);
+            db.kapat();
+            return dt;
+        }
     }
 }

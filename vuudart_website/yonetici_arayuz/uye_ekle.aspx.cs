@@ -72,7 +72,7 @@ namespace vuudart_website.yonetici_arayuz
 
                 if (!FileUpload1.HasFile)
                 {
-                    yeniuye.Pfotograf = "img/uye_profil/default_uye_profil.jpg";
+                    yeniuye.Pfotograf = "img/uye_profil/default_uye_profil.png";
                 }
                 else
                 {

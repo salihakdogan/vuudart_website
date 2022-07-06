@@ -22,7 +22,11 @@ namespace vuudart_website
         protected void Button1_Click(object sender, EventArgs e)
         {
             cs.YoneticiCRUD ygirisbilgi = new cs.YoneticiCRUD();
-            bool cevap = ygirisbilgi.yoneticigiris(TextBox1.Text, TextBox2.Text);
+
+            cs.Sifreleme sifreleme = new cs.Sifreleme();
+            string encryptedsifre = sifreleme.Encrypt(TextBox2.Text);
+
+            bool cevap = ygirisbilgi.yoneticigiris(TextBox1.Text, encryptedsifre);
 
             if (cevap)
             {                
@@ -37,8 +41,7 @@ namespace vuudart_website
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
+            Response.Redirect(Request.RawUrl);
         }
     }
 }
