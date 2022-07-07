@@ -6,8 +6,8 @@
 	<form id="icerik">
 
 	<!-- Title page -->
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
-		<h2 class="ltext-105 cl0 txt-center">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('yonetici_arayuz/img/banner_gorsel/banner3.jpg');">
+		<h2 class="ltext-105 cl0 txt-center" style="color:#383838;">
 			Giriş Yap / Kayıt Ol
 		</h2>
 	</section>	

@@ -304,6 +304,9 @@
     <Content Include="yonetici_arayuz\gelen_mail.aspx" />
     <Content Include="yonetici_arayuz\giris_ekran.css" />
     <Content Include="yonetici_arayuz\gonderilen_mail.aspx" />
+    <Content Include="yonetici_arayuz\img\banner_gorsel\banner1.jpg" />
+    <Content Include="yonetici_arayuz\img\banner_gorsel\banner2.jpg" />
+    <Content Include="yonetici_arayuz\img\banner_gorsel\banner3.jpg" />
     <Content Include="yonetici_arayuz\img\logo\vuudart-fotograf-logo.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider1.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider2.png" />

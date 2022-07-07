@@ -145,7 +145,19 @@
 
 							<div class="size-209" style="float:left; margin:auto; padding-left:30px">
 								<span class="mtext-110 cl2">
+
+									<%if (sepeturunfiyattoplami.Rows[0][0] != DBNull.Value)
+									  {%>
+
 									<%=Math.Round(Convert.ToDouble(sepeturunfiyattoplami.Rows[0][0]),2) %>TL
+
+									<%}else
+								      {%>
+
+										0 TL
+
+									<%}%>
+									
 								</span>
 							</div>
 						</div>
@@ -162,7 +174,19 @@
 
 							<div class="size-209" style="float:left; margin:auto; padding-left:30px">
 								<span class="mtext-110 cl2">
+
+									<%if (sepetkdvfiyattoplami.Rows[0][0] != DBNull.Value)
+									  {%>
+
 									<%=Math.Round(Convert.ToDouble(sepetkdvfiyattoplami.Rows[0][0]),2) %>TL
+
+									<%}else
+                                      {%>
+
+										0 TL
+
+									<%}%>
+						
 								</span>
 							</div>
 						</div>
@@ -176,7 +200,19 @@
 
 							<div class="size-209 p-t-1" style="float:left; margin:auto; padding-left:30px">
 								<span class="mtext-110 cl2">
-								   <%=Math.Round(Convert.ToDouble(sepetfiyattoplami.Rows[0][0]),2) %>TL
+
+									<%if (sepetfiyattoplami.Rows[0][0] != DBNull.Value) 
+									  {%>
+
+									<%=Math.Round(Convert.ToDouble(sepetfiyattoplami.Rows[0][0]),2) %>TL
+
+									<%}else
+									  {%>
+
+										0 TL
+
+									<%}%>
+								   
 								</span>
 							</div>
 						</div>
