@@ -47,26 +47,26 @@
 				   <td><%=dt.Rows[i][4] %></td>
 				   </tr>
       
-                       <%Boolean okundu = Convert.ToBoolean(dt.Rows[i][5]); %>
+                       <%Boolean yanitlandi = Convert.ToBoolean(dt.Rows[i][5]); %>
 
-                       <%if (okundu == false)
+                       <%if (yanitlandi == false)
                          {%>
 
                                <tr>
-				               <td>Okundu bilgisi</td>
+				               <td>Yanıt bilgisi</td>
 				               <td>:</td>
-				               <td>Henüz okunmadı</td>
+				               <td>Henüz yanıtlanmadı</td>
 				               </tr>
 
                        <%}%>
 
-                       <%if (okundu == true)
+                       <%if (yanitlandi == true)
                          {%>
 
                                <tr>
-				               <td>Okundu bilgisi</td>
+				               <td>Yanıt bilgisi</td>
 				               <td>:</td>
-				               <td>Göntülendi</td>
+				               <td>Yanıtlandı</td>
 				               </tr>
 
                        <%}%>
@@ -125,7 +125,7 @@
                 <th>Gönderen Adres</th>
                 <th>Konu Başlığı</th>
                 <th>Mail Detayı</th>
-                <th>Hızlı Yanıt</th>                      
+                <th>Yanıt Bilgisi</th>                      
             </tr>
         </thead>
         <tbody>
@@ -142,9 +142,23 @@
                 <td><%=dt.Rows[i][2] %></td>
                 
                 <td><button type="button" class="mb-2 mr-2 btn btn-outline-primary btn-sm btn-block" data-toggle="modal" data-target="#gprm<%=dt.Rows[i][0] %>">Mail Detayı</button></td>
-                <td><a type="button" href="bireysel_mail.aspx?gonderenmail=<%=dt.Rows[i][1] %>&konubaslik=<%=dt.Rows[i][2] %>" class="mb-2 mr-2 btn btn-outline-info btn-sm btn-block">Hızlı Yanıt  <i class="fa fa-solid fa-paper-plane"></i></a></td>
-                <%--<td><a href="  <i class="fa fa-solid fa-paper-plane"></i></a></td>--%>
-                
+
+                <%Session["yanitmailid"] = dt.Rows[i][0]; %>
+
+                <% Boolean yanitlandi = Convert.ToBoolean(dt.Rows[i][5]); %>
+
+                <%if (yanitlandi == false)
+                  {%>
+
+                    <td><a type="button" href="bireysel_mail.aspx?gonderenmail=<%=dt.Rows[i][1] %>&konubaslik=<%=dt.Rows[i][2] %>&mailid=<%=dt.Rows[i][0] %>" class="mb-2 mr-2 btn btn-outline-success btn-sm btn-block">Yanıtla  <i class="fa fa-solid fa-paper-plane"></i> </a></td>
+
+                <%}else 
+                  {%>
+                                           
+                    <td><button type="button" class="mb-2 mr-2 btn btn-outline-secondary btn-sm btn-block" data-toggle="modal" data-target="#gprm<%=dt.Rows[i][0] %>">Yanıtlandı <i class="fa fa-solid fa-check"></i> </button></td>
+         
+                <%}%>
+               
             </tr>
        <%}%>
 
@@ -154,7 +168,7 @@
                 <th>Gönderen Adres</th>
                 <th>Konu Başlığı</th>
                 <th>Mail Detayı</th>
-                <th>Hızlı Yanıt</th>  
+                <th>Yanıt bilgisi</th>  
             </tr>
         </tfoot>
     </table>

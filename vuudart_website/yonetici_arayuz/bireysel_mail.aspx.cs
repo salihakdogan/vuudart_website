@@ -15,6 +15,7 @@ namespace vuudart_website.yonetici_arayuz
 {
     public partial class bireysel_mail : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["uyemail"] != null)
@@ -33,12 +34,19 @@ namespace vuudart_website.yonetici_arayuz
             {
                 string gonderenmail = Request.QueryString["gonderenmail"];
                 TextBox1.Text = gonderenmail;
+                Session["gonderenmail"] = gonderenmail;
             }
 
-            if (Request.QueryString["konubaslik"] != null) 
+            if (Request.QueryString["konubaslik"] != null)
             {
                 string konubaslik = Request.QueryString["konubaslik"];
                 TextBox2.Text = "Gönderdiğiniz '" + konubaslik + "' başlıklı mail hakkında:";
+            }
+
+            if (Request.QueryString["mailid"] != null)
+            {
+                string mailkod = Request.QueryString["mailid"];
+                Session["mailkod"] = mailkod;
             }
         }
 
@@ -92,6 +100,9 @@ namespace vuudart_website.yonetici_arayuz
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "mailgonderilemedi", "mailgonderilemedi()", true);
             }
+      
+            cs.GelenMailCRUD gelenmailCRUD = new cs.GelenMailCRUD();
+            bool yanitlandi = gelenmailCRUD.mailyanitla(Session["gonderenmail"].ToString(), Session["mailkod"].ToString());
         }
 
         protected void Button2_Click(object sender, EventArgs e)

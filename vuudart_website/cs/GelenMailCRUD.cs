@@ -49,5 +49,40 @@ namespace vuudart_website.cs
             db.kapat();
             return dt;
         }
+
+        public bool mailyanitla(string mail, string mailid) //güncelleme işlemi için
+        {
+            bool cevap = true;
+            db.ac();
+            SqlCommand komut = new SqlCommand("update GelenMail set Durum=1 where Mail=@a and MailID=@b", db.baglanti);
+            komut.Parameters.AddWithValue("@a", mail);
+            komut.Parameters.AddWithValue("@b", mailid);
+
+            int kayitsay = komut.ExecuteNonQuery();
+            if (kayitsay == 0)
+            {
+                cevap = false;
+            }
+            else
+            {
+                cevap = true;
+            }
+            db.kapat();
+
+            return cevap;
+        }
+
+        public int yanitlanmamismail()
+        {
+            int cesitadet;
+
+            db.ac();
+            SqlCommand komut = new SqlCommand("select count(*) from Gelenmail where Durum=0", db.baglanti);
+            
+            cesitadet = Convert.ToInt16(komut.ExecuteScalar());
+
+            db.kapat();
+            return cesitadet;
+        }
     }
 }

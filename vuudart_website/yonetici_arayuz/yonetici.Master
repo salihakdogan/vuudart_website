@@ -850,9 +850,26 @@
                             </li>
 
                             <li>
+
+                                <%vuudart_website.cs.GelenMailCRUD sayi = new vuudart_website.cs.GelenMailCRUD();
+                                  int mailsayi = sayi.yanitlanmamismail();  %>
+
                                 <a href="#">
-                                    <i class="metismenu-icon pe-7s-mail"></i>
-                                    Mail Kutusu
+
+                                    <%if(mailsayi == 0) 
+                                      {%>
+
+                                    <i class="metismenu-icon pe-7s-mail">
+                                    </i>Mail Kutusu 
+
+                                    <%}else
+                                      {%>
+
+                                    <i class="metismenu-icon pe-7s-mail">
+                                    </i>Mail Kutusu <span class="badge badge-pill badge-danger"><%=mailsayi%></span>
+
+                                    <%}%> 
+                               
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul>
@@ -876,8 +893,21 @@
                                     </li>
                                     <li>
                                         <a href="gelen_mail.aspx">
+                                            
+                                            <%if(mailsayi == 0) 
+                                              {%>
+                                                
                                             <i class="metismenu-icon">
                                             </i>Gelen mailler
+
+                                            <%}else
+                                              {%>
+
+                                            <i class="metismenu-icon">
+                                            </i>Gelen mailler <span class="badge badge-pill badge-danger"><%=mailsayi%></span>
+
+                                            <%}%> 
+                                                                            
                                         </a>
                                     </li>
                                     
