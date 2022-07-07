@@ -86,7 +86,7 @@ namespace vuudart_website.yonetici_arayuz
 
                 if (FileUpload1.HasFile != false)
                 {
-                    FileUpload1.SaveAs(Server.MapPath("img/yonetici_profil/" + yoneticigorsel + "_" + yoneticigorseltarih));
+                    FileUpload1.SaveAs(Server.MapPath("img/yonetici_profil/" + yoneticigorseltarih + "_" + yoneticigorsel));
                     yeniyonetici.Pfotograf = "img/yonetici_profil/" + yoneticigorseltarih + "_" + yoneticigorsel;
                 }
                 else
