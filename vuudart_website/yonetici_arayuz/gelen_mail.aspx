@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/yonetici_arayuz/yonetici.Master" AutoEventWireup="true" CodeBehind="gonderilen_mail.aspx.cs" Inherits="vuudart_website.yonetici_arayuz.gonderilen_mail" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/yonetici_arayuz/yonetici.Master" AutoEventWireup="true" CodeBehind="gelen_mail.aspx.cs" Inherits="vuudart_website.yonetici_arayuz.gelen_mail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <%vuudart_website.cs.GonderilenMailCRUD gidenmailler = new vuudart_website.cs.GonderilenMailCRUD();
+    <%vuudart_website.cs.GelenMailCRUD gelenmailler = new vuudart_website.cs.GelenMailCRUD();
          System.Data.DataTable dt = new System.Data.DataTable();
-         dt = gidenmailler.gndmaillistele();%>
+         dt = gelenmailler.glnmaillistele();%>
     
     <%for (int i = 0; i < dt.Rows.Count; i++)
       {%>
@@ -24,45 +24,33 @@
 				   <table class="mb-0 table table-striped">
 																							       
                    <tr>
-				   <td>Gönderen yönetici</td>
+				   <td>Gönderen adres</td>
 				   <td>:</td>
-				   <td><%=dt.Rows[i][6] %></td>
-				   </tr>
-
-				   <tr>
-				   <td>Gönderilen adres</td>
-				   <td>:</td>
-				   <td><%=dt.Rows[i][3] %></td>
-				   </tr>
+				   <td><%=dt.Rows[i][1] %></td>
+				   </tr>			  
 
                    <tr>
 				   <td>Mail başlığı</td>
 				   <td>:</td>
-				   <td><%=dt.Rows[i][4] %></td>
+				   <td><%=dt.Rows[i][2] %></td>
 				   </tr>
 
                    <tr>
 				   <td>Mail mesajı</td>
 				   <td>:</td>
-				   <td><%=dt.Rows[i][5] %></td>
+				   <td><%=dt.Rows[i][3] %></td>
 				   </tr>
 
                    <tr>
 				   <td>Gönderilen tarih</td>
 				   <td>:</td>
-				   <td><%=dt.Rows[i][7] %></td>
+				   <td><%=dt.Rows[i][4] %></td>
 				   </tr>
+      
+                       <%Boolean okundu = Convert.ToBoolean(dt.Rows[i][5]); %>
 
-
-                    <%int mailtur = Convert.ToUInt16(dt.Rows[i][1]); %>
-
-                    <%if (mailtur == 0)
-                      {%>
-                        
-                        <%Boolean okundu = Convert.ToBoolean(dt.Rows[i][8]); %>
-
-                        <%if (okundu == false)
-                          {%>
+                       <%if (okundu == false)
+                         {%>
 
                                <tr>
 				               <td>Okundu bilgisi</td>
@@ -70,12 +58,19 @@
 				               <td>Henüz okunmadı</td>
 				               </tr>
 
-                        <%}%>
+                       <%}%>
 
-                    <%}%>
+                       <%if (okundu == true)
+                         {%>
 
-                   
-                                
+                               <tr>
+				               <td>Okundu bilgisi</td>
+				               <td>:</td>
+				               <td>Göntülendi</td>
+				               </tr>
+
+                       <%}%>
+                                   
 				   </table>													
 				</div>       
                 </div>
@@ -88,7 +83,7 @@
   </div>
 </div>
              
-	<%}%>  
+	<%}%>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -101,13 +96,13 @@
                                     </i>
                                 </div>
                                 <div>
-                                    Gönderilen Mailler
+                                    Gelen Mailler
                                     <div class="page-title-subheading">
-                                        Bu sayfada gönderilen mailleri görüntüleyebilirsin.
+                                        Bu sayfada gelen mailleri görüntüleyebilirsin.
                                         <ol class="breadcrumb">
                                                 <li class="breadcrumb-item"><a href="index.aspx">Anasayfa</a></li>   
                                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Mail kutusu</a></li>
-                                                <li class="active breadcrumb-item" aria-current="page">Gönderilen mailler</li>
+                                                <li class="active breadcrumb-item" aria-current="page">Gelen mailler</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -118,7 +113,7 @@
     <div class="main-card mb-3 card">
        <div class="card-body">
 
-           <h5 class="card-title">GÖNDERİLEN MAİLLER LİSTESİ</h5>
+           <h5 class="card-title">GELEN MAİLLER LİSTESİ</h5>
            <div class="position-relative form-group">
                
            </div>
@@ -127,39 +122,28 @@
                
         <thead>
             <tr>
-                <th>Mail Türü</th>
-                <th>Gönderen Yetkili</th>
-                <th>Gönderilen Adres</th>
-                <th>Mail Başlığı</th>        
+                <th>Gönderen Adres</th>
+                <th>Konu Başlığı</th>
                 <th>Mail Detayı</th>
+                <th>Hızlı Yanıt</th>                      
             </tr>
         </thead>
         <tbody>
             
-       <%vuudart_website.cs.GonderilenMailCRUD gidenmailler = new vuudart_website.cs.GonderilenMailCRUD();
+       <%vuudart_website.cs.GelenMailCRUD gelenmailler = new vuudart_website.cs.GelenMailCRUD();
          System.Data.DataTable dt = new System.Data.DataTable();
-         dt = gidenmailler.gndmaillistele();%> 
+         dt = gelenmailler.glnmaillistele();%> 
             
        <%for (int i = 0; i < dt.Rows.Count; i++)
          {%>    
             <tr>
-                 
-                <%int mailtur = Convert.ToUInt16(dt.Rows[i][1]); %>
-
-                <%if (mailtur == 0)
-                  {%>
-                        <td>Bireysel Mail</td>
-                <%}%>
-
-                <%if (mailtur == 1)
-                  {%>
-                        <td>Toplu Mail</td>
-                <%}%>
-
-                <td><%=dt.Rows[i][6] %></td>
-                <td><%=dt.Rows[i][3] %></td>
-                <td><%=dt.Rows[i][4] %></td>
+                              
+                <td><%=dt.Rows[i][1] %></td>
+                <td><%=dt.Rows[i][2] %></td>
+                
                 <td><button type="button" class="mb-2 mr-2 btn btn-outline-primary btn-sm btn-block" data-toggle="modal" data-target="#gprm<%=dt.Rows[i][0] %>">Mail Detayı</button></td>
+                <td><a type="button" href="bireysel_mail.aspx?gonderenmail=<%=dt.Rows[i][1] %>&konubaslik=<%=dt.Rows[i][2] %>" class="mb-2 mr-2 btn btn-outline-info btn-sm btn-block">Hızlı Yanıt  <i class="fa fa-solid fa-paper-plane"></i></a></td>
+                <%--<td><a href="  <i class="fa fa-solid fa-paper-plane"></i></a></td>--%>
                 
             </tr>
        <%}%>
@@ -167,11 +151,10 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Mail Türü</th>
-                <th>Gönderen Yetkili</th>
-                <th>Gönderilen Adres</th>
-                <th>Mail Başlığı</th>        
+                <th>Gönderen Adres</th>
+                <th>Konu Başlığı</th>
                 <th>Mail Detayı</th>
+                <th>Hızlı Yanıt</th>  
             </tr>
         </tfoot>
     </table>
@@ -183,7 +166,7 @@
     <script>
 
         $(document).ready(function () {
-            $('#maillistesi').DataTable();
+            $('maillistesi').DataTable();
         });
        
     </script>

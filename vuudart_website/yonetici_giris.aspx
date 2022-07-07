@@ -82,8 +82,8 @@
                    <div class="col-md-8 ortahizala">
                            <div class="position-relative form-group">
                                
-                               <asp:Label ID="Label2" runat="server" Text="E-mail * "></asp:Label>
-                               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="E-mail alanı boş bırakılamaz!" ControlToValidate="TextBox1" ForeColor="#FF5840"></asp:RequiredFieldValidator>
+                               <asp:Label ID="Label2" runat="server" Text="Mail adresi * "></asp:Label>
+                               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Mail adresi alanı boş bırakılamaz!" ControlToValidate="TextBox1" ForeColor="#FF5840"></asp:RequiredFieldValidator>
                                
                                <div class="input-group">
                                <asp:TextBox ID="TextBox1" runat="server" class="form-control"></asp:TextBox>
@@ -109,7 +109,9 @@
 
                    <div class="col-md-8 ortahizala">
                            <div class="position-relative form-group">
-                               <asp:CheckBox ID="CheckBox1" runat="server" Text="Giriş bilgilerini kaydet" class="custom-checkbox"/>
+                               <asp:CheckBox ID="CheckBox1" runat="server" class="custom-checkbox"/>
+                               <asp:Label ID="Label3" runat="server" Text="Giriş bilgilerini kaydet" style="margin-left:5px; font-style:italic;"></asp:Label>
+
                             </div>
                        </div>
 

@@ -28,6 +28,18 @@ namespace vuudart_website.yonetici_arayuz
                 string gelenyoneticimail = Request.QueryString["yoneticimail"];
                 TextBox1.Text = gelenyoneticimail;
             }
+
+            if (Request.QueryString["gonderenmail"] != null)
+            {
+                string gonderenmail = Request.QueryString["gonderenmail"];
+                TextBox1.Text = gonderenmail;
+            }
+
+            if (Request.QueryString["konubaslik"] != null) 
+            {
+                string konubaslik = Request.QueryString["konubaslik"];
+                TextBox2.Text = "Gönderdiğiniz '" + konubaslik + "' başlıklı mail hakkında:";
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

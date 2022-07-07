@@ -9,8 +9,19 @@ namespace vuudart_website
 {
     public partial class yonetici_giris : System.Web.UI.Page
     {
+        HttpCookie kukiyonetici = new HttpCookie("vuudartyoneticigiris");
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["vuudartyoneticigiris"] != null)
+                {
+                    kukiyonetici = Request.Cookies["vuudartyoneticigiris"];
+                    TextBox1.Text = kukiyonetici["yoneticigiris"].ToString();
+                }
+            }
+
+
             string güvenlicikis = Request.QueryString["cikisyapildi"];
             if (güvenlicikis == "1")
             {
@@ -31,7 +42,16 @@ namespace vuudart_website
             if (cevap)
             {                
                 Session["yoneticigiris"] = TextBox1.Text;
+      
                 Response.Redirect("yonetici_arayuz/index.aspx");
+
+                if (CheckBox1.Checked)
+                {
+                    kukiyonetici["yoneticigiris"] = TextBox1.Text;
+
+                    kukiyonetici.Expires = DateTime.Now.AddDays(10);
+                    Response.Cookies.Add(kukiyonetici);
+                }
             }
             else
             {

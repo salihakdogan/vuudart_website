@@ -323,6 +323,67 @@
         }
     </script>
 
+	<script id="mailgonderildi">
+        function mailgonderildi() {
+
+            let timerInterval
+
+            Swal.fire({
+                title: 'İşlem başarılı',
+                html: 'Mailiniz tarafımıza iletildi en yakın süreçte mail adresinize geri dönüş sağlayacağız.',
+                icon: 'success',
+                timer: 4500,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+        }
+    </script>
+
+	<script id="mailgonderilemedi">
+        function mailgonderilemedi() {
+
+            let timerInterval
+
+            Swal.fire({
+                title: 'İşlem başarısız',
+                html: 'Mailiniz tarafımıza iletilemedi daha sonra tekrar deneyin.',
+                icon: 'error',
+                timer: 4500,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+        }
+    </script>
+
+
 <!--===============================================================================================-->	
 	<%--<link rel="icon" type="image/png" href="images/icons/favicon.png"/>--%>
 <!--===============================================================================================-->
@@ -405,9 +466,9 @@
                           else
                           {%>
 							
-						<a href="hesabim.aspx" class="flex-c-m trans-04 p-lr-25">
+						<%--<a href="hesabim.aspx" class="flex-c-m trans-04 p-lr-25">
 							Hesabım
-						</a>
+						</a>--%>
 
 						<a role="button" class="flex-c-m trans-04 p-lr-25" runat="server" onserverclick="cikis_Click">
 							<i class="fa fa-sign-out" aria-hidden="true"></i> Çıkış yap
@@ -464,12 +525,12 @@
 								<a href="blog.html">Blog</a>
 							</li>--%>
 
-							<li>
+							<%--<li>
 								<a href="about.html">Hakkımızda</a>
-							</li>
+							</li>--%>
 
 							<li>
-								<a href="contact.html">İletişim</a>
+								<a href="iletisim.aspx">İletişim</a>
 							</li>
 						</ul>
 					</div>	
@@ -727,39 +788,66 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-    </form>
+    
 
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
+
+
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Categories
+						Kategoriler
+					</h4>
+
+					<ul>
+
+						<%vuudart_website.cs.DroplistCRUD listele4kate = new vuudart_website.cs.DroplistCRUD();
+							 System.Data.DataTable dtkate = new System.Data.DataTable();
+							 dtkate = listele4kate.kategori4liste();%>
+
+						<%for (int i = 0; i < dtkate.Rows.Count; i++)
+                          {%>
+
+						<li class="p-b-10">
+							<a href="urunler.aspx?kategoriprm=<%=dtkate.Rows[i][0] %>" class="stext-107 cl7 hov-cl1 trans-04">
+								<%=dtkate.Rows[i][1] %>
+							</a>
+						</li>
+
+                        <%}%>
+								
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Yardım & Destek
 					</h4>
 
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
+								Sipariş takibi
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
+								İadeler
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
+								Kargo
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
+								SSS
 							</a>
 						</li>
 					</ul>
@@ -767,43 +855,11 @@
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Help
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
+						İletişime Geçin
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Sorularınız mı var? 8th floor, 379 Hudson St, New York, NY 10018 adresindeki mağazamızda bize bildirin veya (+1) 96 716 6879 numaralı telefondan bizi arayın.
 					</p>
 
 					<div class="p-t-27">
@@ -823,18 +879,22 @@
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Newsletter
+						Mail bülteni
 					</h4>
 
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
+
+							<%--<asp:TextBox ID="TextBox1" runat="server" class="input1 bg-none plh1 stext-107 cl7" placeholder="adres@mail.com" ></asp:TextBox>--%>
+
 							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
 							<div class="focus-input1 trans-04"></div>
 						</div>
 
 						<div class="p-t-18">
+							<%--<asp:Button ID="Button3" runat="server" Text="Abone Ol" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04" OnClick="Button3_Click"/>--%>
 							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
+								Kayıt ol
 							</button>
 						</div>
 					</form>
@@ -1042,7 +1102,7 @@ Telif hakkı &copy;<script>document.write(new Date().getFullYear());</script> T�
 			</div>
 		</div>
 	</div>--%>
-	
+	</form>
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

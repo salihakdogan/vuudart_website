@@ -90,6 +90,7 @@
     <Content Include="hesap_dogrula.aspx" />
     <Content Include="home-02.html" />
     <Content Include="home-03.html" />
+    <Content Include="iletisim.aspx" />
     <Content Include="images\about-01.jpg" />
     <Content Include="images\about-02.jpg" />
     <Content Include="images\avatar-01.jpg" />
@@ -300,6 +301,7 @@
     <Content Include="yonetici_arayuz\forms-controls.html" />
     <Content Include="yonetici_arayuz\forms-layouts.html" />
     <Content Include="yonetici_arayuz\forms-validation.html" />
+    <Content Include="yonetici_arayuz\gelen_mail.aspx" />
     <Content Include="yonetici_arayuz\giris_ekran.css" />
     <Content Include="yonetici_arayuz\gonderilen_mail.aspx" />
     <Content Include="yonetici_arayuz\img\logo\vuudart-fotograf-logo.png" />
@@ -382,6 +384,8 @@
     <Compile Include="cs\Db.cs" />
     <Compile Include="cs\Droplist.cs" />
     <Compile Include="cs\DroplistCRUD.cs" />
+    <Compile Include="cs\GelenMail.cs" />
+    <Compile Include="cs\GelenMailCRUD.cs" />
     <Compile Include="cs\GonderilenMail.cs" />
     <Compile Include="cs\GonderilenMailCRUD.cs" />
     <Compile Include="cs\Olcu.cs" />
@@ -420,6 +424,13 @@
     <Compile Include="hesap_dogrula.aspx.designer.cs">
       <DependentUpon>hesap_dogrula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="iletisim.aspx.cs">
+      <DependentUpon>iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iletisim.aspx.designer.cs">
+      <DependentUpon>iletisim.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sepet.aspx.cs">
       <DependentUpon>sepet.aspx</DependentUpon>
@@ -455,6 +466,13 @@
     </Compile>
     <Compile Include="yonetici_arayuz\bireysel_mail.aspx.designer.cs">
       <DependentUpon>bireysel_mail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="yonetici_arayuz\gelen_mail.aspx.cs">
+      <DependentUpon>gelen_mail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="yonetici_arayuz\gelen_mail.aspx.designer.cs">
+      <DependentUpon>gelen_mail.aspx</DependentUpon>
     </Compile>
     <Compile Include="yonetici_arayuz\gonderilen_mail.aspx.cs">
       <DependentUpon>gonderilen_mail.aspx</DependentUpon>
