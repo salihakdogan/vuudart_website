@@ -59,8 +59,18 @@
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-01.png" alt="IMG-BANNER">
 
+					<%string gorsel = dtkate.Rows[i][2].ToString(); %>
+
+						<%if (gorsel == "")
+                          {%>
+								<img src="yonetici_arayuz/img/kategori_gorsel/default.png" alt="IMG-BANNER">
+                        <%}
+                          else
+                          {%>
+								<img src="<%="yonetici_arayuz/"+dtkate.Rows[i][2] %>" alt="IMG-BANNER">
+                        <%}%>
+				
 						<a href="urunler.aspx?kategoriprm=<%=dtkate.Rows[i][0] %>" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
@@ -68,7 +78,7 @@
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									<%=dtkate.Rows[i][2] %>
+									
 								</span>
 							</div>
 

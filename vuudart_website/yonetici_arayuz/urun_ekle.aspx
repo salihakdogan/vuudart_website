@@ -370,9 +370,9 @@
                              
                        <div class="col-md-6">
                            <div class="position-relative form-group">
-                               <asp:Label ID="yk_kateaciklama_label" runat="server" Text="Açıklama * "></asp:Label>
-                               <asp:RequiredFieldValidator ID="yk_valid_2" runat="server" ErrorMessage="Kategori açıklaması alanı boş bırakılamaz!" ControlToValidate="yk_textbox2" ForeColor="#FF5840" ValidationGroup="yk_ekle"></asp:RequiredFieldValidator>
-                               <asp:TextBox ID="yk_textbox2" runat="server" class="form-control"></asp:TextBox>
+                               <asp:Label ID="yk_kategorsel_label" runat="server" Text="Kategori görsel "></asp:Label>
+                               <asp:FileUpload ID="FileUpload4" runat="server" class="form-control-file" />
+                              
                            </div>
                        </div>
                    

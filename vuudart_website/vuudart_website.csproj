@@ -947,6 +947,7 @@
     <Content Include="yonetici_arayuz\yonetici.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="yonetici_arayuz\img\kategori_gorsel\" />
     <Folder Include="yonetici_arayuz\img\urun_gorsel\" />
     <Folder Include="yonetici_arayuz\src\assets\fonts\" />
   </ItemGroup>

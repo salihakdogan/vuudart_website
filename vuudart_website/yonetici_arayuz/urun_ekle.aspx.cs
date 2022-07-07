@@ -233,7 +233,22 @@ namespace vuudart_website.yonetici_arayuz
             cs.DroplistCRUD ykdplistCRUD = new cs.DroplistCRUD();
 
             ykategori.Kategoriad = yk_textbox1.Text;
-            ykategori.Kategoriaciklama = yk_textbox2.Text;
+
+            //gorsel 1
+            string kategorsel = FileUpload4.FileName;
+            string kategorseltarih = System.DateTime.Now.ToString("MMddyyyy_HHmmss");
+
+            if (FileUpload4.HasFile != false)
+            {
+                FileUpload4.SaveAs(Server.MapPath("img/kategori_gorsel/" + kategorseltarih + "_" + kategorsel));
+                ykategori.Kategoriaciklama = "img/kategori_gorsel/" + kategorseltarih + "_" + kategorsel;
+            }
+            else
+            {
+                ykategori.Kategoriaciklama = "";
+            }
+
+            //ykategori.Kategoriaciklama = yk_textbox2.Text;
 
             bool cevap = ykdplistCRUD.ykategoriekle(ykategori);
 

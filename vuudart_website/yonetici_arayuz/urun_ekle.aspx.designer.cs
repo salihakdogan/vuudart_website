@@ -492,31 +492,22 @@ namespace vuudart_website.yonetici_arayuz
         protected global::System.Web.UI.WebControls.TextBox yk_textbox1;
 
         /// <summary>
-        /// yk_kateaciklama_label control.
+        /// yk_kategorsel_label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label yk_kateaciklama_label;
+        protected global::System.Web.UI.WebControls.Label yk_kategorsel_label;
 
         /// <summary>
-        /// yk_valid_2 control.
+        /// FileUpload4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator yk_valid_2;
-
-        /// <summary>
-        /// yk_textbox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox yk_textbox2;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload4;
 
         /// <summary>
         /// yk_kayit_button control.
