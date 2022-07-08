@@ -105,11 +105,12 @@ namespace vuudart_website
 
                 cs.Uye yeniuye = new cs.Uye();
                 cs.UyeCRUD yeniuyeCRUD = new cs.UyeCRUD();
-
+                 
                 yeniuye.Kullaniciad = TextBox3.Text;
                 yeniuye.Mail = TextBox4.Text;
                 yeniuye.Ad = TextBox5.Text;
                 yeniuye.Soyad = TextBox6.Text;
+                yeniuye.Pfotograf = "img/uye_profil/default_uye_profil.png";
 
                 cs.Sifreleme sifreleme = new cs.Sifreleme();
                 string encryptedsifre = sifreleme.Encrypt(TextBox7.Text);

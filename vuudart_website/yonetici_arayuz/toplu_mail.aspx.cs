@@ -27,7 +27,7 @@ namespace vuudart_website.yonetici_arayuz
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedItem.Text == "Mail onayı veren tüm üyeler")
+            if (DropDownList1.SelectedItem.Text == "Mail iletisi isteyen tüm üyeler")
             {
                 cs.GonderilenMailCRUD gidenmailler = new cs.GonderilenMailCRUD();
                 DataTable dt = new DataTable();
