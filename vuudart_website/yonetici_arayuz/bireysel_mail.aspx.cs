@@ -100,9 +100,12 @@ namespace vuudart_website.yonetici_arayuz
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "mailgonderilemedi", "mailgonderilemedi()", true);
             }
-      
-            cs.GelenMailCRUD gelenmailCRUD = new cs.GelenMailCRUD();
-            bool yanitlandi = gelenmailCRUD.mailyanitla(Session["gonderenmail"].ToString(), Session["mailkod"].ToString());
+
+            if (Session["gonderenmail"] != null && Session["mailkod"] != null)
+            {
+                cs.GelenMailCRUD gelenmailCRUD = new cs.GelenMailCRUD();
+                bool yanitlandi = gelenmailCRUD.mailyanitla(Session["gonderenmail"].ToString(), Session["mailkod"].ToString());
+            }          
         }
 
         protected void Button2_Click(object sender, EventArgs e)
