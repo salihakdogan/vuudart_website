@@ -618,70 +618,83 @@
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
 			<ul class="topbar-mobile">
-				<li>
-					<div class="left-top-bar">
-						Free shipping for standard order over $100
+				<li> 
+					<div class="left-top-bar" style ="margin-bottom:10px;">
+						<div style="float:left; margin-right:6px;">Hoşgeldiniz</div><div style="color:#6f81e7; float:left;"><%=Session["uyemail"]%></div>
 					</div>
 				</li>
 
 				<li>
+
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
+
+						<%if (Session["uyegirisi"]==null)
+                          {%>
+
+						<a href="giris_kayit.aspx" class="flex-c-m p-lr-10 trans-04">
+							Giriş yap / Kayıt ol
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
+                        <%}
+                          else
+                          {%>
+							
+						<%--<a href="hesabim.aspx" class="flex-c-m trans-04 p-lr-25">
+							Hesabım
+						</a>--%>
+
+						<a role="button" class="flex-c-m p-lr-10 trans-04" runat="server" onserverclick="cikis_Click">
+							<i class="fa fa-sign-out" aria-hidden="true"></i> Çıkış yap
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							EN
-						</a>
+                        <%}%>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
+							Destek & SSS
 						</a>
+						
 					</div>
+
 				</li>
 			</ul>
 
 			<ul class="main-menu-m">
 				<li>
 					<a href="default.aspx">Anasayfa</a>
-					<ul class="sub-menu-m">
+					<%--<ul class="sub-menu-m">
 						<li><a href="index.html">Homepage 1</a></li>
 						<li><a href="home-02.html">Homepage 2</a></li>
 						<li><a href="home-03.html">Homepage 3</a></li>
 					</ul>
 					<span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+					</span>--%>
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="urunler.aspx">Mağaza</a>
 				</li>
 
-				<li>
+				<%--<li>
 					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
-				</li>
+				</li>--%>
 
 				<li>
-					<a href="blog.html">Blog</a>
+					<a href="iletisim.aspx">İletişim</a>
 				</li>
 
-				<li>
+				<%--<li>
 					<a href="about.html">About</a>
 				</li>
 
 				<li>
 					<a href="contact.html">Contact</a>
-				</li>
+				</li>--%>
 			</ul>
 		</div>
 
 		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+		<%--<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
 					<img src="images/icons/icon-close2.png" alt="CLOSE">
@@ -694,7 +707,7 @@
 					<input class="plh3" type="text" name="search" placeholder="Search...">
 				</form>
 			</div>
-		</div>
+		</div>--%>
 	</header>
 
 	<%--<!-- Cart -->
