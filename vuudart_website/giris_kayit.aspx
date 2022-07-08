@@ -63,7 +63,7 @@
 
 						<div class="bor8 m-b-20 how-pos4-parent">
 							<asp:TextBox ID="TextBox3" runat="server" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" placeholder="Kullanıcı adı"></asp:TextBox>
-							<i class="fa fa-at how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i>
+							<i class="fa fa-solid fa-user how-pos4 pointer-none" aria-hidden="true" alt="ICON"></i><%--<i class="fa-solid fa-user"></i>--%>
 						</div>
 
 							<div class="m-b-20">
@@ -119,8 +119,8 @@
 							</div>
 
 						<div class="m-b-20">
-						    <asp:CheckBox ID="CheckBox3" runat="server" style="float:left; margin-right:10px; margin-top:5px;" />
-					        <asp:Label ID="Label3" runat="server" Text="Ürün reklamı ve bilgilendirmeler için mail gönderilmesini onaylıyorum" style="float:left;" CssClass="m-b-20"></asp:Label>	
+						    <asp:CheckBox ID="CheckBox3" runat="server" style="float:left; margin-right:5px; margin-top:5px;" />
+					        <asp:Label ID="Label3" runat="server" Text="Bilgilendirmeler için mail gönderilmesini onaylıyorum." style="float:left;" CssClass="m-b-20"></asp:Label>	
 						</div>
 						
 						<asp:Button ID="Button2" runat="server" Text="Kayıt ol" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" OnClick="Button2_Click" ValidationGroup="kayit"/>

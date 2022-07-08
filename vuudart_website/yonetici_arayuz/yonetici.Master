@@ -11,9 +11,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>VuudArt - Yönetici Arayüzü</title>
     
-    <link rel="apple-touch-icon" sizes="180x180" href="logo/vuudart180x180.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="logo/vuudart32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="logo/vuudart16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/vuudart180x180.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/logo/vuudart32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/logo/vuudart16x16.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
@@ -1026,7 +1026,7 @@
                                                      
                             <li class="app-sidebar__heading"></li>
                             <li>
-                                <a href="default.aspx" target="_blank">
+                                <a href="../default.aspx" target="_blank">
                                     <i class="metismenu-icon pe-7s-graph2">
                                     </i>
                                     VuudArt - Mağaza

@@ -307,6 +307,7 @@
     <Content Include="yonetici_arayuz\img\banner_gorsel\banner1.jpg" />
     <Content Include="yonetici_arayuz\img\banner_gorsel\banner2.jpg" />
     <Content Include="yonetici_arayuz\img\banner_gorsel\banner3.jpg" />
+    <Content Include="yonetici_arayuz\img\kategori_gorsel\default.png" />
     <Content Include="yonetici_arayuz\img\logo\vuudart-fotograf-logo.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider1.png" />
     <Content Include="yonetici_arayuz\img\slider_gorsel\slider2.png" />
@@ -950,7 +951,6 @@
     <Content Include="yonetici_arayuz\yonetici.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="yonetici_arayuz\img\kategori_gorsel\" />
     <Folder Include="yonetici_arayuz\img\urun_gorsel\" />
     <Folder Include="yonetici_arayuz\src\assets\fonts\" />
   </ItemGroup>
